@@ -7,9 +7,9 @@
   <a href="https://github.com/open17/vuepress-theme-qbook/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/vuepress-theme-qbook.svg" alt="License"></a>
 </p>
 
-<p align="center">
-  English|<a herf="https://github.com/open17/vuepress-theme-qbook/blob/master/README_cn.md">中文</a>
-</p>
+<div align="center">
+  English|<a href="https://github.com/open17/vuepress-theme-qbook/blob/master/README_cn.md"><span>中文</span></a>
+</div>
 
 # Vuepress-theme-qbook
 🍉 A easy,book-style theme for Vuepress site 
