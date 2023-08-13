@@ -1,6 +1,6 @@
 <template>
   <!-- 长宽覆盖屏幕 -->
-  <div class="h-screen w-screen">
+  <div class="h-screen w-screen dark:bg-gray-700">
     <!-- 导航栏 -->
     <TopBarVue/>
     <!-- padding 保证初始化时不被导航栏覆盖 -->
@@ -38,4 +38,25 @@ export default {
 </script>
 
 <style>
+/* 更改滚动条的宽度 */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* 更改滚动条轨道的背景颜色 */
+::-webkit-scrollbar-track {
+  background: gray;
+}
+
+/* 更改滚动条拇指的背景颜色和边框半径 */
+::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 1px;
+}
+
+/* 更改鼠标悬停时滚动条拇指的背景颜色 */
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
 </style>

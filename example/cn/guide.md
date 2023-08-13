@@ -99,7 +99,7 @@
 7. 完成!
    - 在本地服务器中运行页面
 
-        已下均假设你进行了<h-light setcolor="#dafbe1">步骤6</h-light>,否则将下面的`dev`替换为`vuepress dev docs`
+        已下均假设你进行了<h-lighter setcolor="#dafbe1">步骤6</h-lighter>,否则将下面的`dev`替换为`vuepress dev docs`
 
         ```
         npm run dev

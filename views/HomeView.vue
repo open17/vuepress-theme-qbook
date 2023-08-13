@@ -5,12 +5,12 @@
         <img v-if="imageURL" :src="imageURL" alt="" class="h-full w-full" />
         <img v-else src="../assets/default_cover.png" alt="" class="h-full w-full" />
       </div>
-      <div class="items-center space-y-8 w-128">
+      <div class="items-center space-y-8 w-128 text-gray-900 dark:text-gray-100 ">
         <h1 class="text-4xl font-extrabold">{{ title }}</h1>
-        <div class="items-center text-base text-gray-600 flex">
+        <div class="items-center text-base text-gray-600 dark:text-gray-300 flex">
           {{ description }}
         </div>
-        <el-collapse accordion>
+        <el-collapse  accordion>
           <el-collapse-item
             v-for="(item, index) in features"
             :key="index"
@@ -19,7 +19,7 @@
             <template slot="title">
               <div class="items-center justify-start flex space-x-1">
                 <div v-html="item.icon"></div>
-                <div class="text-xl">
+                <div class="text-xl dark:text-yellow-300">
                   {{ item.title }}
                 </div>
               </div>
@@ -35,9 +35,25 @@
       </div>
     </div>
 
-    <div class="absolute left-0 top-0 h-full bg-purple-500 w-64 z-0 "></div>
+    <div class="absolute left-0 top-0 h-full bg-purple-500 dark:bg-gray-800 w-64 z-0 "></div>
   </div>
 </template>
+
+<style>
+.el-collapse-item div{
+  border: none;
+}
+.el-collapse-item i{
+    color: rgba(209, 213, 219);
+}
+.el-collapse-item__content div{
+    color: rgba(209, 213, 219);
+}
+.el-collapse-item div{
+   background-color:  rgba(55, 65, 81, var(--tw-bg-opacity)) !important ;
+}
+</style>
+
 
 <script>
 export default {
@@ -68,4 +84,3 @@ export default {
 };
 </script>
 
-<style></style>

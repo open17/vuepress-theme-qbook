@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   theme: path.resolve(__dirname, '../../'),
   // Fill in the webpage title in title
-  title: 'your-title',
+  title: 'vuepress-theme-qbook',
   base: "/vuepress-theme-qbook/",
   markdown: {
     extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6']

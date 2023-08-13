@@ -13,7 +13,7 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-markdown-todolist": "^1.0.1",
-    "vuepress-plugin-pad-markdown": "^1.0.5"
+    "vuepress-plugin-pad-markdown": "^1.0.6"
   },
   "devDependencies": {
     "vuepress": "^1.9.9"

@@ -1,7 +1,7 @@
 ---
 heroText: 主题指南
 heroImage: /icon.png
-description: 这是主题文档与指南
+description: 这是vuepress-theme-qbook的主题文档与指南
 features:
   - title: Markdown增强
     details: [略]

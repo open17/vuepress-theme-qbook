@@ -99,7 +99,7 @@
 7. Done!
    - Run the page on a local server
 
-        The following assumes that you have performed <h-light setcolor="#dafbe1">step 6</h-light>, otherwise replace `dev` below with `vuepress dev docs`
+        The following assumes that you have performed <h-lighter setcolor="#dafbe1">step 6</h-lighter>, otherwise replace `dev` below with `vuepress dev docs`
 
         ```
         npm run dev

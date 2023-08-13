@@ -15,13 +15,15 @@
 🍉 A easy,book-style theme for Vuepress site 
 
 ## Features
-- Out of the box (supports most default theme configurations)
+- Easy config (supports most default theme configurations)
 - Katex support
 - Table of contents feature
 - Code highlighting, copying
 - To-do
 - Highlighter
 - Full-text search
+- Back to top
+- light/dark mode
 - ...
 
 ## Demo & Doc

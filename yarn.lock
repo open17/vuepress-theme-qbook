@@ -8910,10 +8910,10 @@ vuepress-plugin-markdown-todolist@^1.0.1:
   resolved "https://registry.yarnpkg.com/vuepress-plugin-markdown-todolist/-/vuepress-plugin-markdown-todolist-1.0.1.tgz#5744fde0d9e2705d6840b7cb0c1612ddaa2cd7d8"
   integrity sha512-a/RI3/0u6YUjDGE3BqBtO4nGg7CwAIlCZPjMRGRiAdxHmTYrCVJTXVAd8bLXhNH1sXk/ZOaIfReWq5MvzIXjdg==
 
-vuepress-plugin-pad-markdown@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-pad-markdown/-/vuepress-plugin-pad-markdown-1.0.5.tgz#081e0c2423427441e48ae876d86cd5a49d69d784"
-  integrity sha512-TEAIt/tAUgq2VbLhl3FiE+PYOabukcfMu2F5xSCYLvkysacBpYUTfglFIY22QpfrJzGL5YFknKTh7RSoGWtmqQ==
+vuepress-plugin-pad-markdown@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-pad-markdown/-/vuepress-plugin-pad-markdown-1.0.6.tgz#a926d9ebb20aec1ff20d57c2615648a775e93ab8"
+  integrity sha512-A8ZEMgGYEXPljW/XvoSiRC8fV1UVX42QqUXy67Y9bqn8siWLqPj33TsSuelSdoQmttgor8k7UNR9esK644Gp9A==
   dependencies:
     clipboard "^2.0.11"
     github-markdown-css "^5.2.0"

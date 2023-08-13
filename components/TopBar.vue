@@ -1,27 +1,31 @@
 <template>
   <div
-    class="flex items-center justify-between border-b-2 w-full px-5 fixed bg-white z-50"
+    class="flex items-center justify-between border-b-2 w-full px-5 fixed bg-white dark:bg-gray-800 z-50"
   >
     <div class="flex items-center text-xl space-x-2">
       <img v-if="imageURL" :src="imageURL" alt="" class="h-10 w-10" />
       <!-- <div v-html="NavIcon"></div> -->
-      <span class="font-bold">{{ NavTitle }}</span>
+      <span class="font-bold text-gray-900 dark:text-gray-100">{{
+        NavTitle
+      }}</span>
     </div>
     <div class="flex items-center justify-end space-x-1">
       <SearchBox />
       <el-menu
         :default-active="activeIndex"
-        class="text-black"
         mode="horizontal"
         :router="true"
         @select="handleSelect"
+            :background-color="isDarkMode ? 'rgba(31, 41, 55, var(--tw-bg-opacity))' : '#fff'"
+            :text-color="isDarkMode ? '#fff' : '#000'"
+            :active-text-color="isDarkMode ? '#ffd04b' : '#409EFF'"
       >
         <template v-for="(NavLink, index) in NavLinkGroup">
           <el-menu-item
             :index="NavLink.link"
             :key="index"
             v-if="NavLink.link"
-            class="text-black"
+
             >{{ NavLink.text }}</el-menu-item
           >
           <template v-else>
@@ -41,6 +45,7 @@
   </div>
 </template>
 
+
 <script>
 import SearchBox from "@SearchBox";
 export default {
@@ -52,6 +57,7 @@ export default {
       activeIndex: "/",
       NavTitle: "Vuepress Theme QBook",
       NavLinkGroup: [],
+      isDarkMode: false,
     };
   },
   methods: {
@@ -62,10 +68,11 @@ export default {
   mounted() {
     if (this.$themeConfig.NavTitle) this.NavTitle = this.$themeConfig.NavTitle;
     this.NavLinkGroup = this.$themeConfig.nav;
+    this.isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
   },
   computed: {
     imageURL() {
-      if(this.$themeConfig.logo)return this.$withBase(this.$themeConfig.logo);
+      if (this.$themeConfig.logo) return this.$withBase(this.$themeConfig.logo);
       return null;
     },
   },
@@ -73,4 +80,17 @@ export default {
 </script>
 
 <style>
+.el-menu-item:hover{
+  background: transparent !important;
+}
+.el-submenu__title:hover{
+  background: transparent !important;
+}
+.el-menu--popup li{
+  color: black !important;
+  background-color: #fff !important;
+}
+.el-menu--popup li:hover{
+  background-color: #fff !important;
+}
 </style>
