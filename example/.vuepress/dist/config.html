@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configuration | your-title</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/vuepress-theme-qbook/assets/css/0.styles.77951101.css" as="style"><link rel="preload" href="/vuepress-theme-qbook/assets/js/app.c5667ffe.js" as="script"><link rel="preload" href="/vuepress-theme-qbook/assets/js/3.036aff61.js" as="script"><link rel="preload" href="/vuepress-theme-qbook/assets/js/2.29b52389.js" as="script"><link rel="preload" href="/vuepress-theme-qbook/assets/js/9.4b53a2f0.js" as="script"><link rel="prefetch" href="/vuepress-theme-qbook/assets/js/10.f408ddf8.js"><link rel="prefetch" href="/vuepress-theme-qbook/assets/js/4.defe6798.js"><link rel="prefetch" href="/vuepress-theme-qbook/assets/js/5.675acf2c.js"><link rel="prefetch" href="/vuepress-theme-qbook/assets/js/6.61d85705.js"><link rel="prefetch" href="/vuepress-theme-qbook/assets/js/7.08c5b4d7.js"><link rel="prefetch" href="/vuepress-theme-qbook/assets/js/8.276c0dc5.js">
+    <link rel="stylesheet" href="/vuepress-theme-qbook/assets/css/0.styles.77951101.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="h-screen w-screen"><div class="flex items-center justify-between border-b-2 w-full px-5 fixed bg-white z-50"><div class="flex items-center text-xl space-x-2"><img src="/vuepress-theme-qbook/icon.png" alt class="h-10 w-10"> <span class="font-bold">Vuepress Theme QBook</span></div> <div class="flex items-center justify-end space-x-1"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <ul role="menubar" class="text-black el-menu--horizontal el-menu" style="background-color:;"></ul></div></div> <div class="h-full w-full pt-16"><div><div class="sidebar h-screen fixed w-56 z-20 bg-white border-r-2 py-10 overflow-scroll" data-v-17841368><ul data-v-17841368><li class="text-blue-500" style="display:;" data-v-17841368><a href="#description" class="block py-1 px-2 hover:text-blue-500 font-extrabold py-2" style="padding-left:1.25rem;font-size:15px;" data-v-17841368>
+        Description
+      </a></li><li class="text-gray-600" style="display:;" data-v-17841368><a href="#configuration-migration" class="block py-1 px-2 hover:text-blue-500 font-extrabold py-2" style="padding-left:1.25rem;font-size:15px;" data-v-17841368>
+        Configuration Migration
+      </a></li><li style="display:none;" data-v-17841368><a href="#migrating-from-the-default-theme" class="block py-1 px-2 hover:text-blue-500" style="padding-left:2.5rem;font-size:14px;" data-v-17841368>
+        Migrating from the default theme
+      </a></li><li style="display:none;" data-v-17841368><a href="#migrating-from-an-old-version" class="block py-1 px-2 hover:text-blue-500" style="padding-left:2.5rem;font-size:14px;" data-v-17841368>
+        Migrating from an old version
+      </a></li><li class="text-gray-600" style="display:;" data-v-17841368><a href="#navigation-bar-configuration" class="block py-1 px-2 hover:text-blue-500 font-extrabold py-2" style="padding-left:1.25rem;font-size:15px;" data-v-17841368>
+        Navigation Bar Configuration
+      </a></li><li style="display:none;" data-v-17841368><a href="#navigation-bar-title" class="block py-1 px-2 hover:text-blue-500" style="padding-left:2.5rem;font-size:14px;" data-v-17841368>
+        Navigation Bar Title
+      </a></li><li style="display:none;" data-v-17841368><a href="#navigation-bar-links" class="block py-1 px-2 hover:text-blue-500" style="padding-left:2.5rem;font-size:14px;" data-v-17841368>
+        Navigation Bar Links
+      </a></li><li style="display:none;" data-v-17841368><a href="#navigation-bar-logo" class="block py-1 px-2 hover:text-blue-500" style="padding-left:2.5rem;font-size:14px;" data-v-17841368>
+        Navigation Bar Logo
+      </a></li><li class="text-gray-600" style="display:;" data-v-17841368><a href="#homepage-configuration" class="block py-1 px-2 hover:text-blue-500 font-extrabold py-2" style="padding-left:1.25rem;font-size:15px;" data-v-17841368>
+        Homepage Configuration
+      </a></li><li style="display:none;" data-v-17841368><a href="#example" class="block py-1 px-2 hover:text-blue-500" style="padding-left:2.5rem;font-size:14px;" data-v-17841368>
+        Example:
+      </a></li><li class="text-gray-600" style="display:;" data-v-17841368><a href="#complete-example" class="block py-1 px-2 hover:text-blue-500 font-extrabold py-2" style="padding-left:1.25rem;font-size:15px;" data-v-17841368>
+        Complete Example:
+      </a></li></ul></div> <div class="markdown-body px-5 pl-64 w-full content__default"><h1 id="configuration"><a href="#configuration" class="header-anchor">#</a> Configuration</h1> <blockquote><p>Unless otherwise specified, the configuration is for the theme and should be placed in themeConfig</p></blockquote> <h2 id="description"><a href="#description" class="header-anchor">#</a> Description</h2> <h2 id="configuration-migration"><a href="#configuration-migration" class="header-anchor">#</a> Configuration Migration</h2> <h3 id="migrating-from-the-default-theme"><a href="#migrating-from-the-default-theme" class="header-anchor">#</a> Migrating from the default theme</h3> <p>To reduce configuration complexity, this theme supports most of the default theme's configurations<br>
+Configurations that need to be changed:<br>
+- The details of features in the homepage configuration are changed from a string to an array, and each element of the array is a line of strings<br>
+New configurations:<br>
+- Navigation bar title setting<br>
+- Icon configuration is supported in features of homepage configuration</p> <h3 id="migrating-from-an-old-version"><a href="#migrating-from-an-old-version" class="header-anchor">#</a> Migrating from an old version</h3> <blockquote><p>No changes yet</p></blockquote> <h2 id="navigation-bar-configuration"><a href="#navigation-bar-configuration" class="header-anchor">#</a> Navigation Bar Configuration</h2> <h3 id="navigation-bar-title"><a href="#navigation-bar-title" class="header-anchor">#</a> Navigation Bar Title</h3> <p>NavTitle</p> <ul><li>Type: <code>str</code></li> <li>Default value: <code>&quot;Vuepress Theme QBook&quot;</code></li></ul> <h3 id="navigation-bar-links"><a href="#navigation-bar-links" class="header-anchor">#</a> Navigation Bar Links</h3> <p>nav</p> <ul><li>Type: <code>array</code></li> <li>Default value: <code>null</code></li> <li><code>text</code>: Navigation text</li> <li><code>link</code>: Page route address</li> <li><code>items</code>: Embedded drop-down navigation</li> <li>Example:
+<div style="position:relative;"><pre><code><span class="hljs-attr">nav</span>: [
+  {
+    <span class="hljs-attr">text</span>: <span class="hljs-string">&quot;Home&quot;</span>,
+    <span class="hljs-attr">link</span>: <span class="hljs-string">&quot;/&quot;</span>,
+  },
+  {
+    <span class="hljs-attr">text</span>: <span class="hljs-string">&quot;Chapter 1&quot;</span>,
+    <span class="hljs-attr">link</span>: <span class="hljs-string">&quot;Ct1&quot;</span>,
+  },
+  {
+    <span class="hljs-attr">text</span>: <span class="hljs-string">&quot;ddd&quot;</span>,
+    <span class="hljs-attr">items</span>: [
+      { <span class="hljs-attr">text</span>: <span class="hljs-string">'Chinese'</span>, <span class="hljs-attr">link</span>: <span class="hljs-string">'/cn/'</span> },
+      { <span class="hljs-attr">text</span>: <span class="hljs-string">'Japanese'</span>, <span class="hljs-attr">link</span>: <span class="hljs-string">'/jp/'</span> }
+    ]
+  },
+],
+</code></pre> <button data-clipboard-text="nav: [
+  {
+    text: &quot;Home&quot;,
+    link: &quot;/&quot;,
+  },
+  {
+    text: &quot;Chapter 1&quot;,
+    link: &quot;Ct1&quot;,
+  },
+  {
+    text: &quot;ddd&quot;,
+    items: [
+      { text: 'Chinese', link: '/cn/' },
+      { text: 'Japanese', link: '/jp/' }
+    ]
+  },
+],
+" class="code-copy-button">  
+ COPY
+ </button></div></li></ul> <h3 id="navigation-bar-logo"><a href="#navigation-bar-logo" class="header-anchor">#</a> Navigation Bar Logo</h3> <p>logo</p> <ul><li>Type:<code>str</code></li> <li>Default value: <code>null</code><br>
+Fill in the corresponding icon/picture <a href="https://vuepress.vuejs.org/guide/assets.html#public-files" target="_blank" rel="noopener noreferrer">public file<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> path.</li></ul> <h2 id="homepage-configuration"><a href="#homepage-configuration" class="header-anchor">#</a> Homepage Configuration</h2> <h3 id="example"><a href="#example" class="header-anchor">#</a> Example:</h3> <div style="position:relative;"><pre><code><span class="hljs-meta">---</span>
+<span class="hljs-attr">heroText:</span> <span class="hljs-string">Vuepress</span> <span class="hljs-string">Theme</span> <span class="hljs-string">QBook</span>
+<span class="hljs-attr">heroImage:</span> <span class="hljs-string">/icon.png</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">A</span> <span class="hljs-string">doc</span> <span class="hljs-string">book</span> <span class="hljs-string">that</span> <span class="hljs-string">shows</span> <span class="hljs-string">you</span> <span class="hljs-string">how</span> <span class="hljs-string">to</span> <span class="hljs-string">use</span> <span class="hljs-string">this</span> <span class="hljs-string">theme.</span>
+<span class="hljs-attr">features:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">title:</span> <span class="hljs-string">Markdown</span> <span class="hljs-string">Enhancement</span>
+    <span class="hljs-attr">details:</span> [<span class="hljs-string">omitted</span>]
+    <span class="hljs-attr">icon:</span> <span class="hljs-string">'&lt;i class=&quot;text-xl el-icon-table-lamp&quot;&gt;&lt;/i&gt;'</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">title:</span> <span class="hljs-string">Experience</span> <span class="hljs-string">Enhancement</span>
+    <span class="hljs-attr">details:</span> [<span class="hljs-string">omitted</span>]
+    <span class="hljs-attr">icon:</span> <span class="hljs-string">'&lt;i class=&quot;text-xl el-icon-collection&quot;&gt;&lt;/i&gt;'</span>
+<span class="hljs-attr">actionText:</span> <span class="hljs-string">Get</span> <span class="hljs-string">Started</span> <span class="hljs-string">→</span> 
+<span class="hljs-attr">actionLink:</span> <span class="hljs-string">guide</span>
+<span class="hljs-meta">---
+</span></code></pre> <button data-clipboard-text="---
+heroText: Vuepress Theme QBook
+heroImage: /icon.png
+description: A doc book that shows you how to use this theme.
+features:
+  - title: Markdown Enhancement
+    details: [omitted]
+    icon: '&lt;i class=&quot;text-xl el-icon-table-lamp&quot;&gt;&lt;/i&gt;'
+  - title: Experience Enhancement
+    details: [omitted]
+    icon: '&lt;i class=&quot;text-xl el-icon-collection&quot;&gt;&lt;/i&gt;'
+actionText: Get Started → 
+actionLink: guide
+---
+" class="code-copy-button">  
+ COPY
+ </button></div> <h2 id="complete-example"><a href="#complete-example" class="header-anchor">#</a> Complete Example:</h2> <div style="position:relative;"><pre><code>
+</code></pre> <button data-clipboard-text="
+" class="code-copy-button">  
+ COPY
+ </button></div></div> <!----></div></div></div><div class="global-ui"></div></div>
+    <script src="/vuepress-theme-qbook/assets/js/app.c5667ffe.js" defer></script><script src="/vuepress-theme-qbook/assets/js/3.036aff61.js" defer></script><script src="/vuepress-theme-qbook/assets/js/2.29b52389.js" defer></script><script src="/vuepress-theme-qbook/assets/js/9.4b53a2f0.js" defer></script>
+  </body>
+</html>

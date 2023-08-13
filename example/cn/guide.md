@@ -1,0 +1,159 @@
+# 主题指南
+## 介绍
+### 概述
+
+### 特征
+- Out of the box (supports most default theme configurations)
+- Katex support
+- Table of contents feature
+- Code highlighting, copying
+- To-do
+- Highlighter
+- Full-text search
+- ...
+
+## 快速开始
+### 前置环境
+- [Node.js 10+](https://nodejs.org/en)
+
+### 安装
+> 如果要在已有的项目安装,请从第三步开始
+1. 创建一个项目文件夹并切换到该文件夹,把myqbook替换为你想要的项目名
+    ```cmd
+    mkdir myqbook && cd myqbook
+    ```
+2. 包管理器初始化
+
+
+    ```sh
+    npm init
+    ```
+
+    或者你更喜欢yarn  
+
+    ```
+    yarn init 
+    ```
+3. 安装vuepress-theme-qbook和vuepress(如果你没安装的话)
+    ```
+    npm i vuepress-theme-qbook vuepress -D
+    ```
+
+    或者
+
+    ```
+    yarn add vuepress-theme-qbook vuepress -D
+    ```
+4. 创建你的第一篇文档
+    ```cmd
+    mkdir docs && echo '# qbook' > docs/README.md
+    ```
+5. 配置主题
+    现在您的目录应该类似如下结构
+     ```
+    .
+    ├── docs
+    │   └── README.md
+    │   
+    │ 
+    └── package.json
+    ```
+    现在在docs文件夹中创建.vuepress文件夹,并创建config.js(这是vuepress的配置文件)
+    ```
+    .
+    ├── docs
+    │   ├── .vuepress 
+    │   │   │
+    │   │   └── config.js
+    │   │ 
+    │   └── README.md
+    │   
+    │ 
+    └── package.json
+    ```
+    在config.js配置中引入主题,下面是最简单的配置
+    ```js
+    // .vuepress/config.js
+    module.exports = {
+        //使用本主题
+        theme: 'qbook',
+        //title中填入网页标题
+        title: 'your-title',
+    }
+    ```
+6. 修改pakage.json启动命令(可选但推荐)
+   
+   在pakage.json加入以下代码
+   这里我们把`vuepress dev docs`命令简化成`dev`,`vuepress build docs`命令简化成`build`
+   
+    ```json
+    {
+        //...你前面的init时自动生成配置
+      "scripts": {
+        "dev": "vuepress dev docs",
+        "build": "vuepress build docs"
+      }
+    }
+    ```
+
+7. 完成!
+   - 在本地服务器中运行页面
+
+        已下均假设你进行了<h-light setcolor="#dafbe1">步骤6</h-light>,否则将下面的`dev`替换为`vuepress dev docs`
+
+        ```
+        npm run dev
+        ```
+        或者
+        ```
+        yarn dev
+        ```
+   - 打包
+  
+        已下均假设你进行了<h-light setcolor="#dafbe1">步骤6</h-light>,否则将下面的`build`替换为`vuepress build docs`
+
+        ```
+        npm build dev
+        ```
+        或者
+        ```
+        yarn build
+        ```
+ 
+## 目录结构
+建议的目录结构如下:
+```
+.
+├── docs(存放markdown的根目录)
+│   │   
+│   ├── .vuepress 
+│   │   │
+│   │   ├── components(可选的,存放自定义组件)
+│   │   │
+│   │   │
+│   │   ├── public (可选的,存放公共资源)
+│   │   │
+│   │   ├── enhanceApp.js (可选的,客户端增强组件)
+│   │   │
+│   │   └── config.js (vuepress配置)
+│   │ 
+│   └── README.md (主页)
+│   
+│ 
+└── package.json
+```
+## 页面路由
+
+下面源自vuepress官方文档
+
+> 此处我们把 docs 目录作为 targetDir （参考 命令行接口），下面所有的“文件的相对路径”都是相对于 docs 目录的
+
+|文件的相对路径	   |页面路由地址  |
+| ---              | ---          |
+|/README.md	       |   /          |
+|/guide/README.md  |  /guide/     | 
+|/config.md	       | /config.html |
+
+`README.md`会作为qbook桌面界面渲染,#一级标题会作为页面的小title,目前其他内容不会被渲染
+
+
