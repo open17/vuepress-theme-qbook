@@ -157,3 +157,6 @@
 `README.md`会作为qbook桌面界面渲染,#一级标题会作为页面的小title,目前其他内容不会被渲染
 
 
+## 问题
+### Module not found
+当你看到:`babel-runtime/core-js/object/assign.js Module not found: Error: Can't resolve 'core-js/library/fn/object/assign'`,你可以尝试降低core-js版本到2.5.7来解决这个问题.这个问题可能与[这里类似](https://stackoverflow.com/questions/55308769/module-not-found-error-cant-resolve-core-js-es6#:~:text=To%20resolve%20this%20error%2C%20you%20can%20downgrade%20the,In%20my%20case%2C%20with%20Angular%2C%20this%20works%20ok.)

@@ -158,3 +158,7 @@ The following is from the official VuePress documentation:
 |/config.md	         | /config.html       |
 
 `README.md` will be rendered as a qbook desktop interface, and # level 1 headings will be used as small titles on the page. Currently, other content will not be rendered.
+
+## Problems
+### Module not found
+When you see this:`babel-runtime/core-js/object/assign.js Module not found: Error: Can't resolve 'core-js/library/fn/object/assign'`,you can downgrade the core-js version to 2.5.7 to fix it.Maybe it is related to [this](https://stackoverflow.com/questions/55308769/module-not-found-error-cant-resolve-core-js-es6#:~:text=To%20resolve%20this%20error%2C%20you%20can%20downgrade%20the,In%20my%20case%2C%20with%20Angular%2C%20this%20works%20ok.)
