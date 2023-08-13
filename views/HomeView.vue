@@ -40,7 +40,8 @@
 </template>
 
 <style>
-.el-collapse-item div{
+@media(prefers-color-scheme:dark){
+  .el-collapse-item div{
   border: none;
 }
 .el-collapse-item i{
@@ -52,6 +53,8 @@
 .el-collapse-item div{
    background-color:  rgba(55, 65, 81, var(--tw-bg-opacity)) !important ;
 }
+}
+
 </style>
 
 
