@@ -25,7 +25,7 @@
             :index="NavLink.link"
             :key="index"
             v-if="NavLink.link"
-
+            :route="NavLink.link"
             >{{ NavLink.text }}</el-menu-item
           >
           <template v-else>
@@ -34,6 +34,7 @@
               <el-menu-item
                 v-for="(item, i) in NavLink.items"
                 :index="item.link"
+                 :route="item.link"
                 :key="i"
                 >{{ item.text }}</el-menu-item
               >
@@ -62,7 +63,7 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      this.activeIndex = keyPath;
+      this.activeIndex = keyPath[0];
     },
   },
   mounted() {

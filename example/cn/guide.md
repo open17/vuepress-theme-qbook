@@ -110,7 +110,7 @@
         ```
    - 打包
   
-        已下均假设你进行了<h-light setcolor="#dafbe1">步骤6</h-light>,否则将下面的`build`替换为`vuepress build docs`
+        已下均假设你进行了<h-lighter setcolor="#dafbe1">步骤6</h-lighter>,否则将下面的`build`替换为`vuepress build docs`
 
         ```
         npm build dev
@@ -160,3 +160,6 @@
 ## 问题
 ### Module not found
 当你看到:`babel-runtime/core-js/object/assign.js Module not found: Error: Can't resolve 'core-js/library/fn/object/assign'`,你可以尝试降低core-js版本到2.5.7来解决这个问题.这个问题可能与[这里类似](https://stackoverflow.com/questions/55308769/module-not-found-error-cant-resolve-core-js-es6#:~:text=To%20resolve%20this%20error%2C%20you%20can%20downgrade%20the,In%20my%20case%2C%20with%20Angular%2C%20this%20works%20ok.)
+
+### Redirected
+尽管vuepress重定向是按照预期工作的,但是由于elementui本身的机制,它会把重定向当做错误报出,所以控制台报错`Redirected when going from "xxx" to "xx" via a navigation guard.`不一定有问题.
