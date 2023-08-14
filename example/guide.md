@@ -99,7 +99,7 @@
 7. Done!
    - Run the page on a local server
 
-        The following assumes that you have performed <h-lighter setcolor="#dafbe1">step 6</h-lighter>, otherwise replace `dev` below with `vuepress dev docs`
+        The following assumes that you have performed step 6, otherwise replace `dev` below with `vuepress dev docs`
 
         ```
         npm run dev
@@ -110,7 +110,7 @@
         ```
    - Package
   
-        The following assumes that you have performed <h-lighter setcolor="#dafbe1">step 6</h-lighter>, otherwise replace `build` below with `vuepress build docs`
+        The following assumes that you have performed step 6, otherwise replace `build` below with `vuepress build docs`
 
         ```
         npm build dev
