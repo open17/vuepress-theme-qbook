@@ -5,9 +5,9 @@
         <img v-if="imageURL" :src="imageURL" alt="" class="h-full w-full" />
         <img v-else src="../assets/default_cover.png" alt="" class="h-full w-full" />
       </div>
-      <div class="items-center space-y-8 w-128 text-gray-900 dark:text-gray-100 ">
+      <div class="items-center space-y-8 w-128" :class="isDarkMode ? 'text-gray-100' : 'text-gray-900'">
         <h1 class="text-4xl font-extrabold">{{ title }}</h1>
-        <div class="items-center text-base text-gray-600 dark:text-gray-300 flex">
+        <div class="items-center text-base flex" :class="isDarkMode ? 'text-gray-300' : 'text-gray-600'">
           {{ description }}
         </div>
         <el-collapse  accordion>
@@ -19,7 +19,7 @@
             <template slot="title">
               <div class="items-center justify-start flex space-x-1">
                 <div v-html="item.icon"></div>
-                <div class="text-xl dark:text-yellow-300">
+                <div class="text-xl" :class="isDarkMode ? 'text-yellow-300' : ''">
                   {{ item.title }}
                 </div>
               </div>
@@ -35,9 +35,10 @@
       </div>
     </div>
 
-    <div class="absolute left-0 top-0 h-full bg-purple-500 dark:bg-gray-800 w-64 z-0 "></div>
+    <div class="absolute left-0 top-0 h-full w-64 z-0 " :class="isDarkMode ? 'bg-gray-800' : 'bg-red-200'"></div>
   </div>
 </template>
+
 
 <style>
 @media(prefers-color-scheme:dark){
@@ -60,6 +61,23 @@
 
 <script>
 export default {
+   data() {
+    return {
+      isDarkMode: false,
+    };
+  },
+  mounted() {
+    // Get the matchMedia object
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    // Set initial value
+    this.isDarkMode = darkModeMediaQuery.matches;
+    
+    this.$EventBus.$on("isDarkMode", (value) => {
+      this.isDarkMode = value;
+    });
+  },
   components: {},
    computed: {
     title() {

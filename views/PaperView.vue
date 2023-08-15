@@ -1,7 +1,7 @@
 <template>
   <div class="">
-    <SlideBarVue :headers="this.$page.headers" />
-    <Content class="markdown-body px-5 pl-64  w-full" />
+    <SlideBarVue :headers="PageHeader" />
+    <Content class="markdown-body px-5 pl-64  w-full pb-16 min-h-screen" />
 
     <el-backtop class="fixed z-20"></el-backtop>
   </div>
@@ -14,6 +14,11 @@ export default {
   components: {
     SlideBarVue,
   },
+  computed:{
+    PageHeader(){
+      return this.$page.headers;
+    }
+  }
 };
 </script>
 
