@@ -1,5 +1,6 @@
 # changelog
-
+## v1.0.5 
+- banner
 ## v1.0.4
 - Resize the navigation bar router
 - Added image enlargement function

@@ -68,7 +68,8 @@ export default {
       if (this.activeIdx >= 0) {
         return this.nextLevelTwoIndices[this.activeIdx];
       }
-      return this.headers.length;
+      if(this.headers)return this.headers.length;
+      return null;
     },
   },
   methods: {

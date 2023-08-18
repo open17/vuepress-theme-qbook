@@ -1,7 +1,7 @@
 <template>
   <div
-    class="flex items-center justify-between border-b-2 w-full px-5 fixed z-50"
-    :class="isDarkMode ? 'bg-gray-800' : 'bg-white'"
+    class="flex items-center justify-between  w-full px-5 fixed z-50"
+    :class="isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-green-200 to-yellow-200'"
   >
     <div class="flex items-center text-xl space-x-2">
       <img v-if="imageURL" :src="imageURL" alt="" class="h-10 w-10" />
@@ -20,9 +20,7 @@
         mode="horizontal"
         :router="false"
         @select="handleSelect"
-        :background-color="
-          isDarkMode ? 'rgba(31, 41, 55, var(--tw-bg-opacity))' : '#fff'
-        "
+        background-color="transparent"
         :text-color="isDarkMode ? '#fff' : '#000'"
         :active-text-color="isDarkMode ? '#ffd04b' : '#409EFF'"
       >
@@ -94,8 +92,11 @@ export default {
 </script>
 
 <style>
-el-menu-item li{
+.el-menu-item li{
   padding: 0 !important;
+}
+.el-menu.el-menu--horizontal{
+  border-bottom:none !important;
 }
 .el-menu-item:hover {
   background: transparent !important;

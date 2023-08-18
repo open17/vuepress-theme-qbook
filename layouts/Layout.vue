@@ -14,6 +14,7 @@
 </template>
 
 <script>
+
 // 导入组件
 import TopBarVue from "../components/TopBar.vue";
 import HomeViewVue from "../views/HomeView.vue";

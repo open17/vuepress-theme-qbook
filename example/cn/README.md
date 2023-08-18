@@ -11,4 +11,7 @@ features:
     icon: '<i class="text-xl el-icon-collection"></i>'
 actionText: 一键开始 →
 actionLink: guide
+banner_strong: 版本已更新
+banner_text: 看看有什么更新啦?
+banner_button: 查看更新日志
 ---
