@@ -12,7 +12,10 @@ module.exports = {
     nav: [
       {
         text: "Home",
-        link: "/",
+        items: [
+          { text: 'Chinese', link: '/cn/' },
+          { text: 'English', link: '/' }
+        ]
       },
       {
         text: "Config",
@@ -23,11 +26,12 @@ module.exports = {
         link: "guide",
       },
       {
-        text: "language",
-        items: [
-          { text: 'Chinese', link: '/cn/' },
-          { text: 'English', link: '/' }
-        ]
+        text: "ChangeLog",
+        link: "changelog"
+      },
+      {
+        text:"Markdown",
+        link:"markdown"
       },
     ],
     logo:"/icon.png"

@@ -74,7 +74,7 @@ export default {
   mounted() {
     if (this.$themeConfig.NavTitle) this.NavTitle = this.$themeConfig.NavTitle;
     this.NavLinkGroup = this.$themeConfig.nav;
-        // Get the matchMedia object
+    // Get the matchMedia object
     const darkModeMediaQuery = window.matchMedia(
       "(prefers-color-scheme: dark)"
     );
@@ -94,6 +94,9 @@ export default {
 </script>
 
 <style>
+el-menu-item li{
+  padding: 0 !important;
+}
 .el-menu-item:hover {
   background: transparent !important;
 }
@@ -106,5 +109,6 @@ export default {
 }
 .el-menu--popup li:hover {
   background-color: #fff !important;
+  color: skyblue !important;
 }
 </style>

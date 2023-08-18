@@ -8896,6 +8896,11 @@ vuepress-plugin-container@^2.0.2:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
 
+vuepress-plugin-el-img@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-el-img/-/vuepress-plugin-el-img-1.0.0.tgz#94cdc9dcb0ffb4ca6318aeaf4346769fece458c8"
+  integrity sha512-o2ZEWC/Q5aqHLgpJURBWx0DJa2mbipFpIN0zyRO+ZPOUrGkoPmxTQYBOOLG5Nb0FhxOZl7osSzORw79b+Z6UXw==
+
 vuepress-plugin-fulltext-search@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-fulltext-search/-/vuepress-plugin-fulltext-search-2.2.1.tgz#f73cddfec3b878aa83b89559e8985be1e1cc50de"

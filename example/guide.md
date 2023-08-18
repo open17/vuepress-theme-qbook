@@ -10,6 +10,7 @@
 - To-do
 - Highlighter
 - Full-text search
+- Image enhancement: zoom in and out of rotation
 - ...
 
 ## Quick Start
@@ -167,3 +168,4 @@ When you see this:`babel-runtime/core-js/object/assign.js Module not found: Erro
 > Already fixed in v1.0.3
 
 Although the vuepress redirect is working as expected, due to the mechanism of elementui itself, it will treat the redirect as an error and report it, so the console error `Redirected when going from "xxx" to "xx" via a navigation guard.` may not necessarily be a problem.
+

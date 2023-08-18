@@ -2,14 +2,17 @@
 ## 介绍
 ### 概述
 
-### 特征
-- Out of the box (supports most default theme configurations)
-- Katex support
-- Table of contents feature
-- Code highlighting, copying
+### 功能
+- 开箱即用(支持大多数默认主题配置)
+- katex支持
+- 目录功能
+- 代码高亮,复制
 - To-do
-- Highlighter
-- Full-text search
+- 荧光笔
+- 全文搜索
+- 返回顶部
+- 白天/黑夜模式(自动)
+- 图片增强:放大缩小旋转
 - ...
 
 ## 快速开始

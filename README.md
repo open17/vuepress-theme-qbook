@@ -23,7 +23,8 @@
 - Highlighter
 - Full-text search
 - Back to top
-- light/dark mode
+- light/dark mode(auto)
+- Image enhancement: zoom in and out of rotation
 - ...
 
 ## Demo & Doc

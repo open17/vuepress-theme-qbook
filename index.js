@@ -11,7 +11,8 @@ module.exports = (options, ctx) => {
     plugins: [
       ['fulltext-search'],
       ['pad-markdown'],
-      ['markdown-todolist']
+      ['markdown-todolist'],
+      ['el-img']
     ],
   }
 }
