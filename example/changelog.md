@@ -1,6 +1,8 @@
 # changelog
+## v1.0.6
+- Markdown Tab
 ## v1.0.5 
-- banner
+- Banner
 ## v1.0.4
 - Resize the navigation bar router
 - Added image enlargement function

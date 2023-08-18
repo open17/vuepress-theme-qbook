@@ -23,9 +23,40 @@
 这是一个<h-lighter>高亮</h-lighter>示例,你可以<h-lighter color="pink">切换</h-lighter><h-lighter color="rgb(33, 168, 252,0.6)">高亮</h-lighter>的<h-lighter color="#dafbe1">颜色</h-lighter>
 
 ## 选项卡
-<el-card class="box-card">
-<el-tabs >
-<el-tab-pane label="c++">
+@tab
+
+
+
+<[python]
+
+```py
+import sys
+import heapq
+import random
+from math import ceil,floor,fmod,gcd,sqrt,inf
+from bisect import bisect_left
+from collections import defaultdict,Counter,deque,OrderedDict
+from functools import lru_cache,cmp_to_key
+
+#sys.setrecursionlimit(100000)
+
+# 输入1
+def ii():
+    return int(sys.stdin.readline().strip())
+
+# 输入2
+def iin():
+    return map(int,sys.stdin.readline().split())
+
+def inn():
+    return sys.stdin.readline().strip()
+```
+
+
+<()
+
+<[c++]
+
 
 ```cpp
 #include<bits/stdc++.h>
@@ -86,36 +117,6 @@ inline void write(int x)
 }
 ```
 
+<()
 
-</el-tab-pane>
-
-
-<el-tab-pane label="python">
-
-```py
-import sys
-import heapq
-import random
-from math import ceil,floor,fmod,gcd,sqrt,inf
-from bisect import bisect_left
-from collections import defaultdict,Counter,deque,OrderedDict
-from functools import lru_cache,cmp_to_key
-
-#sys.setrecursionlimit(100000)
-
-# 输入1
-def ii():
-    return int(sys.stdin.readline().strip())
-
-# 输入2
-def iin():
-    return map(int,sys.stdin.readline().split())
-
-def inn():
-    return sys.stdin.readline().strip()
-```
-
-
-</el-tab-pane>
-</el-tabs>
-</el-card>
+@@tab

@@ -12,6 +12,7 @@
     "element-ui": "^2.15.13",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vuepress-plugin-el-img": "^1.0.0",
+    "vuepress-plugin-el-tab": "^1.0.0",
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-markdown-todolist": "^1.0.1",
     "vuepress-plugin-pad-markdown": "^1.0.7"
