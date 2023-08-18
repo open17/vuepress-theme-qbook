@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-qbook",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "🍉 A easy,book-style theme for Vuepress site",
   "main": "index.js",
   "scripts": {
