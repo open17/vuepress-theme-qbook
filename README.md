@@ -14,6 +14,9 @@
 # Vuepress-theme-qbook
 🍉 A easy,book-style theme for Vuepress site 
 
+## Demo & Doc
+[Demo](https://open17.github.io/vuepress-theme-qbook/)
+
 ## Features
 - Easy config (supports most default theme configurations)
 - Katex support
@@ -25,10 +28,10 @@
 - Back to top
 - light/dark mode(auto)
 - Image enhancement: zoom in and out of rotation
+- Video Embed
 - ...
 
-## Demo & Doc
-[here](https://open17.github.io/vuepress-theme-qbook/)
+
 
 ## Installation
 ```

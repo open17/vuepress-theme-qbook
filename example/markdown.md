@@ -1,29 +1,77 @@
 # Markdown Enhancement
-## Image Enhancement
-### Introduction
-Click on the image to support zoom in, zoom out, and rotate functions.
-### Syntax
-```md
-!![alt](url)
+
+## Video Embed
+
+@tab
+
+<[youtube]
+
+```html
+<IVideo w="590" h="351" youtube="5Kqyhu_eIcw" />
+<!-- w width h height -->
 ```
-### Example
-```md
-!![img](https://github.githubassets.com/images/modules/dashboard/onboarding/gh-desktop.png)
+
+<br/>
+
+<IVideo w="590" h="351" youtube="5Kqyhu_eIcw" />
+
+<()
+
+<[bilibili]
+
+```html
+<IVideo w="560" h="351" bv="BV1CV4y1b72n" />
+<!-- w 宽 h 高 -->
 ```
-!![img](https://github.githubassets.com/images/modules/dashboard/onboarding/gh-desktop.png)
+<br/>
+
+
+
+<()
+
+
+
+@@tab
+
+
+
+
 ## Highlighter
-### Usage
+@tab
+
+<[Introduction]
+
+Highlighter (supported when the code block has no language tag in the code block)
 - `<h-lighter color="COLOR">WORD</h-lighter>`
-- Replace WORD with the text you want to highlight.
-- The `color` attribute is optional, COLOR is the highlight color, if `color` is not filled, the default is yellow.
-- `COLOR` supports CSS color keywords/RGB/hexadecimal colors.
-### Example
-`This is a <h-lighter>highlight</h-lighter> example, you can <h-lighter color="pink">switch</h-lighter> the <h-lighter color="rgb(33, 168, 252,0.6)">highlight</h-lighter> <h-lighter color="#dafbe1">color</h-lighter>`   
+- WORD is replaced by the text to be highlighted
+- The `color` attribute is optional, COLOR is the highlight color, and if `color` is not filled in, the default is yellow
+- `COLOR` supports CSS color keywords/RGB/hexadecimal colors
 
-This is a <h-lighter>highlight</h-lighter> example, you can <h-lighter color="pink">switch</h-lighter> the <h-lighter color="rgb(33, 168, 252,0.6)">highlight</h-lighter> <h-lighter color="#dafbe1">color</h-lighter>
+<()
 
-## Tab
+<[Example]
 
+```md
+
+This is a <h-lighter>highlight</h-lighter> example, you can <h-lighter color="pink">switch</h-lighter><h-lighter color="rgb(33, 168, 252,0.6)">highlight</h-lighter>'s <h-lighter color="#dafbe1">color</h-lighter>
+
+```
+
+This is a <h-lighter>highlight</h-lighter> example, you can <h-lighter color="pink">switch</h-lighter><h-lighter color="rgb(33, 168, 252,0.6)">highlight</h-lighter>'s <h-lighter color="#dafbe1">color</h-lighter>
+
+```
+Support when the code block has no language tag <h-lighter>using</h-lighter>
+```
+
+<()
+
+
+@@tab
+
+
+
+
+## Tabs
 @tab
 
 
@@ -74,8 +122,7 @@ using namespace std;
 #define fo2 freopen("data.in","r",stdin);freopen("ans.out","w",stdout);
 //输出数组
 #define printA(a,b,c) cout<<'\n'<<"debug start"<<'\n';for(int i=a;i<=b;i++){cout<<c[i]<<' ';}cout<<'\n'<<"debug over"<<'\n'<<'\n';
-typedef long long ll;
-typedef unsigned long long ull;
+typedef long long ll
 typedef pair<int, int> pii;
 int read();
 void write(int);
@@ -121,3 +168,32 @@ inline void write(int x)
 <()
 
 @@tab
+
+
+
+
+
+## Image Enhancement
+
+@tab
+
+<[Introduction]
+
+Image enhancement supports zooming, rotating, and other functions when clicking on the image. Please use static resources/external links for the URL, see [Exception Troubleshooting](./guide.html#problems) for details.
+```md
+!![alt](url)
+```
+<()
+
+<[Example]
+
+```md
+!![img](https://avatars.githubusercontent.com/u/125687556?s=48&v=4)
+```
+!![img](https://avatars.githubusercontent.com/u/125687556?s=48&v=4)
+
+<()
+
+
+@@tab
+

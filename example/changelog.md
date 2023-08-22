@@ -1,4 +1,6 @@
 # changelog
+## v1.0.7
+- Added Video Embed function
 ## v1.0.6
 - Markdown Tab
 ## v1.0.5 
