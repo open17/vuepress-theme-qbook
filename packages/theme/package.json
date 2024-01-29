@@ -1,0 +1,20 @@
+{
+  "name": "vuepress-theme-qbook",
+  "version": "2.0.0",
+  "description": "🍉 A blog theme for Vuepress site",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev example",
+    "build": "vuepress build example"
+  },
+  "dependencies": {
+
+  },
+  "repository": "https://github.com/open17/vuepress-theme-qbook.git",
+  "author": "open17",
+  "license": "MIT",
+  "keywords": [
+    "vuepress",
+    "vuepress-theme"
+  ]
+}
