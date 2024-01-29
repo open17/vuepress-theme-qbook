@@ -33,10 +33,13 @@ module.exports = (options, ctx) => {
   //     options
   //   )
   // );
-//   const { comment, analytics, readingTime } = options;
+  //   const { comment, analytics, readingTime } = options;
 
   return {
     name: "vuepress-theme-qbook",
+    chainWebpack: (config) => {
+      config.resolve.alias.set('core-js/library/fn', 'core-js/features');
+    },
     plugins: [
       // "@vuepress/search",
       // "@vuepress/plugin-nprogress",
@@ -163,27 +166,27 @@ module.exports = (options, ctx) => {
     ],
 
     chainMarkdown(config) {
-    //   const { PLUGINS } = require("@vuepress/markdown");
-    //   const originalLinkPlugin = require("@vuepress/markdown/lib/link.js");
+      //   const { PLUGINS } = require("@vuepress/markdown");
+      //   const originalLinkPlugin = require("@vuepress/markdown/lib/link.js");
 
-    //   config.plugins.delete(PLUGINS.CONVERT_ROUTER_LINK);
+      //   config.plugins.delete(PLUGINS.CONVERT_ROUTER_LINK);
 
-    //   const linkPlugin = function (md) {
-    //     const result = originalLinkPlugin.apply(this, arguments);
-    //     const close = md.renderer.rules.link_close;
-    //     md.renderer.rules.link_close = function () {
-    //       return close.apply(this, arguments).replace("<OutboundLink/>", "");
-    //     };
-    //     return result;
-    //   };
+      //   const linkPlugin = function (md) {
+      //     const result = originalLinkPlugin.apply(this, arguments);
+      //     const close = md.renderer.rules.link_close;
+      //     md.renderer.rules.link_close = function () {
+      //       return close.apply(this, arguments).replace("<OutboundLink/>", "");
+      //     };
+      //     return result;
+      //   };
 
-    //   config.plugin(PLUGINS.CONVERT_ROUTER_LINK).use(linkPlugin, [
-    //     {
-    //       // The config.markdown.externalLinks options https://vuepress.vuejs.org/config/#markdown-externallinks
-    //       target: "_blank",
-    //       rel: "noopener noreferrer"
-    //     }
-    //   ]);
+      //   config.plugin(PLUGINS.CONVERT_ROUTER_LINK).use(linkPlugin, [
+      //     {
+      //       // The config.markdown.externalLinks options https://vuepress.vuejs.org/config/#markdown-externallinks
+      //       target: "_blank",
+      //       rel: "noopener noreferrer"
+      //     }
+      //   ]);
     }
   };
 };
