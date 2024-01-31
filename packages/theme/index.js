@@ -1,39 +1,14 @@
 // Theme API.
 module.exports = (options, ctx) => {
   // default theme config
-  // Object.assign(
-  //   options,
-  //   Object.assign(
-  //     {
-  //       search: true,
-  //       searchMaxSuggestions: 10,
-  //       searchPlaceholder: "$ grep ...",
-  //       editLinks: true,
-  //       lastUpdated: true,
-  //       smoothScroll: true,
-  //       sidebarDepth: 2,
-  //       hitokoto: false,
-  //       comment: false,
-  //       analytics: false,
-  //       rss: false,
-  //       katex: false,
-  //       mermaid: false,
-  //       chartjs: false,
-  //       roughviz: false,
-  //       mdPlus: false,
-  //       readingTime: {},
-  //       personalInfo: {},
-  //       homeHeaderImages: {
-  //         api: "https://source.unsplash.com/1600x900/?wallpaper",
-  //         local: false
-  //       },
-  //       pages: {},
-  //       footer: ""
-  //     },
-  //     options
-  //   )
-  // );
-  //   const { comment, analytics, readingTime } = options;
+  Object.assign(
+    options,
+    Object.assign(
+      {
+      },
+      options
+    )
+  );
 
   return {
     name: "vuepress-theme-qbook",

@@ -1,18 +1,19 @@
 <template>
-  <CommonVue>
-    
+  <CommonVue class="post-page">
+    <PostHeaderVue/>
+    <Content />
   </CommonVue>
 </template>
 
 <script>
 import CommonVue from '../components/Common.vue'
+import PostHeaderVue from '../components/post/PostHeader.vue'
+
 export default {
-    components:{
-        CommonVue
-    }
+  components: {
+    CommonVue,
+    PostHeaderVue
+  },
 }
 </script>
 
-<style>
-
-</style>
