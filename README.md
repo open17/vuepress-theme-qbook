@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="180" src="./assets/icon.png" alt="logo">
+    <img width="180" src="./assets/logo.png" style="background-color: #fff;" alt="logo">
 </p>
 <p align="center">
 <a href="#"><img src="https://img.shields.io/npm/dt/vuepress-theme-qbook.svg" alt="Downloads"></a>
