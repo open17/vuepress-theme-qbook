@@ -3,7 +3,7 @@
     trigger="click"
     class="hero-carousel"
     height="100vh"
-    :arrow="$themeConfig.showArrow||showArrow"
+    :arrow="($themeConfig.showArrow||showArrow).toString()"
   >
     <el-carousel-item
       v-for="(item, index) in $themeConfig.pics||carouselItems"
