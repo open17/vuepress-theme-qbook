@@ -1389,7 +1389,7 @@
   dependencies:
     lodash.debounce "^4.0.8"
 
-"@vuepress/plugin-blog@1.9.4":
+"@vuepress/plugin-blog@1.9.4", "@vuepress/plugin-blog@^1.9.4":
   version "1.9.4"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-blog/-/plugin-blog-1.9.4.tgz#34636d0387d28221c9f2564b6255786da0dd186a"
   integrity sha512-7A4Y3mYrSOUKdzsTjeVOKt0XgZ0m1Iqq7BeZn7y9YeZfDcZ4Fx6UldsPfK2+THwtYwGzQ7Not3zO8djyk7z3ew==
@@ -9150,6 +9150,16 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   integrity sha512-qsQkDftLVFLe8BiviIHaLV0Ea38YLZKKonDGsNQy1IE0wllFpFIEldWD8frWZtDFdx6b/O3KDMgVQ0qp5NjJCg==
   dependencies:
     smoothscroll-polyfill "^0.4.3"
+
+vuepress-theme-qbook@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-qbook/-/vuepress-theme-qbook-1.1.0.tgz#441d88d5297f245489dddc3d6fcb638d1a7d5e80"
+  integrity sha512-jj6A0eKEtOFqlXKkgPbMYjuETl7RnlUUvz/PUcn7ygwro+9hvyFCpymM5/rkgYC34LZcne4nGYB4SOEWZ55axw==
+  dependencies:
+    "@renovamen/vuepress-plugin-mermaid" "^0.3.0"
+    "@vuepress/plugin-blog" "^1.9.4"
+    element-ui "^2.15.14"
+    vuepress-plugin-pad-markdown "^1.1.6"
 
 vuepress@1.8.2:
   version "1.8.2"
