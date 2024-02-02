@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "https://github.com/open17/vuepress-theme-qbook.git",
   "author": "open17 <opensci@163.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "vuepress": "1.8.2"
   },
@@ -13,7 +13,14 @@
     "build": "vuepress build docs"
   },
   "dependencies": {
+    "@renovamen/vuepress-plugin-mermaid": "^0.3.0",
     "@vuepress/plugin-blog": "1.9.4",
-    "element-ui": "^2.15.14"
+    "clipboard": "2.0.11",
+    "element-ui": "^2.15.14",
+    "highlight.js": "11.8.0",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-katex": "2.0.3",
+    "markdown-it-mark": "^4.0.0",
+    "vuepress-plugin-pad-markdown": "^1.1.6"
   }
 }

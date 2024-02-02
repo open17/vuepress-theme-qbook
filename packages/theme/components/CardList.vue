@@ -8,8 +8,8 @@
       @click="handleLink(card.path)"
     >
       <el-image
-        :src="$withBase('/'+card.frontmatter.img)"
-        style="width: 100%; height: 50vh"
+        :src="$withBase('/' + card.frontmatter.img)"
+        style="width: 100%; height: 40vh"
         fit="cover"
         @click="handleLink(card.path)"
       >
@@ -29,7 +29,7 @@
 import InfoTagVue from './InfoTag.vue'
 
 export default {
-  props:['cards'],
+  props: ['cards'],
   components: {
     InfoTagVue
   },
@@ -58,9 +58,9 @@ export default {
 }
 .box-card {
   margin-top: 2vh;
-  margin-bottom: 2vh;
-  margin-left: 22vw;
-  margin-right: 22vw;
+  margin-bottom: 4vh;
+  margin-left:  20vw;
+  margin-right: 20vw;
   border-radius: 20px;
   text-align: center;
 }

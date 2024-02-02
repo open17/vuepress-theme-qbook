@@ -12,8 +12,8 @@
     "element-ui": "^2.15.14"
   },
   "repository": "https://github.com/open17/vuepress-theme-qbook.git",
-  "author": "open17",
-  "license": "MIT",
+  "author": "open17 <opensci@163.com>",
+  "license": "Apache-2.0",
   "keywords": [
     "vuepress",
     "vuepress-theme"

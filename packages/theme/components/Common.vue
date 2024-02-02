@@ -8,6 +8,7 @@
 <script>
 import TopBarVue from './common/TopBar.vue'
 export default {
+  props:["scrollHeight"],
   components: {
     TopBarVue
   },
@@ -25,7 +26,9 @@ export default {
   methods: {
     handleScroll(event) {
       const scrollTop =  window.pageYOffset || document.documentElement.scrollTop
-      if (scrollTop === 0) {
+      let h=100
+      if(this.scrollHeight)h=this.scrollHeight
+      if (scrollTop < h) {
         this.isScrollTop = true
       } else {
         this.isScrollTop = false

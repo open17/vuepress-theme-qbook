@@ -3,15 +3,15 @@
     trigger="click"
     class="hero-carousel"
     height="100vh"
-    :arrow="showArrow"
+    :arrow="$themeConfig.showArrow||showArrow"
   >
     <el-carousel-item
-      v-for="(item, index) in carouselItems"
+      v-for="(item, index) in $themeConfig.pics||carouselItems"
       :key="index"
       class="hero-carousel-item"
     >
       <div class="img" :style="{ 'background-image': `url(${item.img})` }">
-        <div class="img-mask" :style="{ backgroundColor: item.color }" />
+        <div class="img-mask" :style="{ backgroundColor: item.color||'rgba(92, 101, 124, 0.1)' }" />
       </div>
     </el-carousel-item>
     <DownIconVue class="down-icon" />

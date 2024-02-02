@@ -1,12 +1,4 @@
----
-tags:
-    - theme
-    - log
-img: blog4.webp
-desc: 不定期更新ing 
----
-# [vuepress-theme-qbook]更新日志
-
+# 更新
 :::info 说明
 v1.1.0之前的版本并非是一个博客主题,代码和设计也并无保留,故从v1.1.0开始更新记录
 如果你想了解之前的版本,可以在github上查看[old分支](https://github.com/open17/vuepress-theme-qbook/blob/old/example/changelog.md)

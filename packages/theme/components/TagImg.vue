@@ -4,18 +4,20 @@
     <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
       <el-breadcrumb-item :to="{ path: '/' }">Home</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/tags' }">Tags</el-breadcrumb-item>
-      <el-breadcrumb-item v-if="$title.slice(0, -$site.title.length-2)!='Tags '">{{title}}</el-breadcrumb-item>
+      <el-breadcrumb-item v-if="$title.slice(0, -$site.title.length - 2) != 'Tags '">{{
+        title
+      }}</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
 </template>
 
 <script>
 export default {
-    computed: {
-        title() {
-            return this.$title.slice(0, -this.$site.title.length-2)
-        }
-    },
+  computed: {
+    title() {
+      return this.$title.slice(0, -this.$site.title.length - 2)
+    }
+  }
 }
 </script>
 
@@ -29,22 +31,23 @@ export default {
   text-align: center;
 }
 h1 {
-  font-size: 7rem;
+  font-size: 5rem;
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 5vh;
 }
-.breadcrumb{
-    position: relative;
-    bottom: 7vh;
-    display: flex;
-    justify-content: center;
-    font-size: 2.5rem;
+.breadcrumb {
+  position: relative;
+  bottom: 3vh;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
 }
-.breadcrumb >>> .is-link,.breadcrumb>>>.el-breadcrumb__inner{
-    color: #fff;
+.breadcrumb >>> .is-link,
+.breadcrumb >>> .el-breadcrumb__inner {
+  color: #fff;
 }
-.breadcrumb>>>.el-breadcrumb__inner:hover{
-   color: #fff; 
+.breadcrumb >>> .el-breadcrumb__inner:hover {
+  color: #fff;
 }
 </style>

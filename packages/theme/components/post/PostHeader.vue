@@ -1,6 +1,6 @@
 <template>
   <div class="post-header" :style="pageHeaderStyle">
-    <div class="img-mask"></div>
+    <div class="img-mask"  :style="{ backgroundColor: maskColor }"></div>
     <div class="header-content">
       <InfoBoxVue :name="$page.title" :desc="$page.frontmatter.desc">
         <InfoTagVue :tags="$page.frontmatter.tags" class="tag"/>
@@ -24,6 +24,10 @@ export default {
         backgroundImage: `url(${this.$withBase('/' + this.$page.frontmatter.img)})`
       }
       return style
+    },
+    maskColor(){
+      if(this.$page.frontmatter.mask)return this.$page.frontmatter.mask
+      return '#4e4e4e63'
     }
   }
 }
@@ -42,7 +46,6 @@ export default {
 .img-mask {
   height: 100%;
   width: 100%;
-  background: #4e4e4e38;
   z-index: 0;
 }
 .header-content{
@@ -57,7 +60,7 @@ export default {
 }
 .header-content>>>.info-box{
     padding-top: 5vh;
-    background-color: #191818d4;
+    background-color: transparent;
 }
 .tag{
     margin-top: 3vh;

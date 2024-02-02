@@ -2,47 +2,26 @@
     <img width="180" src="./assets/logo.png" style="background-color: #fff;" alt="logo">
 </p>
 <p align="center">
-<a href="#"><img src="https://img.shields.io/npm/dt/vuepress-theme-qbook.svg" alt="Downloads"></a>
-  <a href="https://www.npmjs.com/package/vuepress-theme-qbook"><img src="https://img.shields.io/npm/v/vuepress-theme-qbook.svg" alt="Version"></a>
-  <a href="https://github.com/open17/vuepress-theme-qbook/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/vuepress-theme-qbook.svg" alt="License"></a>
+<a href="https://www.npmjs.com/package/vuepress-theme-qbook" target="_blank"><img src="https://img.shields.io/npm/v/vuepress-theme-qbook.svg?style=flat-square&amp;logo=npm" alt="npm" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vuepress-theme-qbook/tree/v0" target="_blank"><img src="https://img.shields.io/badge/GitHub-Qbook-26A2FF?style=flat-square&amp;logo=github" alt="github" style="display: inline; margin: 0px;"></a> <a href="https://github.com/open17/vuepress-theme-qbook/blob/v0/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-Apache_2.0-green?style=flat-square" alt="license" style="display: inline; margin: 0px;"></a><br/>
+🍉 一个基于 VuePress  的博客&文档主题
 </p>
 
-<div align="center">
-  English|<a href="https://github.com/open17/vuepress-theme-qbook/blob/master/README_cn.md"><span>中文</span></a>
-</div>
+# Qbook
 
-# Vuepress-theme-qbook
-🍉 A easy,book-style theme for Vuepress site 
-
-## Demo & Doc
-[Demo](https://open17.github.io/vuepress-theme-qbook/)
-
-## Features
-- Easy config (supports most default theme configurations)
-- Katex support
-- Table of contents feature
-- Code highlighting, copying
-- To-do
-- Highlighter
-- Full-text search
-- Back to top
-- light/dark mode(auto)
-- Image enhancement: zoom in and out of rotation
-- Video Embed
-- ...
-
-
-
-## Installation
-```
-npm i vuepress-theme-qbook
-```
-## Importing the Theme
-```js
-// .vuepress/config.js
-  module.exports = {
-      // Use this theme
-      theme: 'qbook',
-  }
-```
+- 支持同时启用博客+文档页面
+- 首页轮播大图(支持蒙版)
+- 标签分类
+- 卡片式文章展示
+- markdown增强
+  - 换行
+  - 脚注
+  - 高亮
+  - emoji
+  - TOC目录
+- 自定义容器
+- 通知
+- 文档侧边栏目录
+- 代码块复制按钮
+- katex公式支持
+- mermaid代码块支持
 

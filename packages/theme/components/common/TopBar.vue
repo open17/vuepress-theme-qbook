@@ -1,8 +1,8 @@
 <template>
-  <div class="top-bar" :class="{ 'show-bg': showBg}">
+  <div class="top-bar" :class="{ 'show-bg': showBg, 'docs-bg': isDocs }">
     <!-- title -->
     <div class="topbar-title" @click="handleLink('/')">
-      <img :src="$withBase('/logo.png')" alt="logo"/>
+      <img :src="$withBase($themeConfig.logo)" alt="logo" />
       {{ $title || title }}
     </div>
     <div class="flex-grow"></div>
@@ -13,7 +13,7 @@
         :key="index"
         @click="handleLink(item.link)"
       >
-        <i :class="item.icon||'el-icon-news'"> {{ item.text }}</i>
+        <i :class="item.icon || 'el-icon-news'"> {{ item.text }}</i>
       </div>
     </div>
   </div>
@@ -47,10 +47,13 @@ export default {
       this.$router.push(url)
     }
   },
-  computed:{
+  computed: {
     showBg() {
-      let path=this.$page.path.split('/')[1]
-      return !this.isScrollTop || !(path=='post' || path=='tags' || path=='')
+      return !this.isScrollTop || this.isDocs
+    },
+    isDocs() {
+      let path = this.$page.path.split('/')[1]
+      return !(path == 'post' || path == 'tags' || path == '')
     }
   }
 }
@@ -100,7 +103,8 @@ export default {
   align-items: center;
   font-weight: 800;
   font-size: large;
-  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
 }
 
 .detail-menu {
@@ -118,7 +122,11 @@ export default {
 .show-bg {
   background: rgba(238, 238, 238, 0.563);
   backdrop-filter: blur(3px);
+}
 
+.docs-bg {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .show-bg .detail-menu,

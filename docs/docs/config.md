@@ -1,10 +1,3 @@
----
-tags: js
-img: blog2.webp
-desc: 不再空空如也啦
----
-# 配置文档
-
 # 配置
 ::: tip 目录
 [[toc]]
