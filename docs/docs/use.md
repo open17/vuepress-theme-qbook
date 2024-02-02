@@ -1,0 +1,126 @@
+# 使用
+:::tip 目录
+[[toc]]
+:::
+## 快速配置
+详见[配置](./config.md)
+## 文件
+在docs文件夹下,posts文件用于存放博客,其他会被视为文档
+posts文件夹下的markdown建议以`yyyy-MM-dd-标题.md`命名,方便时间排序
+## Markdown
+### emoji
+部分展示:
+
+:heart: :relaxed:  :yellow_heart:
+:smirk:	:smiley:	:flushed:
+:joy:	:sob:	:unamused:
+:scream:	:grin:	:blush:
+
+```markdown
+:heart: :relaxed:  :yellow_heart:
+:smirk:	:smiley:	:flushed:
+:joy:	:sob:	:unamused:
+:scream:	:grin:	:blush:
+```
+
+
+完整 `markdown emoji` 详见 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji/tree/master)
+### 段落
+她对人对事还和从前一样，不抢先也不落后，保持中游，使那些生妒的女生也渐渐消除了成见，缓和下来。虽是一切照旧，心情其实是另一番了。过去的安守本分中是怀了一些委屈，还有些负气的，如今却是心甘情愿。王琦瑶做人做得从容多了，这从容是有成功打底的。因是有收获，所以叫她怎么退让她也是愿意。照相馆里那些众星捧月的晚上，足以照耀很多个平淡的白昼，有了那橱窗里的亮相，无声也是有声。这就是王琦瑶高出一般女生的地方，她是比人多出一颗心的，确实是淑媛里的典范。王琦瑶总是安静，以往的安静是有些不得已，瑞纳则是希望撑腰，前后两种安静，却都是一个耐心。王琦瑶就是有耐心，她比人多出的那颗心就是耐心。耐心是百折不饶的东西，无论于得与失，都是最有用的。柔弱如王琦瑶，除了耐心还有什么可作争取的武器？无论是成是败，耐心总是没有错的，是最少牺牲的。安静也是淑媛的风采。
+
+所有的晚会都像有着亲缘关系，盘根错节的。晚会上的人也都是似曾相识，天下一家的样子。他们虽有形形种种，干什么的都有，却都是见面熟。所有的晚会，又都大同小异，是有程式的，王琦瑶很快就领会了它的真谛。她晓得晚会总是一迭声的热闹，所以要用冷清去衬托它；她晓得晚会总是灯红酒绿五光十色，便要用素净去点缀它；她还晓得晚会上的人都是热心肠，千年万代的恩情说不完，于是就用平淡中的真心去对比它。她天生就知道高弦易断，她还自知登高的实力不足，就总是以抑待扬，以少胜多。效果虽然不是显著，却是日积月累，渐渐地赢得人心。她是万紫千红中的一点芍药样的白；繁弦急管中的一曲清唱；高谈阔论里的一个无言。[^1]
+### 公式
+设
+$\displaystyle n=\prod_{i=1}^k{p_i}^{c_i},n'=\prod_{i=1}^k p_i$
+那么
+$\displaystyle\sum_{d\mid n}\mu(d)=\sum_{d\mid n'}\mu(d)=\sum_{i=0}^k \dbinom{k}{i}\cdot(-1)^i=(1+(-1))^k$
+
+根据二项式定理，易知该式子的值在 $k=0$ 即 $n=1$ 时值为 $1$ 否则为 $0$ ，这也同时证明了 $\displaystyle\sum_{d\mid n}\mu(d)=$n=1$=\varepsilon(n)$ 以及 $\mu\ast 1=\varepsilon$
+
+***
+傅里叶变换是积分形式的连续的函数内积，离散傅里叶变换是求和形式的内积。
+在矩阵表示法中，离散傅立叶变换表示如下：
+$$ \begin{bmatrix} X_{0} \\ X_{1} \\ X_{2} \\ \vdots \\ X_{n-1} \end{bmatrix} = \begin{bmatrix} 1 & 1 & 1 & \cdots & 1 \\ 1 & \alpha & \alpha^{2} & \cdots & \alpha^{n-1} \\ 1 & \alpha^{2} & \alpha^{4} & \cdots & \alpha^{2(n-1)} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & \alpha^{n-1} & \alpha^{2(n-1)} & \cdots & \alpha^{(n-1)(n-1)} \end{bmatrix} \begin{bmatrix} x_{0} \\ x_{1} \\ x_{2} \\ \vdots \\ x_{n-1} \end{bmatrix} $$
+
+其中 $\alpha = \mathrm{e}^{-\mathrm{i}\frac{2\pi}{N}n}$ 。[^2]
+### 代码块
+```py
+print('Hello,world!')
+```
+### 引用
+我的勇气和你的勇气加起来，对付这个世界总够了吧？[^3]
+```markdown
+我的勇气和你的勇气加起来，对付这个世界总够了吧？[^3]
+[^3]: 摘自王小波的<<爱你就像爱生命>>
+```
+### 容器
+```markdown
+:::warning
+你好啊，这是一条**警告**。
+:::
+
+::: info
+你好啊，这是一条**信息**。
+:::
+
+::: error
+你好啊，这是一条**错误**。
+:::
+
+::: success
+你好啊，这是一条**成功**。
+:::
+
+::: tip
+你好啊，这是一条**提示**。
+:::
+```
+:::warning
+你好啊，这是一条**警告**。
+:::
+
+::: info
+你好啊，这是一条**信息**。
+:::
+
+::: error
+你好啊，这是一条**错误**。
+:::
+
+::: success
+你好啊，这是一条**成功**。
+:::
+
+::: tip
+你好啊，这是一条**提示**。
+:::
+
+
+### Mermaid
+代码块包裹marmaid语法即可,代码块语言使用`mermaidjs`,例如:
+```markdown
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+```
+```mermaidjs
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+```
+
+[^1]: 摘自王安忆的<<长恨歌>>
+[^2]: 源自[oi wiki](https://oi-wiki.org/math/)
+[^3]: 摘自王小波的<<爱你就像爱生命>>

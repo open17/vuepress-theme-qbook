@@ -1,2 +1,5 @@
 .npmignore
 node_modules/
+test/
+.temp/
+.cache/

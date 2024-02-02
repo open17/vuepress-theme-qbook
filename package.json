@@ -1,31 +1,27 @@
 {
-  "name": "vuepress-theme-qbook",
-  "version": "1.0.6",
-  "description": "🍉 A easy,book-style theme for Vuepress site",
+  "name": "docs",
+  "version": "1.0.0",
   "main": "index.js",
+  "repository": "https://github.com/open17/vuepress-theme-qbook.git",
+  "author": "open17 <opensci@163.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "vuepress": "1.8.2"
+  },
   "scripts": {
-    "dev": "vuepress dev example",
-    "build": "vuepress build example"
+    "dev": "vuepress dev docs --no-cache ",
+    "build": "vuepress build docs"
   },
   "dependencies": {
-    "core-js": "2.6.12",
-    "element-ui": "^2.15.13",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "vuepress-plugin-el-img": "^1.0.0",
-    "vuepress-plugin-el-tab": "^1.0.0",
-    "vuepress-plugin-fulltext-search": "^2.2.1",
-    "vuepress-plugin-markdown-todolist": "^1.0.1",
-    "vuepress-plugin-pad-markdown": "^1.0.7"
-  },
-  "devDependencies": {
-    "vuepress": "^1.9.9"
-  },
-  "repository": "https://github.com/open17/vuepress-theme-qbook.git",
-  "author": "open17",
-  "license": "MIT",
-  "keywords": [
-    "vuepress",
-    "vuepress-theme",
-    "theme"
-  ]
+    "@renovamen/vuepress-plugin-mermaid": "^0.3.0",
+    "@vuepress/plugin-blog": "1.9.4",
+    "clipboard": "2.0.11",
+    "element-ui": "^2.15.14",
+    "highlight.js": "11.8.0",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-katex": "2.0.3",
+    "markdown-it-mark": "^4.0.0",
+    "vuepress-plugin-pad-markdown": "^1.1.6",
+    "vuepress-theme-qbook": "^1.1.0"
+  }
 }
