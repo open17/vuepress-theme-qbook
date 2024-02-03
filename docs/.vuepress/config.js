@@ -1,37 +1,37 @@
 module.exports = {
   theme: 'vuepress-theme-qbook',
-  title: 'Blog of open17',
+  title: '我的博客',
   themeConfig: {
-    avatar: "https://avatars.githubusercontent.com/u/125687556?v=4",
+    avatar: "logo.png",
     name: "个人博客",
     desc: "qbook主题示例",
-    showArrow:true,
-    logo:"/logo.png",
+    showArrow: true,
+    logo: "/logo.png",
     nav: [
       {
-        text: 'Home',
-        link: '/'
+        text: '主页',
+        link: '/',
+        icon: 'el-icon-cold-drink'
       },
       {
-        text: 'Docs',
-        link: '/docs/',
-        icon: 'el-icon-notebook-1'
-      },
-      {
-        text: 'Tags',
+        text: '标签',
         link: '/tags/',
-        icon: 'el-icon-collection-tag'
       },
       {
-        text: 'Plugins',
-        link:'/plugins/',
-        icon: 'el-icon-umbrella'
+        text: '指南',
+        link: '/docs/',
+        icon: 'el-icon-bicycle'
+      },
+      {
+        text: '插件',
+        link: '/plugins/',
+        icon: 'el-icon-coffee-cup'
       }
     ],
     sideBar: [
       {
         title: "主题",
-        icon: "el-icon-collection",
+        icon: "el-icon-chat-line-square",
         links: [
           {
             text: "介绍",
@@ -61,7 +61,7 @@ module.exports = {
       },
       {
         title: "插件",
-        icon: "el-icon-postcard",
+        icon: "el-icon-dish",
         links: [
           {
             text: "介绍",
