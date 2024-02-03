@@ -7,7 +7,7 @@
 </p>
 
 # Qbook
-
+[live demo](https://vuepress-theme-qbook.vercel.app/)
 - 支持同时启用博客+文档页面
 - 首页轮播大图(支持蒙版)
 - 标签分类
