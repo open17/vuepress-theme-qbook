@@ -1,5 +1,5 @@
 <template>
- <Content class="md-content markdown-body el-icon-s-promotion" id="article-container" /> 
+ <Content class="md-content markdown-body" id="article-container" /> 
 </template>
 
 <script>
@@ -14,6 +14,7 @@ export default {
     Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC,
     Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC,
     WenQuanYi Micro Hei, SimSun, sans-serif;
+  padding-bottom: 8vh;
 }
 /* markdown样式更改 取消#符号 */
 .markdown-body >>> .header-anchor {
@@ -36,6 +37,8 @@ export default {
 #article-container.md-content >>> h4::before,
 #article-container.md-content >>> h5::before,
 #article-container.md-content >>> h6::before {
+  font-family: element-icons !important;
+  font-style: normal;
   color: #f47466;
   content: '\e7ba';
   line-height: 1;
@@ -60,6 +63,7 @@ export default {
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 }
 .md-content >>> .custom-tip-block>p{
+  margin-top: 0.2rem;
   font-weight: 400;
 }
 .md-content >>> .error {
