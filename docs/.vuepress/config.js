@@ -83,8 +83,8 @@ module.exports = {
       // 用于存储 issue 和评论的存储库的名称。
       repo: 'vuepress-theme-qbook',
       // 从 OAuth2 规范中引入的 clientId 和 clientSecret。
-      clientId: 'f1ba1cc9abc5b3844b05',
-      clientSecret: 'ade32ddf8c5e1ff125fcfecde535d2d3c09f6f14',
+      clientId: 'e262f99ff317b8f2d87d',
+      clientSecret: 'e38cbbdb2693f7c2267d285ecf53ab88f0535cb0',
     },
     mdUseAllPlugins: true,
     mdUseEventBus: false,
