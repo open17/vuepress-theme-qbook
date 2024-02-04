@@ -8,7 +8,7 @@
       @click="handleLink(card.path)"
     >
       <el-image
-        :src="$withBase('/' + card.frontmatter.img)"
+        :src="getImg(card.frontmatter.img)"
         style="width: 100%; height: 40vh"
         fit="cover"
         @click="handleLink(card.path)"
@@ -42,6 +42,12 @@ export default {
       if (currentRoute.path !== url) {
         this.$router.push(url)
       }
+    },
+    getImg(url){
+      if(url.startsWith('http://')||url.startsWith('https://')){
+        return url;
+      }
+      return this.$withBase('/' + url);
     }
   }
 }
