@@ -10,6 +10,9 @@
 ## 文档与示例
 [demo](vuepress-theme-qbook.vercel.app/)
 ## 模板
+示例模板  
+  
+  
 [![快速启动模板](https://github-readme-stats.vercel.app/api/pin/?username=open17&repo=vuepress-theme-qbook-template)](https://github.com/open17/vuepress-theme-qbook-template)
 ## 特征
 - 支持同时启用博客+文档页面
@@ -28,4 +31,5 @@
 - 代码块复制按钮
 - katex公式支持
 - mermaid代码块支持
+- 评论
 

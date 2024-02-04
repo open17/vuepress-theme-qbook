@@ -67,6 +67,11 @@ export default {
   color: #f47466;
 }
 
+#article-container >>> pre {
+  background-color: #282c34;
+  color: #ece9e9;
+}
+
 #article-container.md-content >>> h1 {
   color: #344c67;
 }
@@ -92,7 +97,7 @@ export default {
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     '微软雅黑', Arial, sans-serif;
 }
-.md-content >>> .custom-tip-block > p {
+.md-content >>> .custom-tip-block > p,.md-content >>> .custom-tip-block > .mycodeblock {
   margin-top: 0.2rem;
   font-weight: 400;
 }
