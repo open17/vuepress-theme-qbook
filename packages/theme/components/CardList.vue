@@ -38,8 +38,10 @@ export default {
   },
   methods: {
     handleLink(url) {
-      console.log(url)
-      this.$router.push(url)
+      const currentRoute = this.$router.currentRoute
+      if (currentRoute.path !== url) {
+        this.$router.push(url)
+      }
     }
   }
 }
@@ -62,7 +64,7 @@ export default {
 .box-card {
   margin-top: 2vh;
   margin-bottom: 4vh;
-  margin-left:  20vw;
+  margin-left: 20vw;
   margin-right: 20vw;
   border-radius: 20px;
   text-align: center;
