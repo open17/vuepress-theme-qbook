@@ -23,18 +23,24 @@ export default {
 
 <style scoped>
 .tag-img {
+  position: relative;
+  top: -5vh;
   width: 100%;
-  height: 40vh;
+  height: 45vh;
   background-image: url('../assets/flat-mountains.svg');
   background-position: center;
   background-size: cover;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 h1 {
   font-size: 5rem;
   color: #fff;
   font-weight: 600;
-  margin-top: 5vh;
+  margin-top: 7vh;
 }
 .breadcrumb {
   position: relative;
