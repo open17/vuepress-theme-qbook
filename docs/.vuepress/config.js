@@ -77,6 +77,6 @@ module.exports = {
     mdUseAllPlugins: true,
     mdUseEventBus: false,
     mdDefaultTheme: "light",
-    mdCodeTheme: ["atom-one-dark", "atom-one-light"]
+    mdCodeTheme: ["atom-one-dark"]
   }
 }
