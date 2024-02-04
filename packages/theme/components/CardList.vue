@@ -38,8 +38,10 @@ export default {
   },
   methods: {
     handleLink(url) {
-      console.log(url)
-      this.$router.push(url)
+      const currentRoute = this.$router.currentRoute
+      if (currentRoute.path !== url) {
+        this.$router.push(url)
+      }
     }
   }
 }
@@ -48,18 +50,21 @@ export default {
 <style scoped>
 .card-list {
   position: relative;
-  top: -3vh;
+  top: -5vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   cursor: pointer;
   background-image: url('../assets/wallpaper.png');
+  padding-top: 10vh;
+  padding-bottom: 20vh;
+  margin-bottom: -5vh;
 }
 .box-card {
   margin-top: 2vh;
   margin-bottom: 4vh;
-  margin-left:  20vw;
+  margin-left: 20vw;
   margin-right: 20vw;
   border-radius: 20px;
   text-align: center;

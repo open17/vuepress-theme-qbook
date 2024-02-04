@@ -44,7 +44,10 @@ export default {
   },
   methods: {
     handleLink(url) {
-      this.$router.push(url)
+      const currentRoute = this.$router.currentRoute
+      if (currentRoute.path !== url) {
+        this.$router.push(url)
+      }
     }
   },
   computed: {

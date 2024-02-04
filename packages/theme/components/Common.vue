@@ -1,14 +1,14 @@
 <template>
-  <div class="container">
+  <div class="container targetContainer" ref="slotContainer">
     <top-bar-vue :isScrollTop="isScrollTop" />
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <script>
 import TopBarVue from './common/TopBar.vue'
 export default {
-  props:["scrollHeight"],
+  props: ['scrollHeight'],
   components: {
     TopBarVue
   },
@@ -18,16 +18,22 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+    this.$nextTick(() => {
+      const slotContainer = this.$refs.slotContainer
+      slotContainer.addEventListener('scroll', this.handleScroll)
+    })
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll)
+    const slotContainer = this.$refs.slotContainer
+    slotContainer.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     handleScroll(event) {
-      const scrollTop =  window.pageYOffset || document.documentElement.scrollTop
-      let h=100
-      if(this.scrollHeight)h=this.scrollHeight
+      const slotContainer = this.$refs.slotContainer
+      const scrollTop = slotContainer.scrollTop
+      // console.log(scrollTop)
+      let h = 100
+      if (this.scrollHeight) h = this.scrollHeight
       if (scrollTop < h) {
         this.isScrollTop = true
       } else {
@@ -44,10 +50,12 @@ export default {
   top: 0;
   left: 0;
   width: 100vw;
+  max-height: 100vh;
   background-color: transparent;
-  display: flex;
+  /* display: block; */
+  /* display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; */
   overflow-x: hidden;
   overflow-y: auto;
   flex-direction: column;

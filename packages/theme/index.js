@@ -5,6 +5,8 @@ module.exports = (options, ctx) => {
   if (!siteConfig.themeConfig.searchMaxSuggestions) siteConfig.themeConfig.searchMaxSuggestions = 50;
   if (!siteConfig.themeConfig.title) siteConfig.themeConfig.title = siteConfig.title;
   siteConfig.themeConfig.mdUseEventBus = false;
+  if (!siteConfig.markdown) siteConfig.markdown = {};
+  siteConfig.markdown.anchor = { permalink: true, permalinkBefore: true, permalinkSymbol: '' };
   // default theme config
   Object.assign(
     options,
@@ -23,6 +25,15 @@ module.exports = (options, ctx) => {
       config.resolve.alias.set('core-js/library/fn', 'core-js/features');
     },
     plugins: [
+      ['@vuepress/nprogress'],
+      // ['@vuepress/medium-zoom',
+      //   {
+      //     selector: '#article-container :not(a) > img',
+      //     options: {
+      //     margin: 160
+      //     }
+      //   }
+      // ],
       [
         "@vuepress/plugin-blog",
         {
