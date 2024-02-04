@@ -24,6 +24,6 @@
     "markdown-it-katex": "2.0.3",
     "markdown-it-mark": "^4.0.0",
     "vuepress-plugin-pad-markdown": "^1.1.6",
-    "vuepress-theme-qbook": "^1.1.0"
+    "vuepress-theme-qbook": "^1.1.3"
   }
 }
