@@ -13,11 +13,41 @@ module.exports = (options, ctx) => {
     Object.assign(
       {
         mdUseAllPlugins: true,
-        mdUseMermaid: true
+        mdUseMermaid: true,
+        comment: false
       },
       options
     )
   );
+  let blogConfig = {
+    permalink: "/:regular",
+    frontmatters: [
+      {
+        id: "tags",
+        keys: ["tags"],
+        path: "/tags/",
+      }
+    ],
+    directories: [
+      {
+        id: "posts",
+        dirname: "posts",
+        path: "/",
+        layout: "Home",
+        itemPermalink: "/post/:year/:month/:day/:slug",
+        itemLayout: "Post",
+        pagination: {
+          layout: "Home"
+        },
+        sitemap: {
+
+        },
+        feed: {
+
+        },
+      }
+    ]
+  }
 
   return {
     name: "vuepress-theme-qbook",
@@ -26,39 +56,13 @@ module.exports = (options, ctx) => {
     },
     plugins: [
       ['@vuepress/nprogress'],
-      // ['@vuepress/medium-zoom',
-      //   {
-      //     selector: '#article-container :not(a) > img',
-      //     options: {
-      //     margin: 160
-      //     }
-      //   }
-      // ],
+      [
+        "@vssue/vuepress-plugin-vssue",
+        options.comment
+      ],
       [
         "@vuepress/plugin-blog",
-        {
-          permalink: "/:regular",
-          frontmatters: [
-            {
-              id: "tags",
-              keys: ["tags"],
-              path: "/tags/",
-            }
-          ],
-          directories: [
-            {
-              id: "posts",
-              dirname: "posts",
-              path: "/",
-              layout: "Home",
-              itemPermalink: "/post/:year/:month/:day/:slug",
-              itemLayout: "Post",
-              pagination: {
-                layout: "Home"
-              }
-            }
-          ]
-        }
+        blogConfig
       ],
       [
         "pad-markdown",

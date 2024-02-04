@@ -152,3 +152,23 @@ mask: 'rgba(74, 106, 67, 0.45)'
 ```
 :::
 
+## 评论
+基于[vssue](https://vssue.js.org/zh/guide/),配置如下,选项请参考[这里](https://vssue.js.org/zh/guide/vuepress.html)
+```ts
+module.exports = {
+    // ... 
+    themeConfig: {
+        comment: {
+          // 设置 `platform` 而不是 `api`
+          platform: 'github',
+          // 存储 issue 和评论的库的所有者名称。
+          owner: 'open17',
+          // 用于存储 issue 和评论的存储库的名称。
+          repo: 'vuepress-theme-qbook',
+          // 从 OAuth2 规范中引入的 clientId 和 clientSecret。
+          clientId: 'xxxxxx',
+          clientSecret: 'xxxxxxxxxxxxxxxx',
+      },
+    }
+}
+```
