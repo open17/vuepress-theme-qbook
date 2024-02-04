@@ -21,13 +21,21 @@ export default {
     pageHeaderStyle() {
       let style = {}
       style = {
-        backgroundImage: `url(${this.$withBase('/' + this.$page.frontmatter.img)})`
+        backgroundImage: `url(${this.getImg(this.$page.frontmatter.img)})`
       }
       return style
     },
     maskColor(){
       if(this.$page.frontmatter.mask)return this.$page.frontmatter.mask
       return '#4e4e4e63'
+    }
+  },
+  methods: {
+    getImg(url){
+      if(url.startsWith('http://')||url.startsWith('https://')){
+        return url;
+      }
+      return this.$withBase('/' + url);
     }
   }
 }
