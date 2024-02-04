@@ -10,6 +10,7 @@
   "dependencies": {
     "@renovamen/vuepress-plugin-mermaid": "^0.3.0",
     "@vuepress/plugin-blog": "^1.9.4",
+    "@vuepress/plugin-nprogress": "^1.9.10",
     "element-ui": "^2.15.14",
     "vuepress-plugin-pad-markdown": "^1.1.6"
   },

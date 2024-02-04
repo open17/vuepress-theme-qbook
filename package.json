@@ -6,6 +6,8 @@
   "author": "open17 <opensci@163.com>",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@vuepress/plugin-medium-zoom": "^1.9.10",
+    "@vuepress/plugin-nprogress": "^1.9.10",
     "vuepress": "1.8.2"
   },
   "scripts": {
