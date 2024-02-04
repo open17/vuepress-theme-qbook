@@ -6,7 +6,6 @@
 </template>
 
 <script>
-
 import CommonVue from '../components/Common.vue'
 import PostHeaderVue from '../components/post/PostHeader.vue'
 import PostContentVue from '../components/PostContent.vue'
@@ -17,7 +16,6 @@ export default {
     PostHeaderVue,
     PostContentVue
   },
-  mounted() {}
 }
 </script>
 
