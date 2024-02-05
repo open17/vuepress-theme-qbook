@@ -154,7 +154,7 @@ mask: 'rgba(74, 106, 67, 0.45)'
 
 ## 评论
 基于[vssue](https://vssue.js.org/zh/guide/),配置如下,选项请参考[这里](https://vssue.js.org/zh/guide/vuepress.html)
-```ts
+```js
 module.exports = {
     // ... 
     themeConfig: {
@@ -171,4 +171,25 @@ module.exports = {
       },
     }
 }
+```
+
+## 分页
+自1.1.7起可以配置博客首页的分页功能每页的数量,默认一页展示10个博客
+```js
+module.exports = {
+    // ... 
+    themeConfig: {
+        pageSize:5 // 每页展示5个博客
+      },
+}   
+```
+## 首页置顶博客
+自1.1.6起博客按照时间排序
+要注意在本主题中你无需配置时间,因为你在创建博客文件名的时候本身就引入了时间,如`2024-1-20-log.md`,主题会根据文件名自行排序(新到旧)
+而想要置顶某个博客,只需要像[博客内容](#博客内容)的配置介绍部分一样在markdown顶部中加入`pin: true`即可,默认为`false`
+多个置顶博客依然按照时间排序
+```yaml
+---
+pin: true
+---
 ```
