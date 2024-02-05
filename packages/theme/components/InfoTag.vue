@@ -43,6 +43,6 @@ export default {
 }
 .info-tags >>> .el-tag {
   font-size: large;
-  font-weight: bold;
+  font-weight: 500;
 }
 </style>

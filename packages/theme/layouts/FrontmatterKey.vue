@@ -4,8 +4,8 @@
     <div class="tagList">
       <div class="tagList-item" v-for="(item, index) in $frontmatterKey.list" :key="index">
         <router-link :to="item.path">
-          <el-badge :value="item.pages.length" :max="100" >
-            <el-button type="warning" round>{{ item.name }}</el-button>
+          <el-badge :value="item.pages.length" :max="100" type="danger">
+             <el-tag  type="danger">{{ item.name }}</el-tag>
           </el-badge>
         </router-link>
       </div>
@@ -28,7 +28,6 @@ export default {
 
 <style scoped>
 .tagList {
-  margin-bottom: 3rem;
   margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
@@ -36,9 +35,14 @@ export default {
   width: 80%;
   padding-left: 10%;
   padding-right: 10%;
-  min-height: 45vh;
 }
 .tagList > * {
-  margin-right: 2vw;
+  margin-right: 1.5vw;
+  margin-bottom: 5vh;
+}
+.tagList >>> .el-tag {
+  font-size: large;
+  font-weight: 500;
+  padding: 0 1rem;
 }
 </style>
