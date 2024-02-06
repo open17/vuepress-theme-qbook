@@ -25,7 +25,7 @@
               :key="itm.toString() + '-' + idx.toString()"
               @click="handleLink(itm.link)"
             >
-              <i :class="itm.icon || item.icon | 'el-icon-date'" style="margin-right: 0.5rem">{{
+              <i :class="itm.icon || item.icon || 'el-icon-date'" style="margin-right: 0.5rem">{{
                 itm.text
               }}</i>
             </div>
