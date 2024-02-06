@@ -97,7 +97,7 @@ export default {
 <style scoped>
 .card-list {
   position: relative;
-  top: -5vh;
+  top: 0vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
