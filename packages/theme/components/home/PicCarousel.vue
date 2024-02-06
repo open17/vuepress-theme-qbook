@@ -4,22 +4,27 @@
     class="hero-carousel"
     height="100vh"
     indicator-position="none"
-    :arrow="($themeConfig.showArrow||showArrow).toString()"
+    :arrow="($themeConfig.showArrow || showArrow).toString()"
   >
     <el-carousel-item
-      v-for="(item, index) in $themeConfig.pics||carouselItems"
+      v-for="(item, index) in $themeConfig.pics || carouselItems"
       :key="index"
       class="hero-carousel-item"
-      
     >
       <div class="img" :style="{ 'background-image': `url(${item.img})` }">
-        <div class="img-mask" :style="{ backgroundColor: item.color||'rgba(92, 101, 124, 0.1)' }"/>
+        <div
+          class="img-mask"
+          :style="{ backgroundColor: item.color || 'rgba(92, 101, 124, 0.1)' }"
+        />
       </div>
     </el-carousel-item>
-    <DownIconVue class="down-icon" />
+    <div class="down-icon" @click="scrollDown()">
+      <DownIconVue />
+    </div>
+
     <div class="user-info">
       <UserAvatar class="" :size="140" :src="$themeConfig.avatar" />
-      <InfoBoxVue :name="$themeConfig.name || 'Hello,world!'" :desc="$themeConfig.desc"/>
+      <InfoBoxVue :name="$themeConfig.name || 'Hello,world!'" :desc="$themeConfig.desc" />
     </div>
   </el-carousel>
 </template>
@@ -52,6 +57,17 @@ export default {
       showArrow: 'always'
     }
   },
+  methods: {
+    scrollDown() {
+      const parentContainer = document.querySelector('.targetContainer')
+      if (parentContainer) {
+        parentContainer.scrollTo({
+          top: window.innerHeight,
+          behavior: 'smooth' // 使用平滑滚动效果
+        })
+      }
+    }
+  },
   mounted() {
     if (this.$themeConfig.arrow === 'never') {
       this.showArrow = 'always'
@@ -68,10 +84,13 @@ export default {
   margin: 0;
   width: 100%;
   overflow-y: hidden;
+  position: relative;
 }
 
 .down-icon {
-  position: relative;
+  display: block;
+  cursor: pointer;
+  position: absolute;
   left: 49%;
   transform: translateX(-50%);
   color: #fff;
@@ -102,6 +121,13 @@ export default {
   background-position: center;
 }
 
+.hero-carousel >>> .el-carousel__arrow {
+  height: 3.5rem;
+  width: 3.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
 .img-mask {
   width: 100%;
   height: 100%;
@@ -109,7 +135,7 @@ export default {
 }
 
 .user-info {
-  position: relative;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   top: 50%;
