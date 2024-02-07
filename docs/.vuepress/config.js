@@ -14,24 +14,12 @@ module.exports = {
                 link:"https://github.com/open17"
             },
             {
-                type:"linkedin",
-                link:"https://www.linkedin.com/in/",
-            },
-            {
-                type:"facebook",
-                link:"https://www.facebook.com/",
-            },
-            {
-                type:"instagram",
-                link:"https://www.instagram.com/",
-            },
-            {
                 type:"zhihu",
                 link:"https://www.zhihu.com/",
             },
             {
                 type:"weibo",
-                link:"https://www.weibo.com/",
+                link:"#",
             },
             {
                 type:"custom",
