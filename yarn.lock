@@ -9376,10 +9376,10 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-theme-qbook@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-qbook/-/vuepress-theme-qbook-1.1.5.tgz#ccedec41b51e8c0a1270115f4dcf0fdfdeaa3a23"
-  integrity sha512-KPhgHoHsonlRX9SBxT2nhmkOkYIWTf1zWzYrIHTDU2oF8F9/0UXSDfnrp3xP+ImltZDkkOJRhOmJp7C+x9b98w==
+vuepress-theme-qbook@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-qbook/-/vuepress-theme-qbook-1.1.8.tgz#e98a28b72562e2bc30d6fdab65ede896d88eb69a"
+  integrity sha512-0acPa6hAnEkD+U6AekPEedo/44zFylvm6MEdTGG8cOYGpfUC2EumlKFBrWERORlAIBQtX+79QP30KDVcFcREjw==
   dependencies:
     "@renovamen/vuepress-plugin-mermaid" "^0.3.0"
     "@vuepress/plugin-blog" "^1.9.4"

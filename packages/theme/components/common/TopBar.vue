@@ -11,9 +11,26 @@
       <div
         v-for="(item, index) in $themeConfig.nav || menuItems"
         :key="index"
-        @click="handleLink(item.link)"
+        @click="handelLinkWithSub(item)"
+        :class="{ 'nav-dropdown': item.sub }"
       >
-        <i :class="item.icon || 'el-icon-news'"> {{ item.text }}</i>
+        <div :class="item.icon || 'el-icon-news'">
+          {{ item.text }} <i class="el-icon-caret-bottom" v-if="item.sub"></i>
+        </div>
+        <!-- 容器防止hover因间隔失去焦点 -->
+        <div class="nav-dropdown-container">
+          <div class="nav-dropdown-items" v-if="item.sub">
+            <div
+              v-for="(itm, idx) in item.sub"
+              :key="itm.toString() + '-' + idx.toString()"
+              @click="handleLink(itm.link)"
+            >
+              <i :class="itm.icon || item.icon || 'el-icon-date'" style="margin-right: 0.5rem">{{
+                itm.text
+              }}</i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -44,10 +61,15 @@ export default {
   },
   methods: {
     handleLink(url) {
+      if (!url) return
       const currentRoute = this.$router.currentRoute
       if (currentRoute.path !== url) {
         this.$router.push(url)
       }
+    },
+    handelLinkWithSub(item) {
+      if (item.sub) return
+      this.handleLink(item.link)
     }
   },
   computed: {
@@ -63,6 +85,35 @@ export default {
 </script>
 
 <style scoped>
+.nav-dropdown-container{
+  position: absolute;
+  display: none;
+  width: 100%;
+  padding: 0.7rem 0;
+}
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown:hover .nav-dropdown-container {
+  display: flex;
+}
+.nav-dropdown-items > * {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  cursor: pointer;
+}
+.nav-dropdown-items {
+  padding: 3% 6%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #c7c3c384;
+  min-width: 100%;
+  font-weight: 550;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+}
 .topbar-title {
   font-weight: 550;
   font-size: large;

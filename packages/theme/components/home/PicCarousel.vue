@@ -3,21 +3,29 @@
     trigger="click"
     class="hero-carousel"
     height="100vh"
-    :arrow="($themeConfig.showArrow||showArrow).toString()"
+    indicator-position="none"
+    :arrow="($themeConfig.showArrow || showArrow).toString()"
   >
     <el-carousel-item
-      v-for="(item, index) in $themeConfig.pics||carouselItems"
+      v-for="(item, index) in $themeConfig.pics || carouselItems"
       :key="index"
       class="hero-carousel-item"
     >
       <div class="img" :style="{ 'background-image': `url(${item.img})` }">
-        <div class="img-mask" :style="{ backgroundColor: item.color||'rgba(92, 101, 124, 0.1)' }" />
+        <div
+          class="img-mask"
+          :style="{ backgroundColor: item.color || 'rgba(92, 101, 124, 0.1)' }"
+        />
       </div>
     </el-carousel-item>
-    <DownIconVue class="down-icon" />
+    <div class="down-icon" @click="scrollDown()">
+      <DownIconVue />
+    </div>
+
     <div class="user-info">
       <UserAvatar class="" :size="140" :src="$themeConfig.avatar" />
-      <InfoBoxVue :name="$themeConfig.name || 'Hello,world!'" :desc="$themeConfig.desc"/>
+      <InfoBoxVue :name="$themeConfig.name || 'Hello,world!'" :desc="$themeConfig.desc" />
+      <SocialButtonsVue class="social-group"/>
     </div>
   </el-carousel>
 </template>
@@ -28,12 +36,15 @@ import default_img2 from '../../assets/default_bg2.jpg'
 import InfoBoxVue from '../InfoBox.vue'
 import DownIconVue from '../others/DownIcon.vue'
 import UserAvatar from '../UserAvatar.vue'
+import SocialButtonsVue from './SocialButtons.vue'
+
 
 export default {
   components: {
     DownIconVue,
     UserAvatar,
-    InfoBoxVue
+    InfoBoxVue,
+  SocialButtonsVue
   },
   data() {
     return {
@@ -50,6 +61,17 @@ export default {
       showArrow: 'always'
     }
   },
+  methods: {
+    scrollDown() {
+      const parentContainer = document.querySelector('.targetContainer')
+      if (parentContainer) {
+        parentContainer.scrollTo({
+          top: window.innerHeight,
+          behavior: 'smooth' // 使用平滑滚动效果
+        })
+      }
+    }
+  },
   mounted() {
     if (this.$themeConfig.arrow === 'never') {
       this.showArrow = 'always'
@@ -62,14 +84,20 @@ export default {
 
 
 <style scoped>
+.social-group{
+  margin-top: 5%;
+}
 .hero-carousel {
   margin: 0;
   width: 100%;
   overflow-y: hidden;
+  position: relative;
 }
 
 .down-icon {
-  position: relative;
+  display: block;
+  cursor: pointer;
+  position: absolute;
   left: 49%;
   transform: translateX(-50%);
   color: #fff;
@@ -88,39 +116,6 @@ export default {
   }
 }
 
-.hero-carousel:deep(.el-carousel__indicators) {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 20vw;
-  width: auto;
-  bottom: 15vh;
-  border: none;
-  height: 20px;
-  background-color: rgba(92, 101, 124, 0.2);
-  border-radius: 50px;
-  padding-left: 2%;
-  padding-right: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-:deep(.el-carousel__button) {
-  /* 默认按钮的样式 */
-  width: 8px;
-  height: 8px;
-  border: none;
-  border-radius: 20px;
-  background: #4085ec;
-}
-
-:deep(.is-active) .el-carousel__button {
-  background: #fff;
-  width: 16px;
-  opacity: 1;
-}
-
 .el-carousel__arrow {
   z-index: 5;
 }
@@ -133,18 +128,21 @@ export default {
   background-position: center;
 }
 
+.hero-carousel >>> .el-carousel__arrow {
+  height: 3.5rem;
+  width: 3.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
 .img-mask {
   width: 100%;
   height: 100%;
   z-index: 2;
-  position: relative;
 }
 
-.demonstration {
-  color: var(--el-text-color-secondary);
-}
 .user-info {
-  position: relative;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   top: 50%;
@@ -153,5 +151,10 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: transparent;
+  box-shadow: 0px 0px 15px #00000027;
+  padding: 5% 2%;
+  border-radius: 20px;
+   backdrop-filter: blur(5px); 
 }
 </style>

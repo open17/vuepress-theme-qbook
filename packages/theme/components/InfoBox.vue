@@ -14,24 +14,24 @@ export default {
 
 <style scoped>
 .info-box {
-  background: #16151572;
+  /* background: #16151572; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-left: 2vw;
-  padding-right: 2vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   padding-top: 0.5vh;
   padding-bottom: 0.5vh;
   border-radius: 20px;
-  min-width: 35vw;
+  /* min-width: 35vw; */
   min-height: 15vh;
   margin-top: 2vh;
   color: #fff;
-  font-size: larger;
+  font-size: x-large;
 }
 .info-name {
-  font-size: xx-large;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 .info-desc {

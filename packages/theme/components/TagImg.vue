@@ -35,19 +35,21 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
 }
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #fff;
-  font-weight: 600;
+  font-weight: 400;
   margin-top: 7vh;
 }
 .breadcrumb {
   position: relative;
-  bottom: 3vh;
+  bottom: 2vh;
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 .breadcrumb >>> .is-link,
 .breadcrumb >>> .el-breadcrumb__inner {

@@ -2,7 +2,7 @@
   <div class="card-list">
     <el-card
       class="box-card"
-      v-for="(card, idx) in cards"
+      v-for="(card, idx) in paginatedCards"
       :key="idx"
       :body-style="{ padding: '0px' }"
       @click="handleLink(card.path)"
@@ -16,12 +16,28 @@
         <div slot="error" class="image-slot"></div>
       </el-image>
       <div class="card-info">
-        <div class="info-title">{{ card.title }}</div>
+        <div class="info-title">
+          <el-tooltip content="置顶" placement="top">
+            <i class="el-icon-s-flag" v-if="card.frontmatter.pin" style="color: red"></i>
+          </el-tooltip>
+          {{ card.title }}
+        </div>
         <div class="info-desc" v-if="card.frontmatter.desc">{{ card.frontmatter.desc }}</div>
         <InfoTagVue :tags="card.frontmatter.tags" />
       </div>
       <div class="book-mark"></div>
     </el-card>
+    <div class="pagination-box">
+      <el-pagination
+        class="pagination"
+        @current-change="handleCurrentChange"
+        :page-size="pageSize"
+        layout="prev, pager, next, jumper"
+        :total="cards.length"
+        background
+      >
+      </el-pagination>
+    </div>
   </div>
 </template>
 
@@ -34,7 +50,26 @@ export default {
     InfoTagVue
   },
   data() {
-    return {}
+    return {
+      pageSize: 10,
+      currentPage: 1
+    }
+  },
+  computed: {
+    sortedCards() {
+      const pinnedCards = this.cards.filter(
+        (card) => card.frontmatter && card.frontmatter.pin === true
+      )
+      pinnedCards.sort((a, b) => b.path.localeCompare(a.path))
+      const remainingCards = this.cards.filter((card) => !pinnedCards.includes(card))
+      remainingCards.sort((a, b) => b.path.localeCompare(a.path))
+      return pinnedCards.concat(remainingCards)
+    },
+    paginatedCards() {
+      const startIndex = (this.currentPage - 1) * this.pageSize
+      const endIndex = startIndex + this.pageSize
+      return this.sortedCards.slice(startIndex, endIndex)
+    }
   },
   methods: {
     handleLink(url) {
@@ -43,12 +78,18 @@ export default {
         this.$router.push(url)
       }
     },
-    getImg(url){
-      if(url.startsWith('http://')||url.startsWith('https://')){
-        return url;
+    getImg(url) {
+      if (url.startsWith('http://') || url.startsWith('https://')) {
+        return url
       }
-      return this.$withBase('/' + url);
+      return this.$withBase('/' + url)
+    },
+    handleCurrentChange(val) {
+      this.currentPage = val
     }
+  },
+  mounted(){
+    if(this.$themeConfig.pageSize)this.pageSize=this.$themeConfig.pageSize
   }
 }
 </script>
@@ -56,7 +97,7 @@ export default {
 <style scoped>
 .card-list {
   position: relative;
-  top: -5vh;
+  top: 0vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -93,5 +134,13 @@ export default {
 }
 .info-title {
   font-size: xx-large;
+}
+.pagination-box {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 20vw;
+  right: 20vw;
+  width: 60vw;
 }
 </style>
