@@ -25,6 +25,7 @@
     <div class="user-info">
       <UserAvatar class="" :size="140" :src="$themeConfig.avatar" />
       <InfoBoxVue :name="$themeConfig.name || 'Hello,world!'" :desc="$themeConfig.desc" />
+      <SocialButtonsVue class="social-group"/>
     </div>
   </el-carousel>
 </template>
@@ -35,12 +36,15 @@ import default_img2 from '../../assets/default_bg2.jpg'
 import InfoBoxVue from '../InfoBox.vue'
 import DownIconVue from '../others/DownIcon.vue'
 import UserAvatar from '../UserAvatar.vue'
+import SocialButtonsVue from './SocialButtons.vue'
+
 
 export default {
   components: {
     DownIconVue,
     UserAvatar,
-    InfoBoxVue
+    InfoBoxVue,
+  SocialButtonsVue
   },
   data() {
     return {
@@ -80,6 +84,9 @@ export default {
 
 
 <style scoped>
+.social-group{
+  margin-top: 5%;
+}
 .hero-carousel {
   margin: 0;
   width: 100%;
@@ -144,5 +151,10 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: transparent;
+  box-shadow: 0px 0px 15px #00000027;
+  padding: 5% 2%;
+  border-radius: 20px;
+   backdrop-filter: blur(5px); 
 }
 </style>
