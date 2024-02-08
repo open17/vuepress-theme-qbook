@@ -7,7 +7,7 @@
       :body-style="{ padding: '0px' }"
     >
       <el-image
-        :src="getImg(card.frontmatter.img)"
+        :src="getImg(card.frontmatter.img)||$themeConfig.defaultCardImg"
         fit="cover"
         @click="handleLink(card.path)"
         style="width: 100%"
