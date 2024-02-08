@@ -44,5 +44,9 @@ export default {
   font-size: large;
   font-weight: 500;
   padding: 0 1rem;
+  background-color: transparent;
+}
+.tagList >>> .el-badge{
+  box-shadow: 0 0 1rem #0000001f;
 }
 </style>

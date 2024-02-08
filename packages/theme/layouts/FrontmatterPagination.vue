@@ -1,7 +1,7 @@
 <template>
   <CommonVue>
     <TagImgVue />
-    <CardListVue :cards="$pagination.pages" />
+    <CardListVue :cards="$pagination.pages" class="list" />
   </CommonVue>
 </template>
 
@@ -18,5 +18,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.list {
+  position: relative;
+
+}
 </style>

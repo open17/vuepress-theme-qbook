@@ -4,6 +4,7 @@
     class="hero-carousel"
     height="100vh"
     indicator-position="none"
+    :interval="3000"
     :arrow="($themeConfig.showArrow || showArrow).toString()"
   >
     <el-carousel-item

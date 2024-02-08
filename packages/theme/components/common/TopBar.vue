@@ -3,7 +3,7 @@
     <!-- title -->
     <div class="topbar-title" @click="handleLink('/')">
       <img :src="$withBase($themeConfig.logo)" alt="logo" />
-      {{ $title || title }}
+      {{ $site.title || title }}
     </div>
     <div class="flex-grow"></div>
     <!-- detail menu -->
@@ -126,9 +126,9 @@ export default {
   max-width: 60vw;
 }
 
-.topbar-title:hover {
+/* .topbar-title:hover {
   color: #85c3f5;
-}
+} */
 
 .topbar-title img {
   max-width: 5rem;

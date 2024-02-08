@@ -1,9 +1,9 @@
 <template>
   <div class="post-header" :style="pageHeaderStyle">
-    <div class="img-mask"  :style="{ backgroundColor: maskColor }"></div>
+    <div class="img-mask" :style="{ backgroundColor: maskColor }"></div>
     <div class="header-content">
       <InfoBoxVue :name="$page.title" :desc="$page.frontmatter.desc">
-        <InfoTagVue :tags="$page.frontmatter.tags" class="tag"/>
+        <InfoTagVue :tags="$page.frontmatter.tags" class="tag" />
       </InfoBoxVue>
     </div>
   </div>
@@ -13,29 +13,32 @@
 import InfoBoxVue from '../InfoBox.vue'
 import InfoTagVue from '../InfoTag.vue'
 export default {
-    components: {
-      InfoBoxVue,
-      InfoTagVue
-    },
+  components: {
+    InfoBoxVue,
+    InfoTagVue
+  },
   computed: {
     pageHeaderStyle() {
       let style = {}
       style = {
-        backgroundImage: `url(${this.getImg(this.$page.frontmatter.img)})`
+        backgroundImage: `url(${this.getImg(
+          this.$page.frontmatter.img || this.$themeConfig.defaultPostImg
+        )})`
       }
       return style
     },
-    maskColor(){
-      if(this.$page.frontmatter.mask)return this.$page.frontmatter.mask
+    maskColor() {
+      if (this.$page.frontmatter.mask) return this.$page.frontmatter.mask
       return '#4e4e4e63'
     }
   },
   methods: {
-    getImg(url){
-      if(url.startsWith('http://')||url.startsWith('https://')){
-        return url;
+    getImg(url) {
+      if (!url) return
+      if (url.startsWith('http://') || url.startsWith('https://')) {
+        return url
       }
-      return this.$withBase('/' + url);
+      return this.$withBase('/' + url)
     }
   }
 }
@@ -56,7 +59,7 @@ export default {
   width: 100%;
   z-index: 0;
 }
-.header-content{
+.header-content {
   position: relative;
   bottom: 100%;
   height: 75vh;
@@ -66,12 +69,12 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.header-content>>>.info-box{
-    padding-top: 5vh;
-    background-color: transparent;
+.header-content >>> .info-box {
+  padding-top: 5vh;
+  background-color: transparent;
 }
-.tag{
-    margin-top: 3vh;
-    margin-bottom: 2vh; 
+.tag {
+  margin-top: 3vh;
+  margin-bottom: 2vh;
 }
 </style>
