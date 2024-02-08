@@ -126,9 +126,9 @@ export default {
   max-width: 60vw;
 }
 
-.topbar-title:hover {
+/* .topbar-title:hover {
   color: #85c3f5;
-}
+} */
 
 .topbar-title img {
   max-width: 5rem;
