@@ -11,7 +11,7 @@
 :::
 
 
-## 博客主页<sup><el-tag type="danger" size="mini" effect="dark" style="border-radius: 10px">更新</el-tag></sup>
+## 博客主页<sup><el-tag type="danger" size="mini" effect="dark" style="border-radius: 10px">1.1.9更新</el-tag></sup>
 配置在.vuepress下config.js文件中,其中如果背景图片太亮,可以加上蒙版颜色调节视觉效果
 ::: error 注意
 如没有特别说明,配置均在.vuepress下config.js文件
@@ -40,6 +40,8 @@ module.exports = {
     name: "个人博客", // 你的名字,用于展示在博客首页,默认为Hello,world!
     desc: "qbook主题示例", // 你的博客描述,用于展示在博客首页,非必须,默认为空
     showArrow:true,  //轮播图左右的箭头是否显示,非必须,默认为true
+    defaultPostImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082314316.jpg", //当博客文章未配置背景图片时文章页面的展示背景图,非必须
+    defaultCardImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082335721.jpg", //当博客文章未配置背景图片时首页文章卡片的展示背景图,非必须
     // 轮播背景大图 ,非必须,默认为两张主题图片
     pics:[
         {
@@ -86,7 +88,7 @@ module.exports = {
   }
 }
 ```
-## 导航栏<sup><el-tag type="danger" size="mini" effect="dark" style="border-radius: 10px">更新</el-tag></sup>
+## 导航栏<sup><el-tag type="danger" size="mini" effect="dark" style="border-radius: 10px">1.1.7更新</el-tag></sup>
 ```js
 module.exports = {
   theme: 'vuepress-theme-qbook', // 使用本主题,不可修改

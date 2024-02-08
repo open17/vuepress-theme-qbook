@@ -1,11 +1,13 @@
 module.exports = {
   theme: 'vuepress-theme-qbook',
-  title: '我的博客',
+  title: 'OPEN17',
   themeConfig: {
     hostname: 'https://vuepress-theme-qbook.vercel.app',
     avatar: "logo.png",
     name: "个人博客",
     desc: "qbook主题示例",
+    defaultPostImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082314316.jpg", //当博客文章未配置背景图片时文章页面的展示背景图,非必须
+    defaultCardImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082335721.jpg", //当博客文章未配置背景图片时首页文章卡片的展示背景图,非必须
     showArrow: true,
     logo: "/logo.png",
     sns:[
@@ -27,6 +29,20 @@ module.exports = {
                 link:"https://space.bilibili.com/",
                 color:"rgb(66, 183, 232)"
             }
+        ],
+    pics: [
+            {
+                img: 'https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082335721.jpg',
+                color: 'rgba(92, 101, 124, 0.2)'
+            },
+            {
+                img: 'https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082335237.jpg',
+                color: 'rgba(92, 101, 124, 0.2)'
+            },
+            {
+                img: 'https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082314316.jpg',
+                color: 'rgba(92, 101, 124, 0.1)'
+            },
         ],
     nav: [
       {
