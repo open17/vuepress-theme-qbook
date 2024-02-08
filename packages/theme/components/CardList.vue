@@ -9,9 +9,9 @@
     >
       <el-image
         :src="getImg(card.frontmatter.img)"
-        style="width: 100%; height: 40vh"
         fit="cover"
         @click="handleLink(card.path)"
+        style="width: 100%;"
       >
         <div slot="error" class="image-slot"></div>
       </el-image>
@@ -47,7 +47,7 @@ import InfoTagVue from './InfoTag.vue'
 export default {
   props: ['cards'],
   components: {
-    InfoTagVue
+    InfoTagVue,
   },
   data() {
     return {
@@ -79,6 +79,7 @@ export default {
       }
     },
     getImg(url) {
+      if(!url)return ;
       if (url.startsWith('http://') || url.startsWith('https://')) {
         return url
       }
@@ -111,8 +112,8 @@ export default {
 .box-card {
   margin-top: 2vh;
   margin-bottom: 4vh;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: 22vw;
+  margin-right: 22vw;
   border-radius: 20px;
   text-align: center;
 }
@@ -125,7 +126,7 @@ export default {
   flex-direction: column;
   margin-left: 2%;
   margin-right: 2%;
-  margin-bottom: 1%;
+  margin-bottom: 3%;
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     '微软雅黑', Arial, sans-serif;
 }
@@ -142,5 +143,12 @@ export default {
   left: 20vw;
   right: 20vw;
   width: 60vw;
+}
+.el-image >>> .el-image__inner{
+  width: 100%;
+  height: 40vh;
+}
+.el-image >>> .image-slot{
+  height: 1vh;
 }
 </style>
