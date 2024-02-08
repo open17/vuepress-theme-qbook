@@ -24,7 +24,6 @@ export default {
 <style scoped>
 .tag-img {
   position: relative;
-  top: -5vh;
   width: 100%;
   height: 45vh;
   background-image: url('../assets/flat-mountains.svg');
