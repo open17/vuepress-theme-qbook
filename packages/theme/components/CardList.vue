@@ -5,24 +5,25 @@
       v-for="(card, idx) in paginatedCards"
       :key="idx"
       :body-style="{ padding: '0px' }"
-      @click="handleLink(card.path)"
     >
       <el-image
         :src="getImg(card.frontmatter.img)"
         fit="cover"
         @click="handleLink(card.path)"
-        style="width: 100%;"
+        style="width: 100%"
       >
         <div slot="error" class="image-slot"></div>
       </el-image>
       <div class="card-info">
-        <div class="info-title">
+        <div class="info-title" @click="handleLink(card.path)">
           <el-tooltip content="置顶" placement="top">
             <i class="el-icon-s-flag" v-if="card.frontmatter.pin" style="color: red"></i>
           </el-tooltip>
           {{ card.title }}
         </div>
-        <div class="info-desc" v-if="card.frontmatter.desc">{{ card.frontmatter.desc }}</div>
+        <div class="info-desc" v-if="card.frontmatter.desc" @click="handleLink(card.path)">
+          {{ card.frontmatter.desc }}
+        </div>
         <InfoTagVue :tags="card.frontmatter.tags" />
       </div>
       <div class="book-mark"></div>
@@ -47,7 +48,7 @@ import InfoTagVue from './InfoTag.vue'
 export default {
   props: ['cards'],
   components: {
-    InfoTagVue,
+    InfoTagVue
   },
   data() {
     return {
@@ -79,7 +80,7 @@ export default {
       }
     },
     getImg(url) {
-      if(!url)return ;
+      if (!url) return
       if (url.startsWith('http://') || url.startsWith('https://')) {
         return url
       }
@@ -89,8 +90,8 @@ export default {
       this.currentPage = val
     }
   },
-  mounted(){
-    if(this.$themeConfig.pageSize)this.pageSize=this.$themeConfig.pageSize
+  mounted() {
+    if (this.$themeConfig.pageSize) this.pageSize = this.$themeConfig.pageSize
   }
 }
 </script>
@@ -144,11 +145,11 @@ export default {
   right: 20vw;
   width: 60vw;
 }
-.el-image >>> .el-image__inner{
+.el-image >>> .el-image__inner {
   width: 100%;
   height: 40vh;
 }
-.el-image >>> .image-slot{
+.el-image >>> .image-slot {
   height: 1vh;
 }
 </style>
