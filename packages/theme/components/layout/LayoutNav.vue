@@ -32,6 +32,10 @@ export default {
 </script>
 
 <style scoped>
+.layout-nav{
+  height: 100vh;
+  overflow-y: scroll;
+}
 .el-nav {
   position: relative;
   top: 10vh;
