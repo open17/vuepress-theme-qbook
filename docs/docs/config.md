@@ -42,6 +42,9 @@ module.exports = {
     showArrow:true,  //轮播图左右的箭头是否显示,非必须,默认为true
     defaultPostImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082314316.jpg", //当博客文章未配置背景图片时文章页面的展示背景图,非必须
     defaultCardImg:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202402082335721.jpg", //当博客文章未配置背景图片时首页文章卡片的展示背景图,非必须
+    homeWallpaper:"https://cdn.jsdelivr.net/gh/open17/Pic/img/202402100325389.webp", //非必须,首页展示博客列表的壁纸
+    prevText:"上一页", //分页按钮的文字提示,默认"prev"和"next",非必须
+    nextText:"下一页",
     // 轮播背景大图 ,非必须,默认为两张主题图片
     pics:[
         {
