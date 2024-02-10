@@ -12,7 +12,7 @@
         v-for="(item, index) in $themeConfig.nav || menuItems"
         :key="index"
         @click="handelLinkWithSub(item)"
-        :class="{ 'nav-dropdown': item.sub }"
+        :class="{ 'nav-dropdown': item.sub, 'nav-simple':!item.sub}"
       >
         <div :class="item.icon || 'el-icon-news'">
           {{ item.text }} <i class="el-icon-caret-bottom" v-if="item.sub"></i>
@@ -25,9 +25,9 @@
               :key="itm.toString() + '-' + idx.toString()"
               @click="handleLink(itm.link)"
             >
-              <i :class="itm.icon || item.icon || 'el-icon-date'">{{
+              <div :class="itm.icon || 'default' ">{{
                 itm.text
-              }}</i>
+              }}</div>
             </div>
           </div>
         </div>
@@ -85,6 +85,12 @@ export default {
 </script>
 
 <style scoped>
+.default{
+  font-weight: normal;
+}
+.nav-simple :hover{
+  color:deepskyblue;
+}
 .nav-dropdown-container{
   position: absolute;
   display: none;
@@ -99,8 +105,11 @@ export default {
 }
 .nav-dropdown-items > * {
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
   cursor: pointer;
+}
+.nav-dropdown-items > *:hover{
+  color:dodgerblue;
 }
 .nav-dropdown-items {
   padding: 3% 6%;
@@ -183,6 +192,10 @@ export default {
 .docs-bg {
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.show-bg .nav-dropdown-items {
+  background-color: #ffffff7e;
 }
 
 .show-bg .detail-menu,

@@ -8,6 +8,7 @@
         :type="getType(i)"
         style="margin-left: 1rem"
         @click="handleTagClick(text)"
+        :size="size"
         >{{ text }}</el-tag
       >
     </template>
@@ -17,7 +18,7 @@
 
 <script>
 export default {
-  props: ['tags'],
+  props: ['tags',"size"],
   data() {
     return {
       types: ['success', 'info', 'danger', 'warning']
