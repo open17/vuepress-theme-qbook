@@ -1,8 +1,8 @@
 <template>
-  <div class="card-list">
+  <div class="card-list" :style=" {'background-image': `url(${wallpaper})`}">
     <el-card
       class="box-card"
-      v-for="(card, idx) in paginatedCards"
+      v-for="(card, idx) in cards"
       :key="idx"
       :body-style="{ padding: '0px' }"
     >
@@ -29,48 +29,28 @@
       <div class="book-mark"></div>
     </el-card>
     <div class="pagination-box">
-      <el-pagination
-        class="pagination"
-        @current-change="handleCurrentChange"
-        :page-size="pageSize"
-        layout="prev, pager, next, jumper"
-        :total="cards.length"
-        background
-      >
-      </el-pagination>
+      <Pagination/>
     </div>
   </div>
 </template>
 
 <script>
 import InfoTagVue from './InfoTag.vue'
-
+import { Pagination } from '@vuepress/plugin-blog/lib/client/components'
+import defaultWallpaper from '../assets/wallpaper.png'
 export default {
   props: ['cards'],
   components: {
-    InfoTagVue
+    InfoTagVue,
+    Pagination
   },
   data() {
     return {
-      pageSize: 10,
-      currentPage: 1
+      wallpaper: defaultWallpaper
     }
   },
   computed: {
-    sortedCards() {
-      const pinnedCards = this.cards.filter(
-        (card) => card.frontmatter && card.frontmatter.pin === true
-      )
-      pinnedCards.sort((a, b) => b.path.localeCompare(a.path))
-      const remainingCards = this.cards.filter((card) => !pinnedCards.includes(card))
-      remainingCards.sort((a, b) => b.path.localeCompare(a.path))
-      return pinnedCards.concat(remainingCards)
-    },
-    paginatedCards() {
-      const startIndex = (this.currentPage - 1) * this.pageSize
-      const endIndex = startIndex + this.pageSize
-      return this.sortedCards.slice(startIndex, endIndex)
-    }
+    
   },
   methods: {
     handleLink(url) {
@@ -86,12 +66,11 @@ export default {
       }
       return this.$withBase('/' + url)
     },
-    handleCurrentChange(val) {
-      this.currentPage = val
-    }
   },
-  mounted() {
-    if (this.$themeConfig.pageSize) this.pageSize = this.$themeConfig.pageSize
+  mounted(){
+    if(this.$themeConfig.homeWallpaper){
+      this.wallpaper = this.$themeConfig.homeWallpaper
+    }
   }
 }
 </script>
@@ -105,7 +84,6 @@ export default {
   background-position: center;
   background-attachment: fixed;
   cursor: pointer;
-  background-image: url('../assets/wallpaper.png');
   padding-top: 10vh;
   padding-bottom: 20vh;
   margin-bottom: -5vh;

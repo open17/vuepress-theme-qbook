@@ -14,7 +14,10 @@ module.exports = (options, ctx) => {
       {
         mdUseAllPlugins: true,
         mdUseMermaid: true,
-        comment: false
+        comment: false,
+        pageSize:10,
+        prevText:"Prev",
+        nextText:"Next",
       },
       options
     )
@@ -37,7 +40,23 @@ module.exports = (options, ctx) => {
         itemPermalink: "/post/:year/:month/:day/:slug",
         itemLayout: "Post",
         pagination: {
-          layout: "Home"
+          layout: "Home",
+          prevText:options.prevText,
+          nextText:options.nextText,
+          lengthPerPage:options.pageSize,
+          sorter: (a, b) => {
+            const isPinA = a.frontmatter.pin === true;
+            const isPinB = b.frontmatter.pin === true;
+
+            if (isPinA && !isPinB) {
+              return -1; // a排在b之前
+            } else if (!isPinA && isPinB) {
+              return 1; // b排在a之前
+            } else {
+              return b.path.localeCompare(a.path); // 根据路径排序
+            }
+          }
+
         },
         sitemap: {
 

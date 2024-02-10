@@ -25,7 +25,7 @@
               :key="itm.toString() + '-' + idx.toString()"
               @click="handleLink(itm.link)"
             >
-              <i :class="itm.icon || item.icon || 'el-icon-date'" style="margin-right: 0.5rem">{{
+              <i :class="itm.icon || item.icon || 'el-icon-date'">{{
                 itm.text
               }}</i>
             </div>
@@ -78,7 +78,7 @@ export default {
     },
     isDocs() {
       let path = this.$page.path.split('/')[1]
-      return !(path == 'post' || path == 'tags' || path == '')
+      return !(path == 'post' || path == 'tags' || path == 'page'|| path=='')
     }
   }
 }
@@ -108,7 +108,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #c7c3c384;
+  background-color: #8a8a8a4d;
+  backdrop-filter: blur(5px);
   min-width: 100%;
   font-weight: 550;
   border-radius: 5px;
@@ -174,8 +175,9 @@ export default {
 }
 
 .show-bg {
-  background: rgba(238, 238, 238, 0.563);
-  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.436);
+  box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
 }
 
 .docs-bg {
@@ -186,5 +188,11 @@ export default {
 .show-bg .detail-menu,
 .show-bg .topbar-title {
   color: rgb(36, 33, 33);
+}
+
+
+.nav-dropdown-items>>>i::before{
+  position: relative;
+  left: -5%;
 }
 </style>

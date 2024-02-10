@@ -1,6 +1,6 @@
 <template>
   <div class="layout-nav">
-    <el-menu default-active="2" class="el-nav" :router="true">
+    <el-menu default-active="2" class="el-nav">
       <el-submenu v-for="(item, i) in $themeConfig.sideBar" :key="i" :index="i.toString()">
         <template slot="title">
           <i :class="item.icon" class="icon"></i>
@@ -11,7 +11,9 @@
           :key="i.toString() + '-' + idx.toString()"
           :index="lk.link"
         >
-        {{ lk.text }}
+        <router-link :to="lk.link">
+          {{ lk.text }}
+        </router-link>
         </el-menu-item>
       </el-submenu>
     </el-menu>
@@ -32,6 +34,10 @@ export default {
 </script>
 
 <style scoped>
+.layout-nav{
+  height: 100vh;
+  overflow-y: scroll;
+}
 .el-nav {
   position: relative;
   top: 10vh;
@@ -60,5 +66,10 @@ export default {
 }
 .el-nav >>> .is-active {
   color: #4e66bf;
+}
+
+.el-nav >>> a{
+  text-decoration: none;
+  color: inherit;
 }
 </style>
