@@ -13,7 +13,7 @@ export default {
   mounted() {
     // const offset = 450 // 偏移量大小
     const headings = this.$el.querySelectorAll(
-      '.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6'
+      '.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6,.markdown-body .table-of-contents ul li'
     )
     headings.forEach((heading) => {
       const anchor = heading.querySelector('a')
@@ -23,7 +23,7 @@ export default {
           const targetId = anchor.getAttribute('href') // 获取目标锚点的 ID
           const targetElement = document.querySelector(targetId) // 获取目标锚点元素
           this.$router.replace({ hash: targetId });
-          console.log(targetElement.offsetTop)
+          // console.log(targetElement.offsetTop)
           if (targetElement) {
             const parentContainer = targetElement.closest('.targetContainer')
             // console.log(parentContainer)
