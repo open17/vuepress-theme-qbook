@@ -2,7 +2,7 @@
   <CommonVue class="post-page" :scrollHeight="400">
     <PostHeaderVue />
     <PostContentVue class="post-content" />
-    <Vssue :title="$title" class="vssue-container"/>
+    <Vssue :title="$page.path" class="vssue-container"/>
   </CommonVue>
 </template>
 
