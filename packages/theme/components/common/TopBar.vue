@@ -185,6 +185,10 @@ export default {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.docs-bg .nav-dropdown-items {
+  background-color: #ffffff7e;
+}
+
 .show-bg .detail-menu,
 .show-bg .topbar-title {
   color: rgb(36, 33, 33);
