@@ -1,33 +1,41 @@
 <template>
-  <div class="top-bar" :class="{ 'show-bg': showBg, 'docs-bg': isDocs }">
-    <!-- title -->
-    <div class="topbar-title" @click="handleLink('/')">
-      <img :src="$withBase($themeConfig.logo)" alt="logo" />
-      {{ $site.title || title }}
-    </div>
-    <div class="flex-grow"></div>
-    <!-- detail menu -->
-    <div class="detail-menu">
-      <div
-        v-for="(item, index) in $themeConfig.nav || menuItems"
-        :key="index"
-        @click="handelLinkWithSub(item)"
-        :class="{ 'nav-dropdown': item.sub, 'nav-simple':!item.sub}"
-      >
-        <div :class="item.icon || 'el-icon-news'">
-          {{ item.text }} <i class="el-icon-caret-bottom" v-if="item.sub"></i>
+  <div class="all">
+    <el-dialog title="搜索" :visible.sync="dialogTableVisible">
+      <div class="search-container">
+        <SearchBox />
+      </div>
+    </el-dialog>
+    <div class="top-bar" :class="{ 'show-bg': showBg, 'docs-bg': isDocs }">
+      <!-- title -->
+      <div class="topbar-title" @click="handleLink('/')">
+        <img :src="$withBase($themeConfig.logo)" alt="logo" />
+        {{ $site.title || title }}
+      </div>
+      <div class="flex-grow"></div>
+      <!-- detail menu -->
+      <div class="detail-menu">
+        <div class="navbar-simple" @click="dialogTableVisible = true">
+          <div class="el-icon-search">搜索</div>
         </div>
-        <!-- 容器防止hover因间隔失去焦点 -->
-        <div class="nav-dropdown-container">
-          <div class="nav-dropdown-items" v-if="item.sub">
-            <div
-              v-for="(itm, idx) in item.sub"
-              :key="itm.toString() + '-' + idx.toString()"
-              @click="handleLink(itm.link)"
-            >
-              <div :class="itm.icon || 'default' ">{{
-                itm.text
-              }}</div>
+        <div
+          v-for="(item, index) in $themeConfig.nav || menuItems"
+          :key="index"
+          @click="handelLinkWithSub(item)"
+          :class="{ 'nav-dropdown': item.sub, 'nav-simple': !item.sub }"
+        >
+          <div :class="item.icon || 'el-icon-news'">
+            {{ item.text }} <i class="el-icon-caret-bottom" v-if="item.sub"></i>
+          </div>
+          <!-- 容器防止hover因间隔失去焦点 -->
+          <div class="nav-dropdown-container">
+            <div class="nav-dropdown-items" v-if="item.sub">
+              <div
+                v-for="(itm, idx) in item.sub"
+                :key="itm.toString() + '-' + idx.toString()"
+                @click="handleLink(itm.link)"
+              >
+                <div :class="itm.icon || 'default'">{{ itm.text }}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -37,6 +45,7 @@
 </template>
 
 <script>
+import SearchBox from '@SearchBox'
 export default {
   props: {
     isScrollTop: {
@@ -44,6 +53,7 @@ export default {
       required: true
     }
   },
+  components: { SearchBox },
   data() {
     return {
       title: 'qbook',
@@ -56,7 +66,8 @@ export default {
           text: 'Tags',
           link: '/tags/'
         }
-      ]
+      ],
+      dialogTableVisible: false
     }
   },
   methods: {
@@ -78,20 +89,30 @@ export default {
     },
     isDocs() {
       let path = this.$page.path.split('/')[1]
-      return !(path == 'post' || path == 'tags' || path == 'page'|| path=='')
+      return !(path == 'post' || path == 'tags' || path == 'page' || path == '')
     }
   }
 }
 </script>
 
 <style scoped>
-.default{
+.all {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
+}
+.search-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.default {
   font-weight: normal;
 }
-.nav-simple :hover{
-  color:deepskyblue;
+.nav-simple :hover {
+  color: deepskyblue;
 }
-.nav-dropdown-container{
+.nav-dropdown-container {
   position: absolute;
   display: none;
   width: 100%;
@@ -108,8 +129,8 @@ export default {
   margin-bottom: 10%;
   cursor: pointer;
 }
-.nav-dropdown-items > *:hover{
-  color:dodgerblue;
+.nav-dropdown-items > *:hover {
+  color: dodgerblue;
 }
 .nav-dropdown-items {
   padding: 3% 6%;
@@ -203,8 +224,7 @@ export default {
   color: rgb(36, 33, 33);
 }
 
-
-.nav-dropdown-items>>>i::before{
+.nav-dropdown-items >>> i::before {
   position: relative;
   left: -5%;
 }
