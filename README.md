@@ -8,7 +8,8 @@
 
 # Qbook
 ## 文档与示例
-[demo](vuepress-theme-qbook.vercel.app/)
+[文档](https://qbook.open17.vip/)
+[我的博客](https://blog.open17.vip/)
 ## 模板
 示例模板  
   
