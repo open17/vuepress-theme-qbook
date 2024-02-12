@@ -17,6 +17,7 @@ export default {
 </script>
 <style scoped>
 .avatar >>> .el-avatar {
+  background: #C0C4CC24;
   box-shadow: 0px 0px 10px #c3c3c3;
   transition: transform 0.5s;
   cursor: pointer;
