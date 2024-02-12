@@ -15,7 +15,7 @@
       <!-- detail menu -->
       <div class="detail-menu">
         <div class="navbar-simple" @click="dialogTableVisible = true">
-          <div class="el-icon-search">搜索</div>
+          <div class="el-icon-search">&nbsp;搜索</div>
         </div>
         <div
           v-for="(item, index) in $themeConfig.nav || menuItems"
