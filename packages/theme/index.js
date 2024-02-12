@@ -15,9 +15,11 @@ module.exports = (options, ctx) => {
         mdUseAllPlugins: true,
         mdUseMermaid: true,
         comment: false,
-        pageSize:10,
-        prevText:"Prev",
-        nextText:"Next",
+        pageSize: 10,
+        prevText: "Prev",
+        nextText: "Next",
+        searchMaxSuggestions: 10,
+        hostname: "https://pake.web.id",
       },
       options
     )
@@ -41,9 +43,9 @@ module.exports = (options, ctx) => {
         itemLayout: "Post",
         pagination: {
           layout: "Home",
-          prevText:options.prevText,
-          nextText:options.nextText,
-          lengthPerPage:options.pageSize,
+          prevText: options.prevText,
+          nextText: options.nextText,
+          lengthPerPage: options.pageSize,
           sorter: (a, b) => {
             const isPinA = a.frontmatter.pin === true;
             const isPinB = b.frontmatter.pin === true;
@@ -74,7 +76,20 @@ module.exports = (options, ctx) => {
       config.resolve.alias.set('core-js/library/fn', 'core-js/features');
     },
     plugins: [
+      ['sitemap', {
+        hostname: options.hostname,
+      }],
+      [
+        "feed1",
+        {
+          hostname: options.hostname,
+          count:5000
+        },
+      ],
       ['@vuepress/nprogress'],
+      ['@vuepress/search', {
+        searchMaxSuggestions: options.searchMaxSuggestions
+      }],
       [
         "@vssue/vuepress-plugin-vssue",
         options.comment
