@@ -268,3 +268,15 @@ module.exports = {
 pin: true
 ---
 ```
+
+## sitemap与rss
+配置honstname即可自动生成
+```js
+module.exports = {
+    // ... 
+    themeConfig: {
+        hostname: "https://pake.web.id", //非必须,默认网址,填入部署的网址
+      },
+}   
+
+```
