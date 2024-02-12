@@ -129,6 +129,7 @@ module.exports = {
     mdUseAllPlugins: true,
     mdUseEventBus: false,
     mdDefaultTheme: "light",
-    mdCodeTheme: ["atom-one-dark"]
+    mdCodeTheme: ["atom-one-dark"],
+    hostname:"https://qbook.open17.vip"
   }
 }

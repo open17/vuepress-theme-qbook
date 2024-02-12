@@ -18,7 +18,8 @@ module.exports = (options, ctx) => {
         pageSize: 10,
         prevText: "Prev",
         nextText: "Next",
-        searchMaxSuggestions:10
+        searchMaxSuggestions: 10,
+        hostname: "https://pake.web.id",
       },
       options
     )
@@ -75,13 +76,23 @@ module.exports = (options, ctx) => {
       config.resolve.alias.set('core-js/library/fn', 'core-js/features');
     },
     plugins: [
+      ['sitemap', {
+        hostname: options.hostname,
+      }],
+      [
+        "feed1",
+        {
+          hostname: options.hostname,
+          count:5000
+        },
+      ],
       ['@vuepress/nprogress'],
       ['@vuepress/search', {
         searchMaxSuggestions: options.searchMaxSuggestions
       }],
       [
-      "@vssue/vuepress-plugin-vssue",
-      options.comment
+        "@vssue/vuepress-plugin-vssue",
+        options.comment
       ],
       [
         "@vuepress/plugin-blog",
