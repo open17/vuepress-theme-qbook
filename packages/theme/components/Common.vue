@@ -1,5 +1,5 @@
 <template>
-  <div class="container targetContainer" ref="slotContainer">
+  <div class="container targetContainer" ref="slotContainer"  :class="{ mobile: isMobile }">
     <top-bar-vue :isScrollTop="isScrollTop" :isMobile="isMobile" />
     <slot />
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="all" :class="{ mobile: isMobile }">
+  <div class="all">
     <!-- 搜索弹窗 -->
     <el-dialog title="搜索" :visible.sync="dialogTableVisible" :fullscreen="isMobile">
       <div class="search-container">

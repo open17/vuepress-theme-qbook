@@ -77,4 +77,7 @@ export default {
   margin-top: 3vh;
   margin-bottom: 2vh;
 }
+.tag >>> .el-tag{
+  margin-top: 1vh;
+} 
 </style>
