@@ -1,6 +1,6 @@
 <template>
   <div class="container targetContainer" ref="slotContainer">
-    <top-bar-vue :isScrollTop="isScrollTop" />
+    <top-bar-vue :isScrollTop="isScrollTop" :isMobile="isMobile" />
     <slot />
   </div>
 </template>
@@ -14,24 +14,28 @@ export default {
   },
   data() {
     return {
-      isScrollTop: true
+      isScrollTop: true,
+      mobileWidthThreshold: 768, // 设定的移动设备宽度阈值
+      isMobile:false
     }
   },
   mounted() {
     this.$nextTick(() => {
       const slotContainer = this.$refs.slotContainer
       slotContainer.addEventListener('scroll', this.handleScroll)
+      this.checkIsMobile()
+      window.addEventListener('resize', this.checkIsMobile) // 监听窗口大小变化
     })
   },
   beforeDestroy() {
     const slotContainer = this.$refs.slotContainer
     slotContainer.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.checkIsMobile)
   },
   methods: {
     handleScroll(event) {
       const slotContainer = this.$refs.slotContainer
       const scrollTop = slotContainer.scrollTop
-      // console.log(scrollTop)
       let h = 100
       if (this.scrollHeight) h = this.scrollHeight
       if (scrollTop < h) {
@@ -39,6 +43,9 @@ export default {
       } else {
         this.isScrollTop = false
       }
+    },
+    checkIsMobile() {
+      this.isMobile = window.innerWidth < this.mobileWidthThreshold
     }
   }
 }
