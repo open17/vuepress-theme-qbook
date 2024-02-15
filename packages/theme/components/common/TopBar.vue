@@ -1,115 +1,59 @@
 <template>
-  <div class="all" :class="{ mobile: isMobile }">
-    <!-- 搜索弹窗 -->
-    <el-dialog title="搜索" :visible.sync="dialogTableVisible" :fullscreen="isMobile">
+  <div class="all">
+    <el-dialog title="搜索" :visible.sync="dialogTableVisible">
       <div class="search-container">
         <SearchBox />
       </div>
     </el-dialog>
-    <!-- 主导航栏 -->
     <div class="top-bar" :class="{ 'show-bg': showBg, 'docs-bg': isDocs }">
-      <!-- 标题与图片 点击返回主页 -->
+      <!-- title -->
       <div class="topbar-title" @click="handleLink('/')">
-        <img :src="$withBase($themeConfig.logo)" alt="logo" v-if="!isMobile" />
+        <img :src="$withBase($themeConfig.logo)" alt="logo" />
         {{ $site.title || title }}
       </div>
       <div class="flex-grow"></div>
-      <!-- nav主体 -->
+      <!-- detail menu -->
       <div class="detail-menu">
-        <!-- 移动端显示 展开抽屉导航按钮 -->
-        <div class="navbar-simple" @click="showDrawer = true" v-if="isMobile">
-          <div class="el-icon-menu"></div>
-        </div>
-        <!-- 固定搜索栏 -->
         <div class="navbar-simple" @click="dialogTableVisible = true">
-          <div class="el-icon-search" v-if="!isMobile">&nbsp;搜索</div>
-          <i class="el-icon-search" v-else></i>
+          <div class="el-icon-search">&nbsp;搜索</div>
         </div>
-        <!-- 用户自定nav -->
-        <template v-if="!isMobile">
-          <div
-            v-for="(item, index) in $themeConfig.nav || menuItems"
-            :key="index"
-            @click="handelLinkWithSub(item)"
-            :class="{ 'nav-dropdown': item.sub, 'nav-simple': !item.sub }"
-          >
-            <div :class="item.icon || 'el-icon-news'">
-              {{ item.text }} <i class="el-icon-caret-bottom" v-if="item.sub"></i>
-            </div>
-            <!-- 容器防止hover因间隔失去焦点 -->
-            <div class="nav-dropdown-container">
-              <!-- 子菜单栏 -->
-              <div class="nav-dropdown-items" v-if="item.sub">
-                <div
-                  v-for="(itm, idx) in item.sub"
-                  :key="itm.toString() + '-' + idx.toString()"
-                  @click="handleLink(itm.link)"
-                >
-                  <div :class="itm.icon || 'default'">{{ itm.text }}</div>
-                </div>
+        <div
+          v-for="(item, index) in $themeConfig.nav || menuItems"
+          :key="index"
+          @click="handelLinkWithSub(item)"
+          :class="{ 'nav-dropdown': item.sub, 'nav-simple': !item.sub }"
+        >
+          <div :class="item.icon || 'el-icon-news'">
+            {{ item.text }} <i class="el-icon-caret-bottom" v-if="item.sub"></i>
+          </div>
+          <!-- 容器防止hover因间隔失去焦点 -->
+          <div class="nav-dropdown-container">
+            <div class="nav-dropdown-items" v-if="item.sub">
+              <div
+                v-for="(itm, idx) in item.sub"
+                :key="itm.toString() + '-' + idx.toString()"
+                @click="handleLink(itm.link)"
+              >
+                <div :class="itm.icon || 'default'">{{ itm.text }}</div>
               </div>
             </div>
           </div>
-        </template>
+        </div>
       </div>
     </div>
-    <!-- 移动端抽屉副导航栏 -->
-    <el-drawer :visible.sync="showDrawer" :with-header="false" size="80%">
-      <div class="info-container">
-        <UserAvatarVue class="" :size="140" :src="$themeConfig.avatar" />
-        <SocialButtonsVue class="social-group"/>
-      </div>
-      <el-menu class="el-menu-vertical-demo">
-        <template v-for="(item, index) in $themeConfig.nav || menuItems">
-          <!-- 存在子栏 -->
-          <el-submenu :index="index.toString()" :key="index" v-if="item.sub">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>{{ item.text }}</span>
-            </template>
-            <el-menu-item
-              v-for="(itm, idx) in item.sub"
-              :key="index.toString() + '-' + idx.toString()"
-              @click="handleLink(itm.link)"
-              :index="index.toString() + '-' + idx.toString()"
-            >
-              <i :class="itm.icon || 'default'"></i>
-              <span slot="title">{{ itm.text }} </span>
-            </el-menu-item>
-          </el-submenu>
-          <!-- 不存在子栏 -->
-          <el-menu-item
-            :index="index.toString()"
-            :key="index"
-            @click="handleLink(item.link)"
-            v-else
-          >
-            <i :class="item.icon || 'el-icon-news'"></i>
-            <span slot="title">{{ item.text }}</span>
-          </el-menu-item>
-        </template>
-      </el-menu>
-    </el-drawer>
   </div>
 </template>
 
 <script>
 import SearchBox from '@SearchBox'
-import UserAvatarVue from '../UserAvatar.vue'
-import SocialButtonsVue from '../home/SocialButtons.vue'
-
 export default {
   props: {
     isScrollTop: {
       type: Boolean,
       required: true
-    },
-    isMobile: {
-      type: Boolean,
-      required: true
     }
   },
-  components: { SearchBox, UserAvatarVue,SocialButtonsVue },
+  components: { SearchBox },
   data() {
     return {
       title: 'qbook',
@@ -123,13 +67,11 @@ export default {
           link: '/tags/'
         }
       ],
-      dialogTableVisible: false,
-      showDrawer: false
+      dialogTableVisible: false
     }
   },
   methods: {
     handleLink(url) {
-      console.log(1)
       if (!url) return
       const currentRoute = this.$router.currentRoute
       if (currentRoute.path !== url) {
@@ -154,50 +96,16 @@ export default {
 </script>
 
 <style scoped>
-.el-menu {
-  border-right: none;
-  background: transparent;
-  width: 100%;
-}
 .all {
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     '微软雅黑', Arial, sans-serif;
 }
-.search-container {
+.search-container{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.info-container {
-  margin-top: 1rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.info-container >>> .social-buttons {
-  box-shadow: none;
-  width: 100%;
-  overflow-x: scroll;
-  border: none;
-}
-
-.mobile .search-container >>> .suggestions {
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-.mobile .search-container >>> .search-box input {
-  width: 75vw;
-  height: 2rem;
-  border: 1px solid #bfbfbf;
-}
-
 .default {
   font-weight: normal;
 }
@@ -319,8 +227,5 @@ export default {
 .nav-dropdown-items >>> i::before {
   position: relative;
   left: -5%;
-}
-
-.mobile {
 }
 </style>
