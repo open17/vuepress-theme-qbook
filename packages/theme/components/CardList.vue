@@ -23,7 +23,7 @@
         <div class="info-desc" v-if="card.frontmatter.desc">
           {{ card.frontmatter.desc }}
         </div>
-        <InfoTagVue :tags="card.frontmatter.tags" size="small" class="tags"/>
+        <InfoTagVue :tags="card.frontmatter.tags" size="mini" class="tags"/>
       </div>
     </div>
     <div class="pagination-box">
@@ -81,6 +81,9 @@ export default {
   border-radius: 0 20px 20px 0;
 }
 
+.mobile .odd-card .el-image >>> .el-image__inner,.mobile .el-image >>> .el-image__inner{
+  border-radius: 20px 20px 0px 0px;
+}
 
 .card-list {
   position: relative;
@@ -107,6 +110,11 @@ export default {
   box-shadow: 0 3px 8px 6px rgba(7,17,27,0.05);
 }
 
+.mobile .box-card {
+  flex-direction: column;
+  width: 98%;
+}
+
 .box-card >>> .el-card__body {
   width: 100%;
 }
@@ -125,6 +133,13 @@ export default {
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     '微软雅黑', Arial, sans-serif;
 }
+
+.mobile .card-info {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+
 .card-info > * {
   margin-top: 1rem;
 }
@@ -135,6 +150,16 @@ export default {
   font-size: large;
   color: rgba(7,17,27,1);
 }
+
+.mobile .info-title {
+  font-size: larger;
+}
+
+.mobile .info-desc {
+  font-size:small;
+}
+
+
 .pagination-box {
   display: flex;
   justify-content: center;
@@ -143,19 +168,33 @@ export default {
   right: 20vw;
   width: 60vw;
 }
+
+.mobile .pagination-box {
+  left: 5vw;
+  right: 5vw;
+  width: 90vw;
+}
+
+
 .el-image >>> .el-image__inner {
   border-radius: 20px 0 0px 20px;
   width: 22rem;
   height: 15rem;
 }
+
+.mobile .el-image >>> .el-image__inner {
+  width: 100%;
+}
 .el-image >>> .image-slot {
   height: 1vh;
 }
-.tags{
-  /* margin-top: 3rem; */
-}
+
 .tags  >>> .el-tag{
   margin-top: 1rem;
   font-weight: 200;
+}
+
+.mobile .tags  >>> .el-tag{
+  font-size: smaller;
 }
 </style>

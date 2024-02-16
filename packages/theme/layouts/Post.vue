@@ -36,6 +36,14 @@ export default {
   top: 30vh;
   left: 3rem;
   margin-top:  3vh;
+  z-index: 50;
+}
+.mobile .menu-button{
+  left: 85vw;
+  background-color: #67c23a78;
+}
+.mobile >>> .el-dialog{
+  width: 100vw;
 }
 *{
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC,
@@ -54,10 +62,20 @@ export default {
     Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC,
     WenQuanYi Micro Hei, SimSun, sans-serif;
 }
+.mobile .post-content{
+  width: 98%;
+  left: 1%;
+  right: 1%;
+}
 .vssue-container {
   margin-left: 20vw;
   width: 60vw;
   margin-right: 20vw;
+}
+.mobile .vssue-container{
+  width: 98vw;
+  margin-left: 2vw;
+  margin-right: 2vws;
 }
 </style>
 

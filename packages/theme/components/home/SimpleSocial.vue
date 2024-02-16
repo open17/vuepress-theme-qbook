@@ -76,8 +76,6 @@ export default {
 }
 .custom div >>> svg {
   transition: 0.3s;
-  height: 20px;
-  width: 20px;
 }
 .social-button {
   display: flex;
@@ -119,8 +117,8 @@ export default {
 }
 
 .github svg {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   fill: #f2f2f2;
 }
 
