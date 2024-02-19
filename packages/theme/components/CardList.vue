@@ -193,6 +193,13 @@ export default {
   margin-top: 1rem;
   font-weight: 200;
 }
+.tags >>> .el-tag--mini{
+  padding: 0rem 0.6rem;
+}
+
+.mobile .tags >>> .el-tag--mini{
+  padding: 0rem 0.3rem;
+}
 
 .mobile .tags  >>> .el-tag{
   font-size: smaller;
