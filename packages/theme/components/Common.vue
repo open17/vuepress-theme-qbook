@@ -1,5 +1,5 @@
 <template>
-  <div class="container targetContainer" ref="slotContainer"  :class="{ mobile: isMobile }">
+  <div class="container targetContainer" ref="slotContainer" :class="{ mobile: isMobile }">
     <top-bar-vue :isScrollTop="isScrollTop" :isMobile="isMobile" />
     <slot />
   </div>
@@ -16,7 +16,7 @@ export default {
     return {
       isScrollTop: true,
       mobileWidthThreshold: 768, // 设定的移动设备宽度阈值
-      isMobile:false
+      isMobile: false
     }
   },
   mounted() {
@@ -67,5 +67,9 @@ export default {
   overflow-y: auto;
   flex-direction: column;
   padding: 0;
+}
+* {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
 }
 </style>

@@ -10,7 +10,7 @@
     <div class="top-bar" :class="{ 'show-bg': showBg, 'docs-bg': isDocs }">
       <!-- 标题与图片 点击返回主页 -->
       <div class="topbar-title" @click="handleLink('/')">
-        <img :src="$withBase($themeConfig.logo)" alt="logo" v-if="!isMobile" />
+        <img :src="$withBase('/'+$themeConfig.logo)" alt="logo" v-if="!isMobile" />
         {{ $site.title || title }}
       </div>
       <div class="flex-grow"></div>
