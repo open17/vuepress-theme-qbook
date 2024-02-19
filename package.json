@@ -8,6 +8,7 @@
   "devDependencies": {
     "@vuepress/plugin-medium-zoom": "^1.9.10",
     "@vuepress/plugin-nprogress": "^1.9.10",
+    "@vuepress/plugin-pwa": "^1.9.10",
     "vuepress": "1.8.2"
   },
   "scripts": {
