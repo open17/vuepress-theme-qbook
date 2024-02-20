@@ -1,5 +1,5 @@
 <template>
-  <Content class="md-content markdown-body" id="article-container" />
+  <Content :class="{'md-content markdown-body':!$page.frontmatter.clean_css}" id="article-container" />
 </template>
 
 <script>
@@ -11,7 +11,6 @@ export default {
     }
   },
   mounted() {
-    // const offset = 450 // 偏移量大小
     const headings = this.$el.querySelectorAll(
       '.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6,.markdown-body .table-of-contents ul li'
     )
@@ -67,13 +66,14 @@ export default {
   color: #f47466;
 }
 
-#article-container >>> pre {
+#article-container.md-content >>> pre {
   background-color: #282c34;
   color: #ece9e9;
 }
 
 #article-container.md-content >>> h1 {
   color: #344c67;
+  border-bottom: none;
 }
 #article-container.md-content >>> h2,
 #article-container.md-content >>> h3,
