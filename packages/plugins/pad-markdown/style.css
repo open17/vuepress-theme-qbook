@@ -1,0 +1,49 @@
+/* katex-html隐藏 */
+.katex-html{
+  display: none;
+}
+
+/* 点击动画 */
+@keyframes click-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*pc端*/
+@media only screen and (min-device-width: 768px) {
+    /* 复制按钮样式 */
+    .code-copy-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none;
+      color: gray;
+      background-color: transparent;
+      padding: 1vw 1vw;
+      text-align: center;
+      text-decoration: none;
+      display: none;
+      font-size: 16px;
+    }
+    /* 点击动画 */
+    .code-copy-button:active {
+      animation: click-animation 0.3s ease-in-out;
+    }
+    .mycodeblock:hover .code-copy-button {
+        display: inline-block;
+    }
+  }
+  
+  /*移动端*/
+  @media only screen and (max-device-width: 768px) {
+    .code-copy-button{
+      display: none;
+    }
+  }
+
