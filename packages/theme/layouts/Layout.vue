@@ -85,7 +85,7 @@ export default {
   overflow-y: auto;
 }
 .layout-content {
-  padding-top: 10vh;
+  padding-top: 15vh;
   padding-right: 5%;
   padding-left: 5%;
   padding-bottom: 5vh;
@@ -96,6 +96,6 @@ export default {
   width: 100%;
   height: 100vh;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #f6f6f7;
+  /* background-color: #f6f6f7; */
 }
 </style>

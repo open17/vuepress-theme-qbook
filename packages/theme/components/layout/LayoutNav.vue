@@ -36,7 +36,7 @@ export default {
 <style scoped>
 .layout-nav{
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .el-nav {
   position: relative;
