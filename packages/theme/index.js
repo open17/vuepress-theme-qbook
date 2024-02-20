@@ -20,6 +20,7 @@ module.exports = (options, ctx) => {
         nextText: "Next",
         searchMaxSuggestions: 10,
         hostname: "https://pake.web.id",
+        revealConfig:{}
       },
       options
     )
@@ -76,6 +77,7 @@ module.exports = (options, ctx) => {
       config.resolve.alias.set('core-js/library/fn', 'core-js/features');
     },
     plugins: [
+      ["vuepress-plugin-reveal-js",options.revealConfig],
       ['sitemap', {
         hostname: options.hostname,
       }],
