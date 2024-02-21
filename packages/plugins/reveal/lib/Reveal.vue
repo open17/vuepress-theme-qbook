@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import "reveal.js/dist/reveal.css";
 import "reveal.js/plugin/highlight/monokai.css";
 export default {
   props: ["config_name", "global_config"],
@@ -57,7 +58,6 @@ export default {
 </script>
 
 <style>
-@import url("../node_modules/reveal.js/dist/reveal.css");
 .reveal {
   width: 100%;
   height: 100vh;
