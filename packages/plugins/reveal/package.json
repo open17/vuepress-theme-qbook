@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-reveal-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A plugin for adding reveal.js to VuePress.",
   "keywords": [
     "vue",
@@ -16,8 +16,8 @@
   "author": "open17 <opensci@163.com>",
   "main": "index.js",
   "dependencies": {
-    "vuepress-plugin-container": "^2.1.5",
     "fitty": "^2.4.2",
-    "reveal.js": "4.6.1"
+    "reveal.js": "4.6.1",
+    "vuepress-plugin-container": "^2.1.5"
   }
 }

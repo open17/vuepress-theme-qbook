@@ -7,36 +7,45 @@
 </template>
 
 <script>
-import Reveal from "reveal.js";
-import Markdown from "reveal.js/plugin/markdown/markdown.esm.js";
-import RevealHighlight from "reveal.js/plugin/highlight/highlight.js";
-import RevealMath from "reveal.js/plugin/math/math.js";
 import "reveal.js/dist/reveal.css";
 import "reveal.js/plugin/highlight/monokai.css";
 export default {
   props: ["config_name", "global_config"],
   mounted() {
-    let config = {
-      plugins: [Markdown, RevealHighlight, RevealMath.KaTeX],
-      width: 960,
-      height: 700,
-      margin: 0.04,
-      minScale: 0.2,
-      maxScale: 2.0,
-      embedded: true,
-      theme: "dracula",
-    };
-    Object.assign(config,this.global_config,this.$page.frontmatter[this.config_name]);
-    console.log(config,this.$page.frontmatter[this.config_name])
-    import("reveal.js/dist/theme/"+config.theme+".css").then(() => {
-      this.initReveal(config);
+    import("reveal.js").then((Reveal) => {
+      import("reveal.js/plugin/markdown/markdown.esm.js").then((Markdown) => {
+        import("reveal.js/plugin/highlight/highlight.js").then(
+          (RevealHighlight) => {
+            import("reveal.js/plugin/math/math.js").then((RevealMath) => {
+              let config = {
+                plugins: [Markdown.default, RevealHighlight.default, RevealMath.KaTeX],
+                width: 960,
+                height: 700,
+                margin: 0.04,
+                minScale: 0.2,
+                maxScale: 2.0,
+                embedded: true,
+                theme: "dracula",
+              };
+              Object.assign(
+                config,
+                this.global_config,
+                this.$page.frontmatter[this.config_name]
+              );
+              import("reveal.js/dist/theme/" + config.theme + ".css").then(
+                () => {
+                  Reveal.default(this.$refs.reveal_container).initialize(
+                    config
+                  );
+                }
+              );
+            });
+          }
+        );
+      });
     });
   },
-  methods: {
-    initReveal(config) {
-      Reveal(this.$refs.reveal_container).initialize(config);
-    }
-  }
+  methods: {},
 };
 </script>
 
