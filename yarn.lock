@@ -4816,6 +4816,11 @@ find-up@^4.0.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
+fitty@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/fitty/-/fitty-2.4.2.tgz#7e75f8325e901f866dffcdb56c310682e15cf2eb"
+  integrity sha512-GNhWgImK4+wEkgEZjBkQMyu5NLSmmryg/CaRP7zYby+TWzCrUou6BHL+iqbjKzJRXMyzuJkH+LBB1+lh4oO77g==
+
 flush-write-stream@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
@@ -8205,6 +8210,11 @@ retry@^0.12.0:
   resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==
 
+reveal.js@4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-4.6.1.tgz#5eda9769e30df922a7cd0f2a2f52bb197c07a124"
+  integrity sha512-1CW0auaXNPmwmvQ7TwpszwVxMi2Xr5cTS3J3EBC/HHgbPF32Dn7aiu/LKWDOGjMbaDwKQiGmfqcoGQ74HUHCMw==
+
 rgb-regex@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/rgb-regex/-/rgb-regex-1.0.1.tgz#c0e0d6882df0e23be254a475e8edd41915feaeb1"
@@ -9652,7 +9662,7 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
-vuepress-plugin-container@^2.0.2:
+vuepress-plugin-container@^2.0.2, vuepress-plugin-container@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-container/-/vuepress-plugin-container-2.1.5.tgz#37fff05662fedbd63ffd3a5463b2592c7a7f3133"
   integrity sha512-TQrDX/v+WHOihj3jpilVnjXu9RcTm6m8tzljNJwYhxnJUW0WWQ0hFLcDTqTBwgKIFdEiSxVOmYE+bJX/sq46MA==
@@ -9711,6 +9721,15 @@ vuepress-plugin-pad-markdown@^1.1.6:
     markdown-it-katex "2.0.3"
     markdown-it-mark "^4.0.0"
 
+vuepress-plugin-reveal-js@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-reveal-js/-/vuepress-plugin-reveal-js-0.0.1.tgz#cbb250338430a5d173aeb5d1f3f9ff58ba409800"
+  integrity sha512-KgLre97omJN0VJqZh2oVlVVEhqn1s8xNZlyO4B6eVENDU2NTvetnk3VI8oiuxoc+R/qW13yHOtM3YILKnB67qA==
+  dependencies:
+    fitty "^2.4.2"
+    reveal.js "4.6.1"
+    vuepress-plugin-container "^2.1.5"
+
 vuepress-plugin-sitemap@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-sitemap/-/vuepress-plugin-sitemap-2.3.1.tgz#51298aca77a5de96396fdbd1103e1637dd61ae6a"
@@ -9737,10 +9756,10 @@ vuepress-shared@1.31.0-beta.1:
     vue "^2.6.14"
     vuepress-typings "1.31.0-beta.1"
 
-vuepress-theme-qbook@^1.1.15:
-  version "1.1.15"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-qbook/-/vuepress-theme-qbook-1.1.15.tgz#addccb4fc30d6174657855dfaf1b0f376c09faf0"
-  integrity sha512-flEt8ZfQWIpvKPa3fCn5RWy8CcKEt7jHzWwDImjHzwBLpdsyOYZTAq0dyoB28u9kbyHmt5Ukf+hksmP1R4M/7g==
+vuepress-theme-qbook@^1.1.16:
+  version "1.1.16"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-qbook/-/vuepress-theme-qbook-1.1.16.tgz#2b05aea9bd5a0da26e9f926a18920d5a525629f4"
+  integrity sha512-xO3thatP07Khmzb4E39ZC4J5Cr23ZCrI7aYz01JRMubgR4FLAXy5Ta8KaMqnXezNatqqn1v3UqZFeVsEDmFnnQ==
   dependencies:
     "@renovamen/vuepress-plugin-mermaid" "^0.3.0"
     "@vuepress/plugin-blog" "^1.9.4"
@@ -9748,6 +9767,7 @@ vuepress-theme-qbook@^1.1.15:
     element-ui "^2.15.14"
     vuepress-plugin-feed1 "^1.31.0-beta.1"
     vuepress-plugin-pad-markdown "^1.1.6"
+    vuepress-plugin-reveal-js "^0.0.1"
     vuepress-plugin-sitemap "^2.3.1"
 
 vuepress-typings@1.31.0-beta.1:

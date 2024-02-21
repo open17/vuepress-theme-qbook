@@ -8,3 +8,4 @@
 目前仅展示本主题依赖,且由我实现的插件,同时目录也会随着主题功能的增加不断更新
 :::
 - [vuepress-pad-markdown](./pad-markdown) : 用于主题的markodwn增强
+- [vuepress-plugin-reveal-js](./reveal-js): 幻灯片支持

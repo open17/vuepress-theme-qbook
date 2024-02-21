@@ -87,6 +87,11 @@ module.exports = {
         link: '/tags/',
       },
       {
+        text:"展示",
+        link:"/post/2024/02/20/reveal-js",
+        icon:"el-icon-data-board"
+      },
+      {
         text: '指南',
         link: '/docs/',
         icon: 'el-icon-bicycle',
@@ -166,6 +171,10 @@ module.exports = {
             text: "pad-markdown",
             link: "/plugins/pad-markdown",
           },
+          {
+            text:"reavel-js",
+            link:"/plugins/reveal-js"
+          }
         ]
       }
     ],
