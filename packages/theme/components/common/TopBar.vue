@@ -129,7 +129,6 @@ export default {
   },
   methods: {
     handleLink(url) {
-      console.log(1)
       if (!url) return
       const currentRoute = this.$router.currentRoute
       if (currentRoute.path !== url) {
