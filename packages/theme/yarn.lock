@@ -2787,10 +2787,10 @@ vuepress-plugin-pad-markdown@^1.1.6:
     markdown-it-katex "2.0.3"
     markdown-it-mark "^4.0.0"
 
-vuepress-plugin-reveal-js@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-reveal-js/-/vuepress-plugin-reveal-js-0.0.3.tgz#78385468fc14d50b9f963ef14d13d295eb3e7b00"
-  integrity sha512-FkDj5uJjyotyfsiWW9kqAhvzhU8UruE8yJJ+t1yY1I31RVEh+ZwDRuBcKdG3VPp6epFE2DFY1wAB6NF7//JY+A==
+vuepress-plugin-reveal-js@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-reveal-js/-/vuepress-plugin-reveal-js-0.0.4.tgz#3350d75ace7f342354bc6d3f4de38cacaad5fa76"
+  integrity sha512-RD/2E0uVyG+OGG+mMnL25D6qZEBccvkhJm/01sEGh3HDdDQK4cukOvgQFubY3qQ5KyeEB066sm1A3eFgcN72Ew==
   dependencies:
     fitty "^2.4.2"
     reveal.js "4.6.1"
