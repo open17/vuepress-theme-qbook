@@ -305,6 +305,7 @@ export default {
 .docs-bg {
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .show-bg .nav-dropdown-items {

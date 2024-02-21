@@ -1,0 +1,23 @@
+{
+  "name": "vuepress-plugin-reveal-js",
+  "version": "0.0.1",
+  "description": "A plugin for adding reveal.js to VuePress.",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "vuepress-plugin",
+    "reveal.js"
+  ],
+  "homepage": "https://github.com/open17/vuepress-theme-qbook/packages/plugins/mermaid",
+  "bugs": {
+    "url": "https://github.com/open17/vuepress-theme-qbook/issues"
+  },
+  "license": "MIT",
+  "author": "open17 <opensci@163.com>",
+  "main": "index.js",
+  "dependencies": {
+    "vuepress-plugin-container": "^2.1.5",
+    "fitty": "^2.4.2",
+    "reveal.js": "4.6.1"
+  }
+}

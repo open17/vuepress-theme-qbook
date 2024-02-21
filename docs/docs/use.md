@@ -121,6 +121,9 @@ journey
       Sit down: 5: Me
 ```
 
+### 幻灯片
+见[插件文档](/plugin/vuepress-theme-plugin-reveal-js)
+
 [^1]: 摘自王安忆的<<长恨歌>>
 [^2]: 源自[oi wiki](https://oi-wiki.org/math/)
 [^3]: 摘自王小波的<<爱你就像爱生命>>
