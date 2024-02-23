@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="root-container">
     <div
       class="container targetContainer"
       ref="slotContainer"
@@ -70,17 +70,14 @@ export default {
 </script>
 
 <style>
-.container {
+#root-container,.container{
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
+  display: block;
   background-color: transparent;
-  /* display: block; */
-  /* display: flex;
-  justify-content: center;
-  align-items: flex-start; */
   overflow-x: hidden;
   overflow-y: auto;
   flex-direction: column;
