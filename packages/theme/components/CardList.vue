@@ -1,20 +1,19 @@
 <template>
   <div class="card-list" :style="{ 'background-image': `url(${wallpaper})` }">
-    <div
-      class="box-card"
-      v-for="(card, idx) in cards"
-      :key="idx"
-      :class="{'odd-card':idx&1}"
-    >
+    <div class="box-card" v-for="(card, idx) in cards" :key="idx" :class="{ 'odd-card': idx & 1 }">
       <el-image
         :src="getImg(card.frontmatter.img) || $themeConfig.defaultCardImg"
         fit="cover"
         @click="handleLink(card.path)"
+        :lazy="$themeConfig.lazyLoad==true"
       >
+        <div slot="placeholder" class="image-slot">
+          <el-skeleton-item variant="image" style="height: 100%; width: 100%"  animated/>
+        </div>
         <div slot="error" class="image-slot"></div>
       </el-image>
       <div class="card-info" @click="handleLink(card.path)">
-        <div class="info-title" >
+        <div class="info-title">
           <el-tooltip content="置顶" placement="top">
             <i class="el-icon-s-flag" v-if="card.frontmatter.pin" style="color: red"></i>
           </el-tooltip>
@@ -23,7 +22,7 @@
         <div class="info-desc" v-if="card.frontmatter.desc">
           {{ card.frontmatter.desc }}
         </div>
-        <InfoTagVue :tags="card.frontmatter.tags" size="mini" class="tags"/>
+        <InfoTagVue :tags="card.frontmatter.tags" size="mini" class="tags" />
       </div>
     </div>
     <div class="pagination-box">
@@ -35,7 +34,7 @@
 <script>
 import InfoTagVue from './InfoTag.vue'
 import { Pagination } from '@vuepress/plugin-blog/lib/client/components'
-import defaultWallpaper from '../assets/wallpaper.png'
+import defaultWallpaper from '../assets/wallerpaper.png'
 export default {
   props: ['cards'],
   components: {
@@ -72,16 +71,17 @@ export default {
 </script>
 
 <style scoped>
-.odd-card{
+.odd-card {
   flex-direction: row-reverse;
   justify-content: end;
 }
 
-.odd-card .el-image >>> .el-image__inner{
+.odd-card .el-image >>> .el-image__inner {
   border-radius: 0 20px 20px 0;
 }
 
-.mobile .odd-card .el-image >>> .el-image__inner,.mobile .el-image >>> .el-image__inner{
+.mobile .odd-card .el-image >>> .el-image__inner,
+.mobile .el-image >>> .el-image__inner {
   border-radius: 20px 20px 0px 0px;
 }
 
@@ -104,10 +104,10 @@ export default {
   margin-bottom: 4vh;
   border-radius: 20px;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   background-color: #ffffffb9;
   backdrop-filter: blur(10px) saturate(180%);
-  box-shadow: 0 3px 8px 6px rgba(7,17,27,0.05);
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
 }
 
 .mobile .box-card {
@@ -139,16 +139,15 @@ export default {
   padding-bottom: 1rem;
 }
 
-
 .card-info > * {
   margin-top: 1rem;
 }
 .info-title {
   font-size: x-large;
 }
-.info-desc{
+.info-desc {
   font-size: large;
-  color: rgba(7,17,27,1);
+  color: rgba(7, 17, 27, 1);
 }
 
 .mobile .info-title {
@@ -156,9 +155,8 @@ export default {
 }
 
 .mobile .info-desc {
-  font-size:small;
+  font-size: small;
 }
-
 
 .pagination-box {
   display: flex;
@@ -175,7 +173,6 @@ export default {
   width: 90vw;
 }
 
-
 .el-image >>> .el-image__inner {
   border-radius: 20px 0 0px 20px;
   width: 22rem;
@@ -186,22 +183,23 @@ export default {
   width: 100%;
 }
 .el-image >>> .image-slot {
-  height: 1vh;
+  width: 22rem;
+  height: 15rem;
 }
 
-.tags  >>> .el-tag{
+.tags >>> .el-tag {
   margin-top: 1rem;
   font-weight: 200;
 }
-.tags >>> .el-tag--mini{
+.tags >>> .el-tag--mini {
   padding: 0rem 0.6rem;
 }
 
-.mobile .tags >>> .el-tag--mini{
+.mobile .tags >>> .el-tag--mini {
   padding: 0rem 0.3rem;
 }
 
-.mobile .tags  >>> .el-tag{
+.mobile .tags >>> .el-tag {
   font-size: smaller;
 }
 </style>

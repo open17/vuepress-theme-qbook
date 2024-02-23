@@ -314,3 +314,14 @@ module.exports = {
 ## 纯净css
 在文章中会使用github-markdown-css来渲染markdown,而github-markdown-css默认会加载一些css,如果你想要一个更纯净的展示,
 你可以使用`clean_css: true`来关闭默认的css加载
+
+## 懒加载
+是否开启部分资源的lazy-load
+```js
+module.exports = {
+    // ... 
+    themeConfig: {
+        lazyLoad: false //非必须,默认为false
+      },
+}   
+```

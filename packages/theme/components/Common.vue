@@ -1,26 +1,44 @@
 <template>
-  <div class="container targetContainer" ref="slotContainer" :class="{ mobile: isMobile }">
-    <top-bar-vue :isScrollTop="isScrollTop" :isMobile="isMobile" />
-    <slot />
+  <div id="root-container">
+    <div
+      class="container targetContainer"
+      ref="slotContainer"
+      :class="{ mobile: isMobile }"
+      v-show="isLoaded"
+    >
+      <top-bar-vue :isScrollTop="isScrollTop" :isMobile="isMobile" />
+      <slot />
+    </div>
+    <load-comm-vue v-if="!isLoaded" />
   </div>
 </template>
 
 <script>
+import LoadCommVue from './common/LoadComm.vue'
 import TopBarVue from './common/TopBar.vue'
 export default {
   props: ['scrollHeight'],
   components: {
-    TopBarVue
+    TopBarVue,
+    LoadCommVue
   },
   data() {
     return {
       isScrollTop: true,
       mobileWidthThreshold: 768, // 设定的移动设备宽度阈值
-      isMobile: false
+      isMobile: false,
+      isLoaded: false
     }
   },
   mounted() {
     this.$nextTick(() => {
+      if (document.readyState === 'complete') {
+        this.isLoaded = true
+      } else {
+        window.onload = (event) => {
+          this.isLoaded = true
+        }
+      }
       const slotContainer = this.$refs.slotContainer
       slotContainer.addEventListener('scroll', this.handleScroll)
       this.checkIsMobile()
@@ -52,17 +70,14 @@ export default {
 </script>
 
 <style>
-.container {
+#root-container,.container{
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
+  display: block;
   background-color: transparent;
-  /* display: block; */
-  /* display: flex;
-  justify-content: center;
-  align-items: flex-start; */
   overflow-x: hidden;
   overflow-y: auto;
   flex-direction: column;
