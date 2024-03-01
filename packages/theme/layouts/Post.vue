@@ -79,7 +79,7 @@ export default {
 }
 .post-content {
   position: absolute;
-  top: 70vh;
+  top: 80vh;
   margin-bottom: 15rem;
   padding-top: 3%;
   width: auto;
