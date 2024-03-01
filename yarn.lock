@@ -9756,10 +9756,10 @@ vuepress-shared@1.31.0-beta.1:
     vue "^2.6.14"
     vuepress-typings "1.31.0-beta.1"
 
-vuepress-theme-qbook@^1.1.22:
-  version "1.1.22"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-qbook/-/vuepress-theme-qbook-1.1.22.tgz#6472d3a939b572a679e36ffb9fc20b4f6b99ad61"
-  integrity sha512-h1W7GC2qFQQBcqSdiHSpqYU/kemqSdJniYR/p63DaVmJ2pbkSq7/GTzkpeDiHIIopUKw8ZzHdbDwhs8bEwi7Lw==
+vuepress-theme-qbook@^1.1.23:
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-qbook/-/vuepress-theme-qbook-1.1.23.tgz#389280206b7d848d739ad9f2a4452956d58a7fb4"
+  integrity sha512-0tWf5siyJQtUMqUsLZt01zpL8611fzye18cx5/etYGm1zdBI0W1HVdMz7y86nCzgqayJBAi4ReXEyW2KCBX3cA==
   dependencies:
     "@renovamen/vuepress-plugin-mermaid" "^0.3.0"
     "@vuepress/plugin-blog" "^1.9.4"
