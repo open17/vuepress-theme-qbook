@@ -1,7 +1,12 @@
 <template>
-  <Content :class="{'md-content markdown-body':!$page.frontmatter.clean_css}" id="article-container" />
+  <div :class="{ con: !$page.frontmatter.clean_css }">
+    <Content
+      :class="{ 'md-content markdown-body': !$page.frontmatter.clean_css }"
+      id="article-container"
+    />
+    <slot />
+  </div>
 </template>
-
 <script>
 export default {
   props: {
@@ -21,15 +26,15 @@ export default {
           event.preventDefault() // 阻止默认的链接跳转行为
           const targetId = anchor.getAttribute('href') // 获取目标锚点的 ID
           const targetElement = document.querySelector(targetId) // 获取目标锚点元素
-          this.$router.replace({ hash: targetId });
+          this.$router.replace({ hash: targetId })
           // console.log(targetElement.offsetTop)
           if (targetElement) {
             const parentContainer = targetElement.closest('.targetContainer')
             // console.log(parentContainer)
             if (parentContainer) {
-                parentContainer.scrollTo({
-                  top: targetElement.offsetTop + this.scrollOffset,
-                  behavior: 'smooth' // 使用平滑滚动效果
+              parentContainer.scrollTo({
+                top: targetElement.offsetTop + this.scrollOffset,
+                behavior: 'smooth' // 使用平滑滚动效果
               })
             }
           }
@@ -41,29 +46,33 @@ export default {
 </script>
 
 <style scoped>
+.con {
+  width: 100%;
+  background-color: #fff;
+}
 .md-content {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC,
     Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC,
     Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC,
     WenQuanYi Micro Hei, SimSun, sans-serif;
-  padding-bottom: 8vh;
+  padding-bottom: 15rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  width: auto;
 }
-/* markdown样式更改 取消#符号 */
+
 .markdown-body >>> .header-anchor::before {
   font-family: element-icons !important;
   font-style: normal;
-  color: #f47466;
-  content: '\e7ba';
+  color: #33a5e2;
+  content: '#';
   line-height: 1;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  visibility: hidden;
+  margin-left: -1.5rem;
 }
 
-.markdown-body >>> .header-anchor:hover {
-  color: #f47466;
+.markdown-body >>> .header-anchor {
+  text-decoration: none;
 }
 
 #article-container.md-content >>> pre {
@@ -71,10 +80,7 @@ export default {
   color: #ece9e9;
 }
 
-#article-container.md-content >>> h1 {
-  color: #344c67;
-  border-bottom: none;
-}
+#article-container.md-content >>> h1,
 #article-container.md-content >>> h2,
 #article-container.md-content >>> h3,
 #article-container.md-content >>> h4,
@@ -82,7 +88,17 @@ export default {
 #article-container.md-content >>> h6 {
   color: #344c67;
   border-bottom: none;
+  cursor: pointer;
 }
+
+#article-container.md-content >>> h2:hover .header-anchor::before,
+#article-container.md-content >>> h3:hover .header-anchor::before,
+#article-container.md-content >>> h4:hover .header-anchor::before,
+#article-container.md-content >>> h5:hover .header-anchor::before,
+#article-container.md-content >>> h6:hover .header-anchor::before {
+  visibility: visible;
+}
+
 #article-container.md-content::before {
   content: '';
 }
@@ -97,7 +113,8 @@ export default {
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     '微软雅黑', Arial, sans-serif;
 }
-.md-content >>> .custom-tip-block > p,.md-content >>> .custom-tip-block > .mycodeblock {
+.md-content >>> .custom-tip-block > p,
+.md-content >>> .custom-tip-block > .mycodeblock {
   margin-top: 0.2rem;
   font-weight: 400;
 }

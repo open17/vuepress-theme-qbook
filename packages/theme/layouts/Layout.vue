@@ -1,6 +1,6 @@
 <template>
   <CommonVue>
-    <el-row class="layout-container" :gutter="20">
+    <el-row class="layout-container" :gutter="5">
       <el-col :span="6">
         <LayoutNavVue lass="layout-nav" />
       </el-col>
@@ -83,14 +83,10 @@ export default {
   width: 100%;
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .layout-content {
   padding-top: 15vh;
-  padding-right: 5%;
-  padding-left: 5%;
-  padding-bottom: 5vh;
-  padding-bottom: 2vh;
-  overflow-y: hidden;
 }
 .layout-nav {
   width: 100%;
