@@ -154,8 +154,9 @@ module.exports = {
   title: 'Blog of open17', //标题
     //   ....其他配置
   themeConfig: {
+    autoSider:false //自动生成侧边栏(依据文件路径) ,非必须,默认关闭
     // 侧边栏配置,非必须,示例如下
-    sideBar: [
+    sidebar: [
       {
         title: "主题",
         icon: "el-icon-collection",
