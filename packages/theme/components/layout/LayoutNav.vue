@@ -1,75 +1,113 @@
 <template>
-  <div class="layout-nav">
-    <el-menu default-active="2" class="el-nav">
-      <el-submenu v-for="(item, i) in $themeConfig.sideBar" :key="i" :index="i.toString()">
-        <template slot="title">
-          <i :class="item.icon" class="icon"></i>
-          <span>{{ item.title }}</span>
-        </template>
-        <el-menu-item
-          v-for="(lk, idx) in item.links"
-          :key="i.toString() + '-' + idx.toString()"
-          :index="lk.link"
-        >
-        <router-link :to="lk.link">
-          {{ lk.text }}
-        </router-link>
-        </el-menu-item>
-      </el-submenu>
-    </el-menu>
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <recursive-menu v-for="(item, index) in $themeConfig.sidebar" :item="item" :key="index" />
+      </ul>
+    </nav>
   </div>
 </template>
 
+
 <script>
 export default {
-  methods: {
-    handleOpen(key, keyPath) {
-      // console.log(key, keyPath)
-    },
-    handleClose(key, keyPath) {
-      // console.log(key, keyPath)
+  name: 'Sidebar',
+  components: {
+    RecursiveMenu: {
+      name: 'RecursiveMenu',
+      props: {
+        item: Object
+      },
+      render(h) {
+        const menuItemStyle = {
+          fontSize: '1rem',
+          fontWeight: 400
+        }
+        return h('li', { class: 'sidebar-item' }, [
+          h(
+            'span',
+            {
+              class: 'sidebar-title',
+              style: menuItemStyle
+            },
+            decodeURIComponent(this.item.text)
+          ),
+          this.item.links
+            ? h(
+                'ul',
+                this.item.links.map((link, idx) => {
+                  if (link.links) {
+                    return h(this.$options.components.RecursiveMenu, {
+                      props: { item: link },
+                      key: idx
+                    })
+                  } else {
+                    return h('li', { key: idx, class: 'submenu-item' }, [
+                      h(
+                        'router-link',
+                        {
+                          attrs: { to: link.link },
+                          class: 'submenu-link',
+                          style: menuItemStyle
+                        },
+                        link.text
+                      )
+                    ])
+                  }
+                })
+              )
+            : null
+        ])
+      }
     }
   }
 }
 </script>
 
+
+
+
+
 <style scoped>
-.layout-nav{
-  height: 100vh;
+.sidebar >>> ul,
+.sidebar >>> li {
+  list-style-type: none;
+}
+
+.sidebar {
+  padding-top: 10vh;
+  height: calc(90vh);
+  width: auto;
+  overflow-x: hidden;
   overflow-y: auto;
+  border-right: 1px solid #e6e6e6;
 }
-.el-nav {
-  position: relative;
-  top: 10vh;
-  font-size: large;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar >>> .sidebar-title {
   font-weight: bold;
-  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    '微软雅黑', Arial, sans-serif;
-}
-.el-menu {
-  border-right: none;
-  background: transparent;
-}
-.el-nav >>> .icon{
-    color: #344c67;
-    font-size:1.3rem;
-    margin-right: 2px;
-}
-.el-nav >>> .el-submenu__title{
-    font-size: 1rem;
+  color: #343434;
+  display: block;
+  padding: 0.5rem 0rem;
+  transition: color 0.3s ease;
 }
 
-.el-nav >>> .el-menu,
-.el-nav >>> .el-submenu__title,
-.el-nav >>> .el-menu-item {
-  background-color: transparent;
-}
-.el-nav >>> .is-active {
-  color: #4e66bf;
-}
-
-.el-nav >>> a{
+.sidebar >>> .submenu-link {
+  color: #343434;
   text-decoration: none;
-  color: inherit;
+  display: block;
+  padding: 0.2rem 0rem;
+  transition: color 0.3s ease;
 }
+
+.sidebar >>> .submenu-link:hover {
+  color: #409eff;
+}
+
+/* Adjust styles for different levels */
 </style>
+
+

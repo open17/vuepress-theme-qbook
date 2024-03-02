@@ -1,7 +1,8 @@
 <template>
   <CommonVue>
     <div class="container">
-      <el-empty description="404" :image-size="200"/>
+      <el-empty description="404" :image-size="200" />
+      1
     </div>
   </CommonVue>
 </template>
@@ -11,6 +12,9 @@ import CommonVue from '../components/Common.vue'
 export default {
   components: {
     CommonVue
+  },
+  mounted() {
+    this.$router.push(this.$route.params.pathMatch)
   }
 }
 </script>

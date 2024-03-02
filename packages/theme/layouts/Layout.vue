@@ -1,10 +1,10 @@
 <template>
   <CommonVue>
     <el-row class="layout-container" :gutter="5">
-      <el-col :span="6">
+      <el-col :span="5">
         <LayoutNavVue lass="layout-nav" />
       </el-col>
-      <el-col :span="18">
+      <el-col :span="19">
         <div class="content-container targetContainer">
           <PostContentVue class="layout-content" :scrollOffset="-80" />
         </div>
@@ -75,12 +75,20 @@ export default {
   display: block;
 }
 
+.mobile .content-container{
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .layout-container {
   width: 100vw;
   height: 100vh;
 }
 .content-container {
-  width: 100%;
+  width: auto;
+  padding-left: 13%;
+  padding-right: 13%;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
