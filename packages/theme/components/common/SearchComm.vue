@@ -4,6 +4,7 @@
     :fullscreen="$root.$isMobile"
     class="search-dialog"
     :before-close="handleClose"
+    :show-close="$root.$isMobile"
   >
   <div class="search-input" slot="title">
     <input

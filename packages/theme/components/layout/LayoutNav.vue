@@ -16,19 +16,35 @@ export default {
     RecursiveMenu: {
       name: 'RecursiveMenu',
       props: {
-        item: Object
+        item: Object,
+        level: Number
       },
-      render(h) {
-        const menuItemStyle = {
-          fontSize: '1rem',
-          fontWeight: 400
+      methods: {
+        getFontStyle(level) {
+          const fontSize = `${1.2 - 0.1 * level}rem`
+          const fontWeight = 500
+          if (level === 0) {
+            let color = '#532fb6'
+            return {
+              fontSize: fontSize,
+              fontWeight: fontWeight,
+              color: color
+            }
+          }
+          return {
+            fontSize: fontSize,
+            fontWeight: fontWeight
+          }
         }
+      },
+
+      render(h) {
         return h('li', { class: 'sidebar-item' }, [
           h(
             'span',
             {
               class: 'sidebar-title',
-              style: menuItemStyle
+              style: this.getFontStyle(this.level || 0)
             },
             decodeURIComponent(this.item.text)
           ),
@@ -38,7 +54,7 @@ export default {
                 this.item.links.map((link, idx) => {
                   if (link.links) {
                     return h(this.$options.components.RecursiveMenu, {
-                      props: { item: link },
+                      props: { item: link, level: (this.level || 0) + 1 },
                       key: idx
                     })
                   } else {
@@ -48,7 +64,7 @@ export default {
                         {
                           attrs: { to: link.link },
                           class: 'submenu-link',
-                          style: menuItemStyle
+                          style: this.getFontStyle((this.level || 0) + 1)
                         },
                         link.text
                       )
@@ -69,9 +85,14 @@ export default {
 
 
 <style scoped>
+* {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    Arial, sans-serif;
+}
 .sidebar >>> ul,
 .sidebar >>> li {
   list-style-type: none;
+  padding-left: 0.5rem;
 }
 
 .sidebar {
@@ -87,24 +108,17 @@ export default {
   display: none;
 }
 
-.sidebar >>> .sidebar-title {
-  font-weight: bold;
-  color: #343434;
-  display: block;
-  padding: 0.5rem 0rem;
-  transition: color 0.3s ease;
-}
-
+.sidebar >>> .sidebar-title,
 .sidebar >>> .submenu-link {
   color: #343434;
   text-decoration: none;
   display: block;
   padding: 0.2rem 0rem;
-  transition: color 0.3s ease;
+  margin-left: 0.5rem;
 }
 
 .sidebar >>> .submenu-link:hover {
-  color: #409eff;
+  color: #532fb6;
 }
 
 /* Adjust styles for different levels */
