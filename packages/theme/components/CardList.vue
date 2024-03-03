@@ -2,13 +2,13 @@
   <div class="card-list" :style="{ 'background-image': `url(${wallpaper})` }">
     <div class="box-card" v-for="(card, idx) in cards" :key="idx" :class="{ 'odd-card': idx & 1 }">
       <el-image
-        :src="getImg(card.frontmatter.img) || $themeConfig.defaultCardImg"
+        :src="getImg(card.frontmatter.img) || getImgFromDefault()"
         fit="cover"
         @click="handleLink(card.path)"
-        :lazy="$themeConfig.lazyLoad==true"
+        :lazy="$themeConfig.lazyLoad == true"
       >
         <div slot="placeholder" class="image-slot">
-          <el-skeleton-item variant="image" style="height: 100%; width: 100%"  animated/>
+          <el-skeleton-item variant="image" style="height: 100%; width: 100%" animated />
         </div>
         <div slot="error" class="image-slot"></div>
       </el-image>
@@ -60,6 +60,16 @@ export default {
         return url
       }
       return this.$withBase('/' + url)
+    },
+    getImgFromDefault() {
+      const defaultCardImg = this.$themeConfig.defaultCardImg
+
+      if (Array.isArray(defaultCardImg) && defaultCardImg.length > 0) {
+        const randomIndex = Math.floor(Math.random() * defaultCardImg.length)
+        return defaultCardImg[randomIndex]
+      } else {
+        return defaultCardImg
+      }
     }
   },
   mounted() {
@@ -128,8 +138,6 @@ export default {
   box-sizing: border-box;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  /* padding-bottom: 2rem; */
-  /* padding-top: 2rem; */
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     '微软雅黑', Arial, sans-serif;
 }
