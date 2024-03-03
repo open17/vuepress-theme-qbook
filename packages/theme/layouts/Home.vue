@@ -2,6 +2,7 @@
   <CommonVue :scrollHeight="600">
     <PicCarousel />
     <CardListVue :cards="$pagination.pages" />
+    <div class="foot" v-html="$themeConfig.footer"></div>
   </CommonVue>
 </template>
 
