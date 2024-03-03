@@ -158,7 +158,7 @@ module.exports = {
     // 侧边栏配置,非必须,示例如下
     sidebar: [
       {
-        title: "主题",
+        text: "主题",
         icon: "el-icon-collection",
         links: [
           {
@@ -168,7 +168,7 @@ module.exports = {
         ]
       },
       {
-        title: "插件",
+        text: "插件",
         icon: "el-icon-postcard",
         links: [
           {

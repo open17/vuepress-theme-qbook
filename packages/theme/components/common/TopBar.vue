@@ -1,16 +1,12 @@
 <template>
   <div class="all">
     <!-- 搜索弹窗 -->
-    <el-dialog title="搜索" :visible.sync="dialogTableVisible" :fullscreen="isMobile">
-      <div class="search-container">
-        <SearchBox />
-      </div>
-    </el-dialog>
+    <SearchCommVue/>
     <!-- 主导航栏 -->
     <div class="top-bar" :class="{ 'show-bg': showBg, 'docs-bg': isDocs }">
       <!-- 标题与图片 点击返回主页 -->
       <div class="topbar-title" @click="handleLink('/')">
-        <img :src="$withBase('/'+$themeConfig.logo)" alt="logo" v-if="!isMobile" />
+        <img :src="$withBase('/' + $themeConfig.logo)" alt="logo" v-if="!isMobile" />
         {{ $site.title || title }}
       </div>
       <div class="flex-grow"></div>
@@ -21,7 +17,7 @@
           <div class="el-icon-menu"></div>
         </div>
         <!-- 固定搜索栏 -->
-        <div class="navbar-simple" @click="dialogTableVisible = true">
+        <div class="navbar-simple" @click="openSearch()">
           <div class="el-icon-search" v-if="!isMobile">&nbsp;搜索</div>
           <i class="el-icon-search" v-else></i>
         </div>
@@ -57,7 +53,7 @@
     <el-drawer :visible.sync="showDrawer" :with-header="false" size="80%">
       <div class="info-container">
         <UserAvatarVue class="" :size="140" :src="$themeConfig.avatar" />
-        <SocialButtonsVue class="social-group"/>
+        <SocialButtonsVue class="social-group" />
       </div>
       <el-menu class="el-menu-vertical-demo">
         <template v-for="(item, index) in $themeConfig.nav || menuItems">
@@ -97,6 +93,7 @@
 import SearchBox from '@SearchBox'
 import UserAvatarVue from '../UserAvatar.vue'
 import SocialButtonsVue from '../home/SocialButtons.vue'
+import SearchCommVue from './SearchComm.vue'
 
 export default {
   props: {
@@ -109,7 +106,7 @@ export default {
       required: true
     }
   },
-  components: { SearchBox, UserAvatarVue,SocialButtonsVue },
+  components: { SearchBox, UserAvatarVue, SocialButtonsVue, SearchCommVue },
   data() {
     return {
       title: 'qbook',
@@ -123,7 +120,6 @@ export default {
           link: '/tags/'
         }
       ],
-      dialogTableVisible: false,
       showDrawer: false
     }
   },
@@ -138,6 +134,9 @@ export default {
     handelLinkWithSub(item) {
       if (item.sub) return
       this.handleLink(item.link)
+    },
+    openSearch() {
+       this.$bus.$emit('openSeach');
     }
   },
   computed: {
@@ -153,6 +152,7 @@ export default {
 </script>
 
 <style scoped>
+
 .el-menu {
   border-right: none;
   background: transparent;

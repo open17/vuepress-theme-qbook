@@ -64,6 +64,7 @@ export default {
     },
     checkIsMobile() {
       this.isMobile = window.innerWidth < this.mobileWidthThreshold
+      this.$root.$isMobile=this.isMobile
     }
   }
 }

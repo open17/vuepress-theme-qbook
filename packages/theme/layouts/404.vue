@@ -2,7 +2,6 @@
   <CommonVue>
     <div class="container">
       <el-empty description="404" :image-size="200" />
-      1
     </div>
   </CommonVue>
 </template>
