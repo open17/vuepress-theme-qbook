@@ -36,7 +36,7 @@ function generateAutoSidebar(pages, themeConfig) {
             });
         })
         // 注入自动生成的侧边栏菜单
-        if(themeConfig.sidebar){
+        if (themeConfig.sidebar) {
             themeConfig.sidebar = themeConfig.sidebar.concat(sidebar)
         }
         else themeConfig.sidebar = sidebar
@@ -48,6 +48,12 @@ function generateAutoSidebar(pages, themeConfig) {
 export default ({ Vue, siteData, isServer, router }) => {
     Vue.use(ElementUI);
     generateAutoSidebar(siteData.pages, siteData.themeConfig)
+
+
+    const eventBus = new Vue();
+    Vue.prototype.$bus = eventBus;
+    Vue.prototype.$isMobile = false;
+    Vue.prototype.$lanType='zh';
     if (!isServer) {
     }
 };
