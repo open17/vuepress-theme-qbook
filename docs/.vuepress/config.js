@@ -87,14 +87,13 @@ module.exports = {
         link: '/tags/',
       },
       {
-        text:"展示",
-        link:"/post/2024/02/20/reveal-js",
-        icon:"el-icon-data-board"
+        text: "展示",
+        link: "/post/2024/02/20/reveal-js",
+        icon: "el-icon-data-board"
       },
       {
         text: '指南',
-        link: '/docs/',
-        icon: 'el-icon-bicycle',
+        icon: 'el-icon-coffee-cup',
         sub: [
           {
             text: "介绍",
@@ -120,17 +119,16 @@ module.exports = {
             text: "常见问题",
             link: "/docs/faq/",
           },
+          {
+            text: '插件',
+            link: '/plugins/',
+          }
         ]
       },
-      {
-        text: '插件',
-        link: '/plugins/',
-        icon: 'el-icon-coffee-cup'
-      }
     ],
-    sideBar: [
+    sidebar: [
       {
-        title: "主题",
+        text: "主题",
         icon: "el-icon-chat-line-square",
         links: [
           {
@@ -160,7 +158,7 @@ module.exports = {
         ]
       },
       {
-        title: "插件",
+        text: "插件",
         icon: "el-icon-dish",
         links: [
           {
@@ -172,8 +170,8 @@ module.exports = {
             link: "/plugins/pad-markdown",
           },
           {
-            text:"reavel-js",
-            link:"/plugins/reveal-js"
+            text: "reavel-js",
+            link: "/plugins/reveal-js"
           }
         ]
       }
