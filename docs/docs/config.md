@@ -312,9 +312,32 @@ module.exports = {
 
 ```
 
-## 纯净css
+## 单页面css变更
+### 纯净css
 在文章中会使用github-markdown-css来渲染markdown,而github-markdown-css默认会加载一些css,如果你想要一个更纯净的展示,
 你可以使用`clean_css: true`来关闭默认的css加载
+
+### 单页面css注入
+现在可以使用`extra_css`为某个单独的页面引入特定的css,比如一个使用纯净css的页面,你就可以使用`extra_css`来引入特定的css来自定义一些属性
+
+通常对markdown的部分直接修改`#article`
+
+
+### 例子
+这是一个例子:
+
+```markdown
+---
+clean_css: true
+extra_css: "#article-container  pre {
+  background-color: #282c34;
+  color: #ece9e9;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}/"
+---
+```
 
 ## 懒加载
 是否开启部分资源的lazy-load
