@@ -9,7 +9,6 @@ layout: Clean
 test_config:
     theme: "night"  
     width: 1200
-    autoSlide: 5000
     loop: true
 pin: true
 ---

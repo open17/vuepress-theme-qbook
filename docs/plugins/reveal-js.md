@@ -1,4 +1,44 @@
+---
+your_config_name:
+    theme: "night"  
+clean_css: true
+extra_css: "#article-container  pre {
+  background-color: #282c34;
+  color: #ece9e9;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}/* 默认链接样式 */
+a {
+  color: skyblue;
+  text-decoration: none; /* 去掉下划线 */
+  transition: color 0.3s; /* 添加过渡效果 */
+}
+
+/* 鼠标悬停时的样式 */
+a:hover {
+  color: red; /* 改变颜色 */
+  text-decoration: underline; /* 添加下划线 */
+}
+
+/* 激活状态的样式 */
+a:active {
+  color: skyblue; /* 改变颜色 */
+}"
+
+
+---
+
 # vuepress-plugin-reveal-js
+
+:::reveal your_config_name
+<section>
+  <h2>vuepress theme qbook</h2>
+</section>
+<section>
+  <p>a blog theme by open17</p>
+</section>
+:::
 
 支持在vuepress中使用reveal.js
 
@@ -37,6 +77,7 @@ module.exports = {
   <p>a blog theme by open17</p>
 </section>
 :::
+```
 
 ## 更多配置
 ### 全局配置
@@ -122,7 +163,7 @@ let config = {
 
 局部配置>全局配置>默认配置
 
-
+```markdown
 :::reveal your_config_name
 <section>
   <h2>vuepress theme qbook</h2>
@@ -131,10 +172,4 @@ let config = {
   <p>a blog theme by open17</p>
 </section>
 :::
-
-
 ```
-
-## License
-
-[MIT](LICENSE)

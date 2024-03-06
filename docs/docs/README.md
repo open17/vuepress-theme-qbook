@@ -9,7 +9,7 @@
 ## 介绍
 欢迎来到 [vuepress-theme-qbook](https://github.com/open17/vuepress-theme-qbook) 文档页面,这是一个基于 [VuePress](https://vuepress.vuejs.org/)  的博客&文档主题。
 
-<img width="180" src="/logo.png" alt="logo">
+<img width="180" src="/icon/android-chrome-512x512.png" alt="logo">
 
 
 ## 动机&灵感
