@@ -75,7 +75,6 @@ export default {
       const res = []
       for (const p of this.$site.pages) {
         if (res.length >= max) break
-        if (p.id !== 'posts') continue
         if (this.getPageLocalePath(p) !== localePath) continue
         if (!this.isSearchable(p)) continue
         if (
