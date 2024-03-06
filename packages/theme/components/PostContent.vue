@@ -15,32 +15,67 @@ export default {
       default: 453
     }
   },
-  mounted() {
-    const headings = this.$el.querySelectorAll(
-      '.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6,.markdown-body .table-of-contents ul li'
-    )
-    headings.forEach((heading) => {
-      const anchor = heading.querySelector('a')
-      if (anchor) {
-        anchor.addEventListener('click', (event) => {
-          event.preventDefault() // 阻止默认的链接跳转行为
-          const targetId = anchor.getAttribute('href') // 获取目标锚点的 ID
-          const targetElement = document.querySelector(targetId) // 获取目标锚点元素
-          this.$router.replace({ hash: targetId })
-          // console.log(targetElement.offsetTop)
-          if (targetElement) {
-            const parentContainer = targetElement.closest('.targetContainer')
-            // console.log(parentContainer)
-            if (parentContainer) {
-              parentContainer.scrollTo({
-                top: targetElement.offsetTop + this.scrollOffset,
-                behavior: 'smooth' // 使用平滑滚动效果
-              })
-            }
-          }
-        })
+  methods: {
+    loadDynamicCSS() {
+      const cssText = this.$page.frontmatter.extra_css
+      if (!cssText) return
+      console.log(1)
+      const style = document.createElement('style')
+      style.type = 'text/css'
+      style.id = 'qbook-dynamic-style' // id 属性用于移除
+      if (style.styleSheet) {
+        style.styleSheet.cssText = cssText
+      } else {
+        style.appendChild(document.createTextNode(cssText))
       }
-    })
+      document.head.appendChild(style)
+      console.log(style)
+    },
+    removeDynamicCSS() {
+      const dynamicStyle = document.getElementById('qbook-dynamic-style')
+      if (dynamicStyle) {
+        document.head.removeChild(dynamicStyle)
+      }
+    },
+    updateDynamicCSS() {
+      this.$watch('$route', (to, from) => {
+        // 在路由变化时执行操作
+        if (to.path !== from.path) {
+          this.removeDynamicCSS()
+          this.loadDynamicCSS()
+        }
+      })
+    },
+    listenScroll() {
+      const headings = this.$el.querySelectorAll(
+        '.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6,.markdown-body .table-of-contents ul li'
+      )
+      headings.forEach((heading) => {
+        const anchor = heading.querySelector('a')
+        if (anchor) {
+          anchor.addEventListener('click', (event) => {
+            event.preventDefault() // 阻止默认的链接跳转行为
+            const targetId = anchor.getAttribute('href') // 获取目标锚点的 ID
+            const targetElement = document.querySelector(targetId) // 获取目标锚点元素
+            this.$router.replace({ hash: targetId })
+            if (targetElement) {
+              const parentContainer = targetElement.closest('.targetContainer')
+              if (parentContainer) {
+                parentContainer.scrollTo({
+                  top: targetElement.offsetTop + this.scrollOffset,
+                  behavior: 'smooth'
+                })
+              }
+            }
+          })
+        }
+      })
+    }
+  },
+  mounted() {
+    this.listenScroll()
+    this.loadDynamicCSS()
+    this.updateDynamicCSS()
   }
 }
 </script>
@@ -62,7 +97,6 @@ export default {
 }
 
 .markdown-body >>> .header-anchor::before {
-  font-family: element-icons !important;
   font-style: normal;
   color: #33a5e2;
   content: '#';

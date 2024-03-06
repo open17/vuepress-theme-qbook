@@ -24,10 +24,10 @@ export default {
           const fontSize = `${1.2 - 0.1 * level}rem`
           const fontWeight = 500
           if (level === 0) {
-            let color = '#532fb6'
+            let color = '#344c67'
             return {
               fontSize: fontSize,
-              fontWeight: fontWeight,
+              fontWeight: fontWeight+200,
               color: color
             }
           }
@@ -118,8 +118,9 @@ export default {
 }
 
 .sidebar >>> .submenu-link:hover {
-  color: #532fb6;
+  color: #0779fb;
 }
+
 
 /* Adjust styles for different levels */
 </style>
