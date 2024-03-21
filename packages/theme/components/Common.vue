@@ -76,6 +76,13 @@ export default {
 </script>
 
 <style>
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
 #root-container,
 .container {
   position: absolute;
