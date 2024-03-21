@@ -27,6 +27,12 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC,
+    Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC,
+    Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC,
+    WenQuanYi Micro Hei, SimSun, sans-serif;
+}
 .tagList {
   margin-top: 3rem;
   display: flex;

@@ -19,7 +19,6 @@ export default {
     loadDynamicCSS() {
       const cssText = this.$page.frontmatter.extra_css
       if (!cssText) return
-      console.log(1)
       const style = document.createElement('style')
       style.type = 'text/css'
       style.id = 'qbook-dynamic-style' // id 属性用于移除
@@ -29,7 +28,6 @@ export default {
         style.appendChild(document.createTextNode(cssText))
       }
       document.head.appendChild(style)
-      console.log(style)
     },
     removeDynamicCSS() {
       const dynamicStyle = document.getElementById('qbook-dynamic-style')
@@ -86,16 +84,20 @@ export default {
   background-color: #fff;
 }
 .md-content {
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC,
-    Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC,
-    Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC,
-    WenQuanYi Micro Hei, SimSun, sans-serif;
   padding-bottom: 15rem;
   padding-right: 3rem;
   padding-left: 3rem;
   width: auto;
 }
-
+.markdown-body >>> .katex-display {
+  width: full;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.markdown-body >>> mtext {
+  min-width: 0.5rem;
+}
 .markdown-body >>> .header-anchor::before {
   font-style: normal;
   color: #33a5e2;

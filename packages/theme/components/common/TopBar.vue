@@ -320,7 +320,4 @@ export default {
   position: relative;
   left: -5%;
 }
-
-.mobile {
-}
 </style>
