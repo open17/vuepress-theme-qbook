@@ -1,7 +1,7 @@
 <template>
   <div class="all">
     <!-- 搜索弹窗 -->
-    <SearchCommVue/>
+    <SearchCommVue />
     <!-- 主导航栏 -->
     <div class="top-bar" :class="{ 'show-bg': showBg, 'docs-bg': isDocs }">
       <!-- 标题与图片 点击返回主页 -->
@@ -126,6 +126,11 @@ export default {
   methods: {
     handleLink(url) {
       if (!url) return
+      if (url.startsWith('https://') || url.startsWith('http://')) {
+        window.open(url)
+        return
+      }
+
       const currentRoute = this.$router.currentRoute
       if (currentRoute.path !== url) {
         this.$router.push(url)
@@ -136,7 +141,7 @@ export default {
       this.handleLink(item.link)
     },
     openSearch() {
-       this.$bus.$emit('openSeach');
+      this.$bus.$emit('openSeach')
     }
   },
   computed: {
@@ -152,7 +157,6 @@ export default {
 </script>
 
 <style scoped>
-
 .el-menu {
   border-right: none;
   background: transparent;
@@ -248,12 +252,8 @@ export default {
   max-width: 60vw;
 }
 
-/* .topbar-title:hover {
-  color: #85c3f5;
-} */
-
 .topbar-title img {
-  max-width: 5rem;
+  max-width: 2.5rem;
   margin-right: 0.25rem;
   max-height: 100%;
   object-fit: cover;
