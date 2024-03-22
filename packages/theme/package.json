@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-qbook",
-  "version": "1.1.29",
+  "version": "1.1.30",
   "description": "🍉 一个基于 VuePress  的博客&文档主题",
   "main": "index.js",
   "scripts": {
