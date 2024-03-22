@@ -128,6 +128,14 @@ module.exports = (options, ctx) => {
       [
         'vuepress-plugin-container',
         {
+          type: 'collapse',
+          before: info => `<el-collapse> <el-collapse-item title="${info}" name="1">`,
+          after: '</el-collapse-item></el-collapse>',
+        },
+      ],
+      [
+        'vuepress-plugin-container',
+        {
           type: 'error',
           before: info => `<div class="custom-tip-block error">${info}`,
           after: '</div>',
@@ -147,6 +155,14 @@ module.exports = (options, ctx) => {
           type: 'success',
           before: info => `<div class="custom-tip-block success">${info}`,
           after: '</div>',
+        },
+      ],
+      [
+        'vuepress-plugin-container',
+        {
+          type: 'tab',
+          before: info => `<el-tab-pane label="${info}">`,
+          after: '</el-tab-pane>',
         },
       ],
     ],
