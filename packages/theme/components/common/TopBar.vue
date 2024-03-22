@@ -254,7 +254,7 @@ export default {
 
 .topbar-title img {
   max-width: 2.5rem;
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
   max-height: 100%;
   object-fit: cover;
 }
@@ -278,7 +278,7 @@ export default {
   justify-content: center;
   align-items: center;
   font-weight: 800;
-  font-size: large;
+  font-size: 1rem;
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
     '微软雅黑', Arial, sans-serif;
 }
@@ -292,7 +292,7 @@ export default {
 }
 
 .detail-menu > * {
-  margin-right: 2rem;
+  margin-right: 1.7rem;
 }
 
 .show-bg {

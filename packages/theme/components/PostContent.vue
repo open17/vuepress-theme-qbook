@@ -110,6 +110,12 @@ export default {
 .markdown-body >>> .header-anchor {
   text-decoration: none;
 }
+.markdown-body >>> .el-collapse{
+  border-bottom: none;
+}
+.markdown-body >>> .el-collapse-item__header{
+  font-size: 1rem;
+}
 
 #article-container.md-content >>> pre {
   background-color: #282c34;
