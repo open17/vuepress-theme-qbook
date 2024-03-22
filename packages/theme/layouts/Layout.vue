@@ -87,8 +87,8 @@ export default {
 }
 .content-container {
   width: auto;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 8%;
+  padding-right: 8%;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;

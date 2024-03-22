@@ -6,7 +6,7 @@
       class="content-link-smooth"
       :href="'#' + item.slug"
       @click.prevent="scrollTo(item.slug)"
-      :style="{ paddingLeft: item.level + 'rem', fontWeight: item.level == 2 ? 'bold' : 'normal' }"
+      :style="{ paddingLeft: item.level + 'rem', fontWeight: item.level == 2 ? 'bold' : 'bold' }"
     >
       {{ item.title }}
     </a>

@@ -32,11 +32,16 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      const waitForLoad = setTimeout(() => {
+        this.isLoaded = true
+      }, 10000)
       if (document.readyState === 'complete') {
         this.isLoaded = true
+        clearTimeout(waitForLoad)
       } else {
         window.onload = (event) => {
           this.isLoaded = true
+          clearTimeout(waitForLoad)
         }
       }
       const slotContainer = this.$refs.slotContainer
@@ -64,14 +69,22 @@ export default {
     },
     checkIsMobile() {
       this.isMobile = window.innerWidth < this.mobileWidthThreshold
-      this.$root.$isMobile=this.isMobile
+      this.$root.$isMobile = this.isMobile
     }
   }
 }
 </script>
 
 <style>
-#root-container,.container{
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+#root-container,
+.container {
   position: absolute;
   top: 0;
   left: 0;
@@ -84,10 +97,4 @@ export default {
   flex-direction: column;
   padding: 0;
 }
-* {
-  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    '微软雅黑', Arial, sans-serif;
-}
-
-
 </style>

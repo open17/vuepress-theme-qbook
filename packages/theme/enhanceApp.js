@@ -48,8 +48,6 @@ function generateAutoSidebar(pages, themeConfig) {
 export default ({ Vue, siteData, isServer, router }) => {
     Vue.use(ElementUI);
     generateAutoSidebar(siteData.pages, siteData.themeConfig)
-
-
     const eventBus = new Vue();
     Vue.prototype.$bus = eventBus;
     Vue.prototype.$isMobile = false;

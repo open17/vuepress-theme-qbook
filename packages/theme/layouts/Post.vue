@@ -85,10 +85,6 @@ export default {
   width: auto;
   left: 18%;
   right: 18%;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, PingFang SC,
-    Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC,
-    Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC,
-    WenQuanYi Micro Hei, SimSun, sans-serif;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   border-radius: 0.7rem;
 }

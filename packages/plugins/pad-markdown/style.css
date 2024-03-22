@@ -2,7 +2,6 @@
 .katex-html{
   display: none;
 }
-
 /* 点击动画 */
 @keyframes click-animation {
   0% {
