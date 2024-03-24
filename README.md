@@ -10,7 +10,7 @@
 ## 文档与示例
 
 [文档](https://qbook.open17.vip/)
-[我的博客](https://blog.open17.vip/)
+[我的博客](https://blog-qbook.open17.vip/)
 ## 模板
 示例模板  
 [![快速启动模板](https://github-readme-stats.vercel.app/api/pin/?username=open17&repo=vuepress-theme-qbook-template)](https://github.com/open17/vuepress-theme-qbook-template)
