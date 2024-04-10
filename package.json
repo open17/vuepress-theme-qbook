@@ -16,6 +16,6 @@
 
   },
   "dependencies": {
-    "vuepress-theme-qbook": "^1.1.26"
+    "vuepress-theme-qbook": "^1.1.30"
   }
 }
