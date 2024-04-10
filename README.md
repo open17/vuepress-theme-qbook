@@ -6,6 +6,8 @@
 🍉 一个基于 VuePress  的博客&文档主题
 </p>
 
+> 当前项目转为维护阶段,现在主要更新基于vitepress的博客主题[open17](https://github.com/open17/vitepress-theme-open17),相较于本主题,它拥有更快速的启动,更简洁合理的配置与更舒适的体验
+
 # Qbook
 ## 文档与示例
 
