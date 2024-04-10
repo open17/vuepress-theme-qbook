@@ -8,30 +8,22 @@
 
 > 当前项目转为维护阶段,现在主要更新基于vitepress的博客主题[open17](https://github.com/open17/vitepress-theme-open17),相较于本主题,它拥有更快速的启动,更简洁合理的配置与更舒适的体验
 
-# Qbook
-## 文档与示例
+- [文档](https://qbook.open17.vip/)
 
-[文档](https://qbook.open17.vip/)
-[我的博客](https://blog-qbook.open17.vip/)
-## 模板
-示例模板  
-[![快速启动模板](https://github-readme-stats.vercel.app/api/pin/?username=open17&repo=vuepress-theme-qbook-template)](https://github.com/open17/vuepress-theme-qbook-template)
+- [我的博客(示例)](https://blog-qbook.open17.vip/)
+
 ## 特征
-- 支持同时启用博客+文档页面
-- 首页轮播大图(支持蒙版)
-- 标签分类
-- 卡片式文章展示
-- markdown增强
-  - 换行
-  - 脚注
-  - 高亮
-  - emoji
-  - TOC目录
-- 自定义容器
-- 通知
-- 文档侧边栏目录
-- 代码块复制按钮
-- katex公式支持
-- mermaid代码块支持
-- 评论
+- 博客功能增强: 标签,分页,置顶博客,时间排序,RSS,评论系统...
+- 多种布局支持: 博客布局,文档布局,纯净布局
+- markdown增强: 代码高亮,复制,自定义容器,footnote,mermaid(图表绘制),revealjs(幻灯片)...
+- 更多丰富功能: 自动生成侧边栏,首页轮播图,图片蒙版色彩,资源懒加载,纯净css,...
+
+## 展示
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404101205530.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404101204405.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404101203968.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404101211704.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404101209312.png)
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404101208413.png)
+
 
